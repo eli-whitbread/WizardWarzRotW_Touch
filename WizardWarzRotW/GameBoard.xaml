@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="WizardWarzRotW.GameBoard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WizardWarzRotW"
+             mc:Ignorable="d" 
+             Height="1080" Width="1920" Background="#FF707070">
+    <Canvas Name="GameCanvas" Height="Auto" Width="Auto">
+        <!--This Dock Panel holds the score/ lives controls for Players 5 & 6. These are placed on the canvas first, then the second dock is layer on top-->
+        <DockPanel Name="panel2" Background="#FF2B1717" Width="1600" Height="960">
+            <Separator Height="64" Width="448" Background="#00A0A0A0" />
+            <Label Name="gameTimeText1" FontSize="48" Content="4:00" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-10,96,0" Width="147" Height="64" FontFamily="Palatino Linotype" TextOptions.TextFormattingMode="Display" FontWeight="Light" Panel.ZIndex="2" />
+            <Label Name="gameTimeText2" FontSize="48" Content="4:00" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,-10,96,0" Width="147" Height="64" FontFamily="Palatino Linotype" TextOptions.TextFormattingMode="Display" FontWeight="Light">
+                <Label.LayoutTransform>
+                    <RotateTransform Angle="180"/>
+                </Label.LayoutTransform>
+            </Label>
+            <!--Player 5 User Control-->
+            <Grid Name="TopPanel2" DockPanel.Dock="Top" HorizontalAlignment="Right" Height="64" Background="#FFAC02FB" Margin="0,0,0,0" />
+            <!--Player 6 User Control-->
+            <Grid Name="BottomPanel2" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Height="64" Background="DarkGreen" Margin="0,830,0,0" />
+        </DockPanel>
+        <DockPanel LastChildFill="True">
+            <!--docked panels grids (players 1- 4 score and lives grids)-->
+            <!--Player 1 User Control-->
+            <Grid Name="TopPanel" DockPanel.Dock="Top" HorizontalAlignment="Left" Height="64" Background="LightGray" />
+            <!--Player 2 User Control-->
+            <Grid Name="RightPanel" DockPanel.Dock="Right" VerticalAlignment="Center" Height="384" Width="64" Background="Red" Margin="0,0,0,64" />
+            <!--Player 3 User Control-->
+            <Grid Name="BottomPanel" DockPanel.Dock="Bottom" HorizontalAlignment="Left" Height="64" Background="Blue" />
+            <!--Player 4 User Control-->
+            <Grid Name="LeftPanel" DockPanel.Dock="Left" VerticalAlignment="Center" Height="384" Width="64" Background="Yellow"/>
+            <!--game board-->
+            <Grid Name="GameGridXAML">
+            </Grid>
+        </DockPanel>
+
+        <local:PlayerControl/>
+    </Canvas>
+
+
+    
+</UserControl>
