@@ -39,10 +39,10 @@ namespace WizardWarzRotW
         bool yFlag = true;
 
         public TileStates[,] curTileStates = GameBoard.curTileState;
-        public PowerupStates[,] powerupTileStates = GameBoard.powerupTileState;
+        public PowerupTileStates[,] powerupTiles = GameBoard.powerupTileState;
         private RandomNumberGenerator RNG = new RandomNumberGenerator();
 
-        Powerup()
+        public Powerups()
         {
             _localGameBoard = GameBoard.ReturnGameBoardInstance();
 
@@ -246,21 +246,21 @@ namespace WizardWarzRotW
                         GameBoard.curTileState[col, row] = TileStates.Floor;
                         GameGrid.Children.Remove(elem);
 
-                        if (GameBoard.powerupTileState[col, row] == PowerupStates.Superbomb)
+                        if (GameBoard.powerupTileState[col, row] == PowerupTileStates.Superbomb)
                         {
-                            GameBoard.powerupTileState[col, row] = PowerupStates.Empty;
+                            GameBoard.powerupTileState[col, row] = PowerupTileStates.Empty;
                             //MessageBox.Show("Superbomb!");
                             return "Superbomb";
                         }
-                        else if (GameBoard.powerupTileState[col, row] == PowerupStates.Shield)
+                        else if (GameBoard.powerupTileState[col, row] == PowerupTileStates.Shield)
                         {
-                            GameBoard.powerupTileState[col, row] = PowerupStates.Empty;
+                            GameBoard.powerupTileState[col, row] = PowerupTileStates.Empty;
                             //MessageBox.Show("Shield!");
                             return "Shield";
                         }
-                        else if (GameBoard.powerupTileState[col, row] == PowerupStates.Lifeup)
+                        else if (GameBoard.powerupTileState[col, row] == PowerupTileStates.Lifeup)
                         {
-                            GameBoard.powerupTileState[col, row] = PowerupStates.Empty;
+                            GameBoard.powerupTileState[col, row] = PowerupTileStates.Empty;
                             //MessageBox.Show("Lifeup!");
                             return "Lifeup";
                         }

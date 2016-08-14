@@ -44,7 +44,7 @@ namespace WizardWarzRotW
             isLooping = true;
             trackLocation = "8_bit_wizard.mp3";
             newVolume = 0.15;
-            PlayTrack();
+            //PlayTrack();
         }
 
         public void playWizardOne()
@@ -52,7 +52,7 @@ namespace WizardWarzRotW
 
             trackLocation = "Wizard_Warz_01.wav";
             newVolume = 0.15;
-            PlayTrack();
+            //PlayTrack();
         }
 
         //public void playGameTheme()

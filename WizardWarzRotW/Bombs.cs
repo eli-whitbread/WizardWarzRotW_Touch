@@ -230,7 +230,7 @@ namespace WizardWarzRotW
 
 
                             //// Attempt to spawn powerup
-                            puRef = new Powerup();
+                            puRef = new Powerups();
 
                             //Random r = new Random();
                             int rand = RNG.GenerateRandomNumber();
@@ -262,10 +262,10 @@ namespace WizardWarzRotW
                 if (explosionStep == 0)
                 {
                     curGameGrid.Children.Remove(bombImage);
-                    playBombSndFX.playBombExplode();
+                    //playBombSndFX.playBombExplode();
                     bombImage = new Rectangle();
-                    bombImage.Height = GameWindow.ReturnTileSize();
-                    bombImage.Width = GameWindow.ReturnTileSize();
+                    bombImage.Height = GameBoard.ReturnTileSize();
+                    bombImage.Width = GameBoard.ReturnTileSize();
 
 
                     Grid.SetColumn(bombImage, colPos);
@@ -278,8 +278,8 @@ namespace WizardWarzRotW
                     Rectangle explosion = new Rectangle();
 
                     Color tempColour = myOwner.playerColour;
-                    explosion.Height = GameWindow.ReturnTileSize();
-                    explosion.Width = GameWindow.ReturnTileSize();
+                    explosion.Height = GameBoard.ReturnTileSize();
+                    explosion.Width = GameBoard.ReturnTileSize();
 
                     explosion.Fill = new SolidColorBrush(tempColour);
                     explosion.Fill.Opacity = 0.5f;
@@ -321,9 +321,9 @@ namespace WizardWarzRotW
             //}
 
             // Check if all players were caught in the blast.
-            for (int i = 0; i < GameWindow.ReturnPlayerList().Count; i++)
+            for (int i = 0; i < GameBoard.ReturnPlayerList().Count; i++)
             {
-                PlayerControl tempPlayer = GameWindow.ReturnPlayerList()[i];
+                PlayerControl tempPlayer = GameBoard.ReturnPlayerList()[i];
 
                 if (colPos == tempPlayer.playerX && rowPos == tempPlayer.playerY)
                 {

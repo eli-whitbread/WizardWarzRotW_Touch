@@ -34,7 +34,7 @@ namespace WizardWarzRotW
         {
             InitializeComponent();
 
-            tileSizeLocal = GameWindow.ReturnTileSize();
+            tileSizeLocal = GameBoard.ReturnTileSize();
 
             //--------------- Player Lives (HAS TO BE CHANGED HERE)--------------------------
             playerLivesNumber = playerLivesNumber + 3;
@@ -107,7 +107,7 @@ namespace WizardWarzRotW
             playerLivesNumber -= count;
 
             CalculateLives();
-            Debug.WriteLine("Player lives reduced!");
+            //Debug.WriteLine("Player lives reduced!");
         }
 
         /// <summary>
@@ -132,10 +132,10 @@ namespace WizardWarzRotW
                 //MessageBox.Show("Nothing at index: " + 1);
             }
 
-            playMusic.playPickupBomb();
+            //playMusic.playPickupBomb();
             if (playerLivesNumber <= 0)
             {
-                Debug.WriteLine(string.Format("Sorry Player {0}, you are out of lives, and cannot respawn..", /*playerID*/ 1));
+                //Debug.WriteLine(string.Format("Sorry Player {0}, you are out of lives, and cannot respawn..", /*playerID*/ 1));
 
             }
             else if (playerLivesNumber > 0)
@@ -160,7 +160,7 @@ namespace WizardWarzRotW
             playerScore.FontSize = 32;
             playerScore.Foreground = new SolidColorBrush(Colors.Black);
             playerScore.Width = 128;
-            playerScore.Height = GameWindow.ReturnTileSize();
+            playerScore.Height = GameBoard.ReturnTileSize();
 
             // --------------- Set position, within the local grid (scoreGrid) of this element --------------------------------
 

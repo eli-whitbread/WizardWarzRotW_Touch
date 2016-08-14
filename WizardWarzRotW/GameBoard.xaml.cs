@@ -23,6 +23,14 @@ namespace WizardWarzRotW
         Powerup
     }
 
+    public enum PowerupTileStates
+    {
+        Empty,
+        Superbomb,
+        Shield,
+        Lifeup
+    }
+
     /// <summary>
     /// Interaction logic for GameBoard.xaml
     /// </summary>
@@ -36,6 +44,7 @@ namespace WizardWarzRotW
         Int32 cols = 23;
         Int32 numberOfDestructibleWalls = 60;
         public static TileStates[,] curTileState = null;
+        public static PowerupTileStates[,] powerupTileState = null;
 
         static Random randomNumber = new Random();
 
@@ -131,8 +140,12 @@ namespace WizardWarzRotW
 
         public void InitializeGameBoard()
         {
+            // Initialise the gameboard reference
+            gameBoardManager = this;
 
             curTileState = new TileStates[cols, rows];
+            powerupTileState = new PowerupTileStates[cols, rows];
+
 
             GridLengthConverter myGridLengthConverter = new GridLengthConverter();
             GridLength side = (GridLength)myGridLengthConverter.ConvertFromString("Auto");
@@ -163,12 +176,15 @@ namespace WizardWarzRotW
                     //flrTiles[c, r] = new Rectangle();
                     flrTiles[c, r] = new Image();
 
+                    // populate the secondary poweruptile grid with empty tiles.
+                    powerupTileState[c, r] = PowerupTileStates.Empty;
+
 
                     //add a wall tile if along the grid extremes
                     if (InitialTilePlacementCheck(c, r, cols, rows) == true)
                     {
                         //flrTiles[c, r].Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\Indesructable.png", UriKind.Relative)));
-                        flrTiles[c, r].Source = new BitmapImage(new Uri("pack://application:,,,/Resources/Indestructible.png", UriKind.Absolute));
+                        flrTiles[c, r].Source = new BitmapImage(new Uri("pack://application:,,,/Resources/Indesructable.png", UriKind.Absolute));
                         flrTiles[c, r].Stretch = Stretch.Fill;
                         curTileState[c, r] = TileStates.SolidWall;
                     }
@@ -371,44 +387,6 @@ namespace WizardWarzRotW
         //    randomNo4PowerUps = (short)tempRandom.Next(0, 3);
         }
 
-        //public void timer_Tick(object sender, EventArgs e)
-        //{
-        //    currentTick += 0.5;
-
-        //    if (currentTick % 1 == 0)
-        //    {
-
-        //        // Decrement the timer
-        //        gameTimeSeconds -= 1;
-
-        //        if (gameTimeSeconds <= -1)
-        //        {
-        //            gameTimeSeconds = 59;
-        //            gameTimeMinutes -= 1;
-
-        //            if (gameTimeMinutes <= -1)
-        //            {
-        //                //MessageBox.Show("Four minutes passed. End of game reached.");
-        //                gameTimerInstance.gameLoopTimer.Stop();
-
-        //                MainWindow mwRef = MainWindow.ReturnMainWindowInstance();
-        //                mwRef.GameEnd();
-        //            }
-        //        }
-
-        //    }
-
-        //    //provideAllPlayerPositions();
-        //    CheckPlayersOnBoard();
-
-        //    // "D2" = Standard Numeric Formatting. Ensures that the seconds will always be displayed in double digits.
-        //    gameTimeText1.Content = gameTimeMinutes + ":" + gameTimeSeconds.ToString("D2");
-        //    gameTimeText2.Content = gameTimeMinutes + ":" + gameTimeSeconds.ToString("D2");
-
-        //    Random tempRandom = new Random();
-        //    randomNo4PowerUps = (short)tempRandom.Next(0, 3);
-        //}
-
         private void initialiseGameBoardSize()
         {
             if (noOfPlayers == 4)
@@ -550,6 +528,16 @@ namespace WizardWarzRotW
         {
             gameTimeText1.Content = minutes + ":" + seconds.ToString("D2");
             gameTimeText2.Content = gameTimeText1.Content;
+        }
+
+        public void ChangeTileImage(int PosX, int PosY)
+        {
+
+        }
+
+        public void ChangeTileState(int PosX, int PosY, string tileState)
+        {
+
         }
     }
 }
