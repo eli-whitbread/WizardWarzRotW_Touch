@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AudioManager.xaml.cs">
+      <DependentUpon>AudioManager.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Bombs.cs" />
     <Compile Include="GameTimer.cs" />
     <Compile Include="LivesAndScore.xaml.cs">
@@ -74,6 +77,10 @@
     <Compile Include="TitleScreen.xaml.cs">
       <DependentUpon>TitleScreen.xaml</DependentUpon>
     </Compile>
+    <Page Include="AudioManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GameBoard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

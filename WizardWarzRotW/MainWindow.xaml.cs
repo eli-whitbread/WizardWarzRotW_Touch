@@ -31,11 +31,20 @@ namespace WizardWarzRotW
     public partial class MainWindow : Window
     {
         private GameStates curGameState = GameStates.Title;
-        
+
+        public static bool GlobalAudio1
+        {
+            get; set;
+        }
 
         public MainWindow()
         {
             InitializeComponent();
+            // Initialise Audio
+            GlobalAudio1 = true;
+            AudioMan.audioOn = GlobalAudio1;
+            AudioMan.playWizardOne();
+
         }
               
 

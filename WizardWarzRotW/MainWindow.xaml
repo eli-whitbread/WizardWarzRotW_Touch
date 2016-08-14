@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindowXAML" Height="auto" Width="auto" >
     <Canvas Name="GameCANVAS" Height="Auto" Width="Auto">
+        <local:AudioManager x:Name="AudioMan"/>
         <local:TitleScreen />
         <local:MainMenu />
         <local:GameBoard />

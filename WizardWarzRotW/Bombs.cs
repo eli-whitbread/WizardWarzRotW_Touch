@@ -31,7 +31,7 @@ namespace WizardWarzRotW
 
         public GameBoard managerRef = null;
         public PlayerControl myOwner = null;
-        public Powerup puRef = null;
+        public Powerups puRef = null;
         private RandomNumberGenerator RNG = new RandomNumberGenerator();
 
         GameTimer myGameTimerRef = null;

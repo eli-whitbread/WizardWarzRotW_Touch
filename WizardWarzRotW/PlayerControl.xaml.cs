@@ -34,13 +34,7 @@ namespace WizardWarzRotW
         }
 
         private void UserControl_PreviewTouchDown(object sender, TouchEventArgs e)
-        {
-            //Point position; 
-            
-            //position = e.GetTouchPoint(sender as IInputElement).Position;
-
-            //MessageBox.Show(string.Format("Position: {0}", position));
-
+        {            
             LastTouchDown = e.GetTouchPoint(GameBoard.ReturnGameBoardInstance()).Position;
         }
 
