@@ -59,7 +59,8 @@ namespace WizardWarzRotW
         double varRotTransform = 90;        
         protected static GameBoard gameBoardManager;
         protected static Canvas GameCanvasInstance;
-        protected static List<PlayerControl> PlayerListRef;        
+        protected static List<PlayerControl> PlayerListRef;
+        protected static Grid gameGrid;
         public RotateTransform trRot = null;
         protected static int noOfPlayers = 4;
         public PlayerControl[] playerControllers = null;
@@ -86,7 +87,14 @@ namespace WizardWarzRotW
             return GameCanvasInstance;
         }
 
-        
+        /// <summary>
+        /// Returns a reference to the Game Grid. <para> The Game Grid is where all game play happens. </para>
+        /// </summary>
+        public static Grid ReturnGameGrid()
+        {
+            return gameGrid;
+
+        }
 
         /// <summary>
         /// Returns a reference to the GameBoardManager. <para> The GameBoard Manager holds tile/floor state information. </para>
@@ -325,7 +333,7 @@ namespace WizardWarzRotW
                 //playersOnBoard = 4; 
             }
 
-
+            gameGrid = GameGridXAML;
             initialiseGameBoardSize();
 
             playerControllers = new PlayerControl[noOfPlayers];
@@ -338,53 +346,7 @@ namespace WizardWarzRotW
             powerupRef = new Powerups();
             powerupRef.curGameGrid = GameGridXAML;
             powerupRef.InitialisePowerups();
-
-
-        //    // End timer
-        //    gameTimerInstance.processFrameEvent_TICK += GameTimerInstance_processFrameEvent_TICK;
-        //    endTimer = new DispatcherTimer(DispatcherPriority.Render);
-        //    endTimer.Interval = TimeSpan.FromSeconds(0.5);
-        //    endTimer.Tick += new EventHandler(timer_Tick);
-        //    endTimer.Start();
-
-        //}
-
-        //private void GameTimerInstance_processFrameEvent_TICK(object sender, EventArgs e)
-        //{
-        //    currentTick += 0.5;
-
-        //    if (currentTick % 1 == 0)
-        //    {
-
-        //        // Decrement the timer
-        //        gameTimeSeconds -= 1;
-
-        //        if (gameTimeSeconds <= -1)
-        //        {
-        //            gameTimeSeconds = 59;
-        //            gameTimeMinutes -= 1;
-
-        //            if (gameTimeMinutes <= -1)
-        //            {
-        //                //MessageBox.Show("Four minutes passed. End of game reached.");
-        //                gameTimerInstance.gameLoopTimer.Stop();
-
-        //                MainWindow mwRef = MainWindow.ReturnMainWindowInstance();
-        //                //mwRef.GameEnd();
-        //            }
-        //        }
-
-        //    }
-
-        //    //provideAllPlayerPositions();
-        //    CheckPlayersOnBoard();
-
-        //    // "D2" = Standard Numeric Formatting. Ensures that the seconds will always be displayed in double digits.
-        //    gameTimeText1.Content = gameTimeMinutes + ":" + gameTimeSeconds.ToString("D2");
-        //    gameTimeText2.Content = gameTimeMinutes + ":" + gameTimeSeconds.ToString("D2");
-
-        //    Random tempRandom = new Random();
-        //    randomNo4PowerUps = (short)tempRandom.Next(0, 3);
+            
         }
 
         private void initialiseGameBoardSize()
@@ -418,8 +380,7 @@ namespace WizardWarzRotW
                 playerLives[i] = new LivesAndScore();
                 Grid.SetRow(playerControllers[i], 1);
                 Grid.SetColumn(playerControllers[i], 1);
-                //playerControllers[i].localGameGrid = MainGameGrid;
-                //playerControllers[i].highlightLocalGrid = MainGameGrid;
+                
                 //playerControllers[i].managerRef = gameBoardManager;
                 //playerControllers[i].gridCellsArray = gameBoardManager.flrTiles;
                 playerControllers[i].myLivesAndScore = playerLives[i];
@@ -538,6 +499,21 @@ namespace WizardWarzRotW
 
         public void ChangeTileState(int PosX, int PosY, string tileState)
         {
+
+        }
+
+        /// <summary>
+        /// This function returns to the distance between two points. <para>Takes in two POINTS (A & B), and puts out the distance between them.</para>
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="q"></param>
+        /// <returns></returns>
+        public static double GetDistanceBetweenPoints(Point p, Point q)
+        {
+            double a = p.X - q.X;
+            double b = p.Y - q.Y;
+            double distance = Math.Sqrt(a * a + b * b);
+            return distance;
 
         }
     }

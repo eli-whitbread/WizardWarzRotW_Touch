@@ -21,8 +21,16 @@ namespace WizardWarzRotW
     /// </summary>
     public partial class PlayerControl : UserControl
     {
-        //public PlayerUserControl playerTileAnimOverlay;
-        //public Rectangle playerTile;
+        // ALL THE NEW STUFF
+        private readonly Stopwatch _doubleTapStopwatch = new Stopwatch();
+        private Point? _lastTapLocation;
+        private int[,] PlayerPositions;
+        public EventHandler DoubleTouchDown;
+        Int32 checkCellColPos, checkCellRowPos;
+        private int colCheckCur;
+        private int rowCheckCur;
+        // END NEW STUFF
+
         public Point currentPOS;
         public Point lastClickPOS;
         public Point playerPosition;
@@ -71,12 +79,26 @@ namespace WizardWarzRotW
         public PlayerControl()
         {
             InitializeComponent();
+            PlayerPositions = new int[20, 2];
+            ResetPlayerPositionArray();
             facingRight = true;
             gameCanRef = GameBoard.ReturnMainCanvas();
             facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/ZombieHunter_SpriteSheet.png", UriKind.Absolute));
             facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/ZombieHunter_SpriteSheet_facingLeft.png", UriKind.Absolute));
             Loaded += PlayerControl_Loaded;
         }
+
+        void ResetPlayerPositionArray()
+        {
+            for (int i = 0; i < PlayerPositions.GetLength(0); i++)
+            {
+                PlayerPositions[i, 0] = 0;
+                PlayerPositions[i, 1] = 0;
+            }
+            checkCellColPos = 0;
+            checkCellRowPos = 0;
+        }
+        private Point lastTouchDownPoint;
 
         private void PlayerControl_Loaded(object sender, RoutedEventArgs e)
         {
@@ -115,22 +137,139 @@ namespace WizardWarzRotW
         }
 
         private void UserControl_PreviewTouchDown(object sender, TouchEventArgs e)
-        {            
-            LastTouchDown = e.GetTouchPoint(GameBoard.ReturnGameBoardInstance()).Position;
+        {
+            if (IsDoubleTap(e))
+            {
+                Debug.WriteLine("Double Touch");
+                OnDoubleTouchDown();
+            }
+
+            ResetPlayerPositionArray();
+
+            this.lastTouchDownPoint = e.GetTouchPoint((UIElement)sender).Position;
+
+            Debug.WriteLine(string.Format("FIRST TOUCH: {0}", lastTouchDownPoint));
         }
 
         private void UserControl_PreviewTouchUp(object sender, TouchEventArgs e)
         {
-
+            MoveThePlayer();
         }
 
         private void UserControl_PreviewTouchMove(object sender, TouchEventArgs e)
         {
-            LastTouchDown = e.GetTouchPoint(GameBoard.ReturnGameBoardInstance()).Position;
+            FrameworkElement newPlayer = sender as FrameworkElement;
+            if (newPlayer == null)
+            {
+                return;
+            }
+
+            //this.lastTouchDownPoint = e.GetTouchPoint(newPlayer).Position;
+
+            //Debug.WriteLine(string.Format("Touch Point: {0}", this.lastTouchDownPoint));
+
+
+            TouchPoint tp = e.GetTouchPoint(GameBoard.ReturnGameGrid());
+
+            colCheckCur = (int)tp.Position.X / 64;
+            rowCheckCur = (int)tp.Position.Y / 64;
+            //int colCheckPrev = PlayerPosition[]
+
+            if (colCheckCur != checkCellColPos || rowCheckCur != checkCellRowPos)
+            {
+                for (int i = 0; i < PlayerPositions.GetLength(0); i++)
+                {
+                    if (PlayerPositions[i, 0] == 0)
+                    {
+                        if (GameBoard.curTileState[colCheckCur, rowCheckCur] == TileStates.Floor)
+                        {
+                            PlayerPositions[i, 0] = colCheckCur;
+                            PlayerPositions[i, 1] = rowCheckCur;
+
+                            checkCellColPos = colCheckCur;
+                            checkCellRowPos = rowCheckCur;
+
+                            break;
+                        }
+                        else
+                        {
+                            MoveThePlayer();
+                            return;
+                        }
+                    }
+                }
+
+            }
+            else if (GameBoard.curTileState[colCheckCur, rowCheckCur] == TileStates.DestructibleWall)
+            {
+                MoveThePlayer();
+
+            }
+
+            Debug.WriteLine(String.Format("{0}, {1}", ((int)tp.Position.X / 64), ((int)tp.Position.Y / 64)));
+
+            newPlayer.CaptureTouch(e.TouchDevice);
+
+            e.Handled = true;
         }
 
         public void UpdatePlayerStatus(string pStatus)
         {
+
+        }
+
+        private void MoveThePlayer()
+        {
+
+
+            for (int i = 0; i < PlayerPositions.GetLength(0); i++)
+            {
+                if (PlayerPositions[i, 0] != 0)
+                {
+                    Grid.SetColumn(this, PlayerPositions[i, 0]);
+                    Grid.SetRow(this, PlayerPositions[i, 1]);
+                }
+                else
+                {
+                    break;
+                }
+                GameBoard.ReturnGameGrid().Children.Remove(this);
+                GameBoard.ReturnGameGrid().Children.Add(this);
+            }
+
+
+
+        }
+
+        protected virtual void OnDoubleTouchDown()
+        {
+            if (DoubleTouchDown != null)
+            {
+
+                DoubleTouchDown(this, EventArgs.Empty);
+            }
+        }
+
+        private bool IsDoubleTap(TouchEventArgs e)
+        {
+            Point currentTapPosition = e.GetTouchPoint(this).Position;
+            bool tapsAreCloseInDistance = false;
+            if (_lastTapLocation != null)
+            {
+                tapsAreCloseInDistance = GameBoard.GetDistanceBetweenPoints(currentTapPosition, (Point)_lastTapLocation) < 32;
+            }
+            _lastTapLocation = currentTapPosition;
+
+            TimeSpan elapsed = _doubleTapStopwatch.Elapsed;
+            _doubleTapStopwatch.Restart();
+            bool tapsAreCloseInTime = (elapsed != TimeSpan.Zero && elapsed < TimeSpan.FromSeconds(0.7));
+
+            if (tapsAreCloseInTime && tapsAreCloseInDistance)
+            {
+                _lastTapLocation = null;
+            }
+
+            return tapsAreCloseInDistance && tapsAreCloseInTime;
 
         }
     }
