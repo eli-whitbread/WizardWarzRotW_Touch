@@ -30,7 +30,9 @@ namespace WizardWarzRotW
         private int colCheckCur;
         private int rowCheckCur;
         // END NEW STUFF
-
+        private GameTimer _playerControlTimer = null;
+        Int32 _myTime, _count;
+        bool _canMove = false;
         public Point currentPOS;
         public Point lastClickPOS;
         public Point playerPosition;
@@ -79,6 +81,10 @@ namespace WizardWarzRotW
         public PlayerControl()
         {
             InitializeComponent();
+            _playerControlTimer = GameTimer.ReturnTimerInstance();
+            _playerControlTimer.processFrameEvent_TICK += _playerControlTimer_processFrameEvent_TICK;
+            _myTime = 0;
+            _count = 0;
             PlayerPositions = new int[20, 2];
             ResetPlayerPositionArray();
             facingRight = true;
@@ -86,6 +92,26 @@ namespace WizardWarzRotW
             facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/ZombieHunter_SpriteSheet.png", UriKind.Absolute));
             facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/ZombieHunter_SpriteSheet_facingLeft.png", UriKind.Absolute));
             Loaded += PlayerControl_Loaded;
+        }
+
+        // ---------------------------------------------------------------------
+        // ----------------------PLAYER TICK PROCESS -----------------------------------
+        // ---------------------------------------------------------------------
+        private void _playerControlTimer_processFrameEvent_TICK(object sender, EventArgs e)
+        {
+            _count++;
+            if(_count >= 60)
+            {
+                _myTime++;
+                _count = 0;
+
+                if(_canMove == true)
+                {
+                    MoveThePlayer();
+                }
+                
+            }
+            
         }
 
         void ResetPlayerPositionArray()
@@ -97,6 +123,7 @@ namespace WizardWarzRotW
             }
             checkCellColPos = 0;
             checkCellRowPos = 0;
+            _canMove = false;
         }
         private Point lastTouchDownPoint;
 
@@ -153,7 +180,8 @@ namespace WizardWarzRotW
 
         private void UserControl_PreviewTouchUp(object sender, TouchEventArgs e)
         {
-            MoveThePlayer();
+            //MoveThePlayer();
+            _canMove = true;
         }
 
         private void UserControl_PreviewTouchMove(object sender, TouchEventArgs e)
@@ -193,7 +221,8 @@ namespace WizardWarzRotW
                         }
                         else
                         {
-                            MoveThePlayer();
+                            //MoveThePlayer();
+                            _canMove = true;
                             return;
                         }
                     }
@@ -220,22 +249,37 @@ namespace WizardWarzRotW
 
         private void MoveThePlayer()
         {
-
-
-            for (int i = 0; i < PlayerPositions.GetLength(0); i++)
+            if (PlayerPositions[_myTime, 0] != 0)
             {
-                if (PlayerPositions[i, 0] != 0)
-                {
-                    Grid.SetColumn(this, PlayerPositions[i, 0]);
-                    Grid.SetRow(this, PlayerPositions[i, 1]);
-                }
-                else
-                {
-                    break;
-                }
-                GameBoard.ReturnGameGrid().Children.Remove(this);
-                GameBoard.ReturnGameGrid().Children.Add(this);
+                Grid.SetColumn(this, PlayerPositions[_myTime, 0]);
+                Grid.SetRow(this, PlayerPositions[_myTime, 1]);
             }
+            
+            if(_myTime == PlayerPositions.GetLength(0))
+            {
+                _myTime = 0;
+            }
+
+            GameBoard.ReturnGameGrid().Children.Remove(this);
+            GameBoard.ReturnGameGrid().Children.Add(this);
+            return;
+
+            //for (int i = _myTime; i < PlayerPositions.GetLength(0);)
+            //{
+            //    if (PlayerPositions[i, 0] != 0)
+            //    {
+            //        Grid.SetColumn(this, PlayerPositions[i, 0]);
+            //        Grid.SetRow(this, PlayerPositions[i, 1]);
+            //    }
+            //    else
+            //    {
+            //        break;
+            //    }
+            //    GameBoard.ReturnGameGrid().Children.Remove(this);
+            //    GameBoard.ReturnGameGrid().Children.Add(this);
+            //    return;
+            //}
+            
 
 
 
