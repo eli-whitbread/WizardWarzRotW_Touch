@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace WizardWarzRotW
 {
@@ -21,7 +22,7 @@ namespace WizardWarzRotW
     public partial class PlayerControl : UserControl
     {
         //public PlayerUserControl playerTileAnimOverlay;
-        public Rectangle playerTile;
+        //public Rectangle playerTile;
         public Point currentPOS;
         public Point lastClickPOS;
         public Point playerPosition;
@@ -34,6 +35,12 @@ namespace WizardWarzRotW
         public Color playerColour = new Color();
         string playerImage;
         public GameBoard managerRef = null;
+
+        //Animated Tile
+        //SpritesheetImage animPlayerTile;
+        public BitmapImage facingRightImage, facingLeftImage;
+        public bool facingRight;
+
         //public GameTimer playerTimerRef = null;
         //AudioManager playMusic = new AudioManager();
 
@@ -64,6 +71,47 @@ namespace WizardWarzRotW
         public PlayerControl()
         {
             InitializeComponent();
+            facingRight = true;
+            gameCanRef = GameBoard.ReturnMainCanvas();
+            facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/ZombieHunter_SpriteSheet.png", UriKind.Absolute));
+            facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/ZombieHunter_SpriteSheet_facingLeft.png", UriKind.Absolute));
+            Loaded += PlayerControl_Loaded;
+        }
+
+        private void PlayerControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+            SpritesheetImage animPlayerTile = new SpritesheetImage()
+            {
+                Source = facingRightImage,
+                FrameMaxX = 5,
+                FrameMaxY = 2,
+                FrameRate = 30,
+                Width = 64,
+                Height = 64,
+                PlaysRemaining = 10,
+                LoopForever = true
+            };
+            animPlayerTile.AnimationComplete += (o, s) =>
+            {
+                myCanvas.Children.Remove(animPlayerTile);
+            };
+
+            Point centerPoint = new Point(this.ActualWidth / 2, this.ActualHeight / 2);
+
+            //Grid.SetColumn(animPlayerTile, 0);
+            //Grid.SetRow(animPlayerTile, 0);
+
+            myCanvas.Children.Add(animPlayerTile);
+            Canvas.SetTop(animPlayerTile, centerPoint.Y - 32);
+            Canvas.SetLeft(animPlayerTile, centerPoint.X - 32);
+            //animPlayerTile.PlaysRemaining = 10;
+            //
+            //Grid.SetColumn(pTile, 1);
+            //Grid.SetRow(pTile, 1);
+            //myGrid.Children.Add(pTile);
+
+
         }
 
         private void UserControl_PreviewTouchDown(object sender, TouchEventArgs e)

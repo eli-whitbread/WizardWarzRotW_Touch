@@ -55,7 +55,8 @@ namespace WizardWarzRotW
         {
             //--------------------------------------------| Initialise Player Home Base |-------------------------------------------         
             playerHomeTile = new Rectangle();
-            playerHomeTile.Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\Home0.png", UriKind.Relative)));
+            //playerHomeTile.Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\Home0.png", UriKind.Relative)));
+            playerHomeTile.Fill = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/Resources/Home0.png", UriKind.Absolute)));
             playerHomeTile.Height = tileSizeLocal;
             playerHomeTile.Width = tileSizeLocal;
 
@@ -82,7 +83,8 @@ namespace WizardWarzRotW
             {
                 playerLivesTile = new Rectangle();
 
-                playerLivesTile.Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\heart.png", UriKind.Relative)));
+                //playerLivesTile.Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\heart.png", UriKind.Relative)));
+                playerLivesTile.Fill = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/Resources/heart.png", UriKind.Absolute)));
 
                 playerLivesTile.Height = tileSizeLocal;
                 playerLivesTile.Width = tileSizeLocal;

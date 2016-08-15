@@ -8,7 +8,7 @@
                     <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <Border.Background>
                             <ImageBrush ImageSource="{Binding Source, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SpritesheetImage}}}"
-                                        Viewbox="{Binding ViewBox, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SpritesheetImage}}}"
+                                        Viewbox="{Binding Viewbox, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SpritesheetImage}}}"
                                         ViewboxUnits="Absolute"/>
                         </Border.Background>
                     </Border>

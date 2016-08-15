@@ -61,7 +61,7 @@ namespace WizardWarzRotW
         protected static Canvas GameCanvasInstance;
         protected static List<PlayerControl> PlayerListRef;        
         public RotateTransform trRot = null;
-        protected static int noOfPlayers = 6;
+        protected static int noOfPlayers = 4;
         public PlayerControl[] playerControllers = null;
         public LivesAndScore[] playerLives;
         public Powerups powerupRef = null;
@@ -416,8 +416,8 @@ namespace WizardWarzRotW
             {
                 playerControllers[i] = new PlayerControl();
                 playerLives[i] = new LivesAndScore();
-                Grid.SetRow(playerControllers[i], 2);
-                Grid.SetColumn(playerControllers[i], 2);
+                Grid.SetRow(playerControllers[i], 1);
+                Grid.SetColumn(playerControllers[i], 1);
                 //playerControllers[i].localGameGrid = MainGameGrid;
                 //playerControllers[i].highlightLocalGrid = MainGameGrid;
                 //playerControllers[i].managerRef = gameBoardManager;
@@ -433,6 +433,7 @@ namespace WizardWarzRotW
                 // --------------------------- Initialise All Players Lives and Score Controls -----------------------------
                 initialisePlayerLivesAndScore(i);
                 GameGridXAML.Children.Add(playerControllers[i]);
+                Canvas.SetZIndex(playerControllers[i],10);
             }
 
             // I had to hard code the player's starting positions, but they'll update properly whenever the player moves.

@@ -157,50 +157,50 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Destructible.png" />
+    <Resource Include="Resources\audio.png" />
+    <Resource Include="Resources\audioOn.png" />
+    <Resource Include="Resources\Bomb.png" />
+    <Resource Include="Resources\Bomb2.png" />
+    <Resource Include="Resources\castleWizardBlue1.png" />
+    <Resource Include="Resources\Destructible.png" />
+    <Resource Include="Resources\DestructTile_64x64.png" />
+    <Resource Include="Resources\ExplosionCentre.png" />
+    <Resource Include="Resources\Floor.png" />
+    <Resource Include="Resources\FloorTile_64x64.png" />
+    <Resource Include="Resources\heart.png" />
+    <Resource Include="Resources\Home0.png" />
+    <Resource Include="Resources\HorizontalExplosion.png" />
+    <Resource Include="Resources\Indesructable.png" />
+    <Resource Include="Resources\ZombieHunter_SpriteSheet_facingLeft.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\ZombieHunter_SpriteSheet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Floor.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\Indestructible.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\8_bit_wizard.mp3" />
-    <Content Include="Resources\audio.png" />
-    <Content Include="Resources\audioOn.png" />
-    <Content Include="Resources\Bomb.png" />
-    <Content Include="Resources\Bomb2.png" />
-    <Content Include="Resources\bomb_Explode.wav" />
-    <Content Include="Resources\break_wall.wav" />
-    <Content Include="Resources\castleWizardBlue1.png" />
-    <Content Include="Resources\defeat.wav" />
-    <Content Include="Resources\DestructTile_64x64.png" />
-    <Content Include="Resources\ExplosionCentre.png" />
-    <Content Include="Resources\FloorTile_64x64.png" />
-    <Content Include="Resources\heart.png" />
-    <Content Include="Resources\Home0.png" />
-    <Content Include="Resources\HorizontalExplosion.png" />
-    <Content Include="Resources\Indesructable.png" />
-    <Content Include="Resources\pickup.wav" />
-    <Content Include="Resources\PlayerBack1.png" />
-    <Content Include="Resources\PlayerFront1.png" />
-    <Content Include="Resources\PlayerLeft1.png" />
-    <Content Include="Resources\PlayerRight1.png" />
-    <Content Include="Resources\shield.png" />
-    <Content Include="Resources\superbomb.png" />
-    <Content Include="Resources\timer_fuse.wav" />
-    <Content Include="Resources\titleTest1.wav" />
-    <Content Include="Resources\titleTest2.wav" />
-    <Content Include="Resources\WallTile_64x64.png" />
-    <Content Include="Resources\WIZARD1.png" />
-    <Content Include="Resources\WizardWarzText.png" />
-    <Content Include="Resources\WizardWarzText1.png" />
-    <Content Include="Resources\WizardWarzText2.png" />
-    <Content Include="Resources\WizardWarzText3.png" />
-    <Content Include="Resources\WizardWarzText4.png" />
-    <Content Include="Resources\ZombieHunter_SpriteSheet.png" />
-    <Content Include="Resources\ZombieHunter_SpriteSheet_facingLeft.png" />
+    <Resource Include="Resources\8_bit_wizard.mp3" />
+    <Resource Include="Resources\bomb_Explode.wav" />
+    <Resource Include="Resources\break_wall.wav" />
+    <Resource Include="Resources\defeat.wav" />
+    <Resource Include="Resources\Indestructible.png" />
+    <Resource Include="Resources\pickup.wav" />
+    <Resource Include="Resources\PlayerBack1.png" />
+    <Resource Include="Resources\PlayerFront1.png" />
+    <Resource Include="Resources\PlayerLeft1.png" />
+    <Resource Include="Resources\PlayerRight1.png" />
+    <Resource Include="Resources\shield.png" />
+    <Resource Include="Resources\superbomb.png" />
+    <Resource Include="Resources\timer_fuse.wav" />
+    <Resource Include="Resources\titleTest1.wav" />
+    <Resource Include="Resources\titleTest2.wav" />
+    <Resource Include="Resources\WallTile_64x64.png" />
+    <Resource Include="Resources\WIZARD1.png" />
+    <Resource Include="Resources\WizardWarzText.png" />
+    <Resource Include="Resources\WizardWarzText1.png" />
+    <Resource Include="Resources\WizardWarzText2.png" />
+    <Resource Include="Resources\WizardWarzText3.png" />
+    <Resource Include="Resources\WizardWarzText4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

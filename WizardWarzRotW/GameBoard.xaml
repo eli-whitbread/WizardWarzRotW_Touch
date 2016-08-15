@@ -33,10 +33,13 @@
             <Grid Name="LeftPanel" DockPanel.Dock="Left" VerticalAlignment="Center" Height="384" Width="64" Background="Yellow"/>
             <!--game board-->
             <Grid Name="GameGridXAML">
+                
             </Grid>
+            
         </DockPanel>
+        <!--<local:PlayerControl/>-->
 
-        <local:PlayerControl/>
+        <!--<local:PlayerControl Width="64" Height="64"/>-->
     </Canvas>
 
 
