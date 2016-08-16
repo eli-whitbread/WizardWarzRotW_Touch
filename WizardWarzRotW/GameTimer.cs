@@ -78,7 +78,7 @@ namespace WizardWarzRotW
                     if (GameTimeMinutes == 0 && GameTimeSeconds == 0)
                     {
                         gameLoopTimer.Stop();
-                        MainWindow.ChangeGameState(GameStates.EndScreen);
+                        MainWindow.ChangeGameState("end");
                     }
                     GameTimeSeconds = 59;
                 }

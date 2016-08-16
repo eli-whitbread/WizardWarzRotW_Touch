@@ -29,5 +29,27 @@ namespace WizardWarzRotW
         {
             get; set;
         }
+
+
+        private void FourPlayer_PreviewTouchDown(object sender, TouchEventArgs e)
+        {
+            //MessageBox.Show("4 player button pressed");
+            GlobalPlayerMainMenu = false;
+            RunWizardWarz();
+        }
+
+        private void SixPlayer_PreviewTouchDown(object sender, TouchEventArgs e)
+        {
+            //MessageBox.Show("6 player button pressed");
+            GlobalPlayerMainMenu = true;
+            RunWizardWarz();
+        }
+
+        private void RunWizardWarz()
+        {
+            MainWindow.ChangeGameState("game");
+            //mainWinRef.newAudioManager.playMainMusic();
+            //mainWinRef.GameStart();
+        }
     }
 }
