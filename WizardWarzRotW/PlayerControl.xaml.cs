@@ -240,40 +240,33 @@ namespace WizardWarzRotW
             
             if (colCheckCur != checkCellColPos || rowCheckCur != checkCellRowPos)
             {
-                //if (colCheckCur != checkCellColPos && rowCheckCur != checkCellRowPos)
-                //{
-                //    Debug.WriteLine(String.Format("Can't move there!!"));
 
-                //}
-                //else
-                //{
-                    for (int i = 0; i < PlayerPositions.GetLength(0); i++)
+                for (int i = 0; i < PlayerPositions.GetLength(0); i++)
+                {
+                    if (PlayerPositions[i, 0] == 0 && CheckCanAddCell(colCheckCur, rowCheckCur))
                     {
-
-                        if (PlayerPositions[i, 0] == 0)
+                        if (GameBoard.curTileState[colCheckCur, rowCheckCur] == TileStates.Floor || GameBoard.curTileState[colCheckCur, rowCheckCur] == TileStates.Powerup)
                         {
-                            if (GameBoard.curTileState[colCheckCur, rowCheckCur] == TileStates.Floor || GameBoard.curTileState[colCheckCur, rowCheckCur] == TileStates.Powerup)
-                            {
-                                Debug.WriteLine(String.Format("Added: {0}, {1}", ((int)tp.Position.X / 64), ((int)tp.Position.Y / 64)));
-                                PlayerPositions[i, 0] = colCheckCur;
-                                PlayerPositions[i, 1] = rowCheckCur;
+                            Debug.WriteLine(String.Format("Added: {0}, {1}", ((int)tp.Position.X / 64), ((int)tp.Position.Y / 64)));
+                            PlayerPositions[i, 0] = colCheckCur;
+                            PlayerPositions[i, 1] = rowCheckCur;
 
-                                checkCellColPos = colCheckCur;
-                                checkCellRowPos = rowCheckCur;
+                            checkCellColPos = colCheckCur;
+                            checkCellRowPos = rowCheckCur;
 
-                                _startMoving = false;
-                                _cellCount++;
-                                //Debug.WriteLine(string.Format("Cells: {0}", _cellCount));
+                            _startMoving = false;
+                            _cellCount++;
+                            //Debug.WriteLine(string.Format("Cells: {0}", _cellCount));
 
-                                break;
-                            }
-                            else
-                            {
-                                //MoveThePlayer();
-                                _canMove = true;
-                                return;
-                            }
+                            break;
                         }
+                        else
+                        {
+                            //MoveThePlayer();
+                            _canMove = true;
+                            return;
+                        }
+                    }
                     }
                 //}
             }
@@ -293,6 +286,33 @@ namespace WizardWarzRotW
         public void UpdatePlayerStatus(string pStatus)
         {
 
+        }
+
+        private bool CheckCanAddCell(int Col, int Row)
+        {
+            // CHECKS WHETHER THE COORDINATES ARE VALID
+            Debug.WriteLine(String.Format("CHECK CELLS: {0}, {1}", Col, Row));
+            Debug.WriteLine(String.Format("OLD CELLS: {0}, {1}", checkCellColPos, checkCellRowPos));
+            if (checkCellColPos == 0 || checkCellRowPos == 0)
+            {
+                return true;
+            }
+            else if(Col != checkCellColPos && Row != checkCellRowPos)
+            {
+                return false;
+            }
+            else if (Col > checkCellColPos + 1 || Col < checkCellColPos - 1)
+            {
+                return false;
+            }
+            else if (Row > checkCellRowPos + 1 || Row < checkCellRowPos - 1)
+            {
+                return false;
+            }
+            
+
+
+            return true;
         }
 
         private void MoveThePlayer()
