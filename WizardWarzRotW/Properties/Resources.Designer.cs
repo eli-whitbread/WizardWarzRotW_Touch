@@ -93,6 +93,16 @@ namespace WizardWarzRotW.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bomb_Sheet {
+            get {
+                object obj = ResourceManager.GetObject("Bomb_Sheet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bomb2 {
             get {
                 object obj = ResourceManager.GetObject("Bomb2", resourceCulture);
@@ -106,6 +116,26 @@ namespace WizardWarzRotW.Properties {
         internal static System.Drawing.Bitmap castleWizardBlue1 {
             get {
                 object obj = ResourceManager.GetObject("castleWizardBlue1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CharacterSheet_Left {
+            get {
+                object obj = ResourceManager.GetObject("CharacterSheet_Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CharacterSheet_Right {
+            get {
+                object obj = ResourceManager.GetObject("CharacterSheet_Right", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

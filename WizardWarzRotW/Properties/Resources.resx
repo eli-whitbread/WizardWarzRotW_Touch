@@ -190,4 +190,13 @@
   <data name="ZombieHunter_SpriteSheet_facingLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ZombieHunter_SpriteSheet_facingLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Bomb_Sheet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bomb Sheet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CharacterSheet_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CharacterSheet_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CharacterSheet_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CharacterSheet_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -395,6 +395,34 @@ namespace WizardWarzRotW
         {
             if (DoubleTouchDown != null)
             {
+                if (StaticCollections.CheckBombPosition(colCheckCur, rowCheckCur) == true)
+                {
+                    Bombs fireBomb = new Bombs(localGameGrid);
+                    fireBomb.managerRef = managerRef;
+                    fireBomb.myOwner = this;
+
+                    //localGameGrid.Children.Remove(playerTile);
+
+                    if (playerState == "Superbomb")
+                        bombRadius += 3;
+
+                    fireBomb.InitialiseBomb(colCheckCur, rowCheckCur, bombRadius);
+                    //localGameGrid.Children.Add(playerTile);
+
+                    // Play Bomb Explode Sound (Should also play the tick sound here)
+                    //playMusic.playBombExplode(); - move to Bomb.cs
+
+                    //add bomb reference to bomb collection
+                    StaticCollections.AddBomb(fireBomb, colCheckCur, rowCheckCur);
+
+                    //MessageBox.Show(string.Format("Player state: {0}", playerState));
+                    if (playerState == "Superbomb")
+                    {
+                        bombRadius = 3;
+                        playerState = null;
+
+                    }
+                }
 
                 DoubleTouchDown(this, EventArgs.Empty);
             }
