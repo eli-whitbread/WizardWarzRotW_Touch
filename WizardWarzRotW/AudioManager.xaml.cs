@@ -53,7 +53,7 @@ namespace WizardWarzRotW
         {
             titleOrMain = false;
             isLooping = true;
-            trackLocation = "Wizard_Warz_00.wav";
+            trackLocation = "Wizard_Warz_02.mp3";
             newVolume = 0.15;
             PlayTrack();
         }

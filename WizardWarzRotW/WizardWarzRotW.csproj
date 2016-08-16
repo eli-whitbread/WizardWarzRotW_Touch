@@ -212,10 +212,12 @@
     <Resource Include="Resources\Bomb Sheet.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Wizard_Warz_02.wav" />
+    <None Include="Resources\Wizard_Warz_00.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Wizard_Warz_00.wav">
+    <None Include="Resources\Wizard_Warz_02.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -320,11 +320,12 @@ namespace WizardWarzRotW.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Wizard_Warz_02 {
+        internal static byte[] Wizard_Warz_02 {
             get {
-                return ResourceManager.GetStream("Wizard_Warz_02", resourceCulture);
+                object obj = ResourceManager.GetObject("Wizard_Warz_02", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
