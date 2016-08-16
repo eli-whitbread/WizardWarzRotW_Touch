@@ -24,7 +24,7 @@ namespace WizardWarzRotW
         Int32 countUp = 1, countDown = 1, countLeft = 1, countRight = 1;
         Int32[,] explosionMatrix;
         bool iCanDestroy;
-        Rectangle bombImage;
+        Image bombImage;
         List<Rectangle> explosionTiles;
         List<FrameworkElement> bombedCells = new List<FrameworkElement>();
         //AudioManager playBombSndFX = new AudioManager();
@@ -38,10 +38,11 @@ namespace WizardWarzRotW
 
         public Bombs(Grid localGameGrid)
         {
+            myOwner = new PlayerControl();
             curGameGrid = localGameGrid;
             myGameTimerRef = GameTimer.ReturnTimerInstance();
             myGameTimerRef.processFrameEvent_TICK += MyGameTimerRef_tickEvent;
-
+            
             puRef = null;
         }
 
@@ -193,11 +194,11 @@ namespace WizardWarzRotW
             Int32 rowPos = explosionMatrix[0, 1];
 
 
-            bombImage = new Rectangle();
+            bombImage = new Image();
             bombImage.Height = GameBoard.ReturnTileSize();
             bombImage.Width = GameBoard.ReturnTileSize();
 
-            bombImage.Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\Bomb2.png", UriKind.Relative)));
+            bombImage.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/Bomb2.png", UriKind.Absolute));
             bombImage.IsHitTestVisible = false;
 
             Grid.SetColumn(bombImage, colPos);
@@ -216,7 +217,7 @@ namespace WizardWarzRotW
 
                 if (explosionStep == 0)
                 {
-                    foreach (Rectangle curCellInterrogated in bombedCells)
+                    foreach (Image curCellInterrogated in bombedCells)
                     {
                         int curCellC = (int)curCellInterrogated.GetValue(Grid.ColumnProperty);
                         int curCellR = (int)curCellInterrogated.GetValue(Grid.RowProperty);
@@ -263,7 +264,7 @@ namespace WizardWarzRotW
                 {
                     curGameGrid.Children.Remove(bombImage);
                     //playBombSndFX.playBombExplode();
-                    bombImage = new Rectangle();
+                    bombImage = new Image();
                     bombImage.Height = GameBoard.ReturnTileSize();
                     bombImage.Width = GameBoard.ReturnTileSize();
 
@@ -277,7 +278,8 @@ namespace WizardWarzRotW
                 {
                     Rectangle explosion = new Rectangle();
 
-                    Color tempColour = myOwner.playerColour;
+                    //Color tempColour = myOwner.playerColour;
+                    Color tempColour = Colors.Red;
                     explosion.Height = GameBoard.ReturnTileSize();
                     explosion.Width = GameBoard.ReturnTileSize();
 

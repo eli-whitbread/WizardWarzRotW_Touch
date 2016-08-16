@@ -45,6 +45,7 @@ namespace WizardWarzRotW
         public Color playerColour = new Color();
         string playerImage;
         public GameBoard managerRef = null;
+        public Image[,] gridCellsArray = null;
 
         //Animated Tile
         //SpritesheetImage animPlayerTile;
@@ -71,7 +72,7 @@ namespace WizardWarzRotW
 
         public List<FrameworkElement> pathCells = new List<FrameworkElement>();
         List<Ellipse> pathHighlightTile = new List<Ellipse>();
-        public Rectangle[,] gridCellsArray = null;
+        //public Rectangle[,] gridCellsArray = null;
         public Canvas gameCanRef = null;
         public LivesAndScore myLivesAndScore = null;
         public Powerups myPowerupRef = null;
@@ -393,38 +394,47 @@ namespace WizardWarzRotW
 
         protected virtual void OnDoubleTouchDown()
         {
+            DropBomb();
             if (DoubleTouchDown != null)
             {
-                if (StaticCollections.CheckBombPosition(colCheckCur, rowCheckCur) == true)
-                {
-                    Bombs fireBomb = new Bombs(localGameGrid);
-                    fireBomb.managerRef = managerRef;
-                    fireBomb.myOwner = this;
-
-                    //localGameGrid.Children.Remove(playerTile);
-
-                    if (playerState == "Superbomb")
-                        bombRadius += 3;
-
-                    fireBomb.InitialiseBomb(colCheckCur, rowCheckCur, bombRadius);
-                    //localGameGrid.Children.Add(playerTile);
-
-                    // Play Bomb Explode Sound (Should also play the tick sound here)
-                    //playMusic.playBombExplode(); - move to Bomb.cs
-
-                    //add bomb reference to bomb collection
-                    StaticCollections.AddBomb(fireBomb, colCheckCur, rowCheckCur);
-
-                    //MessageBox.Show(string.Format("Player state: {0}", playerState));
-                    if (playerState == "Superbomb")
-                    {
-                        bombRadius = 3;
-                        playerState = null;
-
-                    }
-                }
+                
+                
 
                 DoubleTouchDown(this, EventArgs.Empty);
+            }
+        }
+
+        private void DropBomb()
+        {
+            if (StaticCollections.CheckBombPosition(colCheckCur, rowCheckCur) == true)
+            {
+                //Debug.WriteLine("Dropped Bomb!");
+
+                Bombs fireBomb = new Bombs(GameBoard.ReturnGameGrid());
+                fireBomb.managerRef = managerRef;
+                fireBomb.myOwner = this;
+
+                //localGameGrid.Children.Remove(playerTile);
+
+                if (playerState == "Superbomb")
+                    bombRadius += 3;
+
+                fireBomb.InitialiseBomb(colCheckCur, rowCheckCur, bombRadius);
+                //localGameGrid.Children.Add(playerTile);
+
+                // Play Bomb Explode Sound (Should also play the tick sound here)
+                //playMusic.playBombExplode(); - move to Bomb.cs
+
+                //add bomb reference to bomb collection
+                StaticCollections.AddBomb(fireBomb, colCheckCur, rowCheckCur);
+
+                //MessageBox.Show(string.Format("Player state: {0}", playerState));
+                if (playerState == "Superbomb")
+                {
+                    bombRadius = 3;
+                    playerState = null;
+
+                }
             }
         }
 

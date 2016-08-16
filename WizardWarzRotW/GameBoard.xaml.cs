@@ -144,6 +144,7 @@ namespace WizardWarzRotW
             GameDependencies();
 
             InitializeGameBoard();
+            tempInitialisePlayers();
         }
 
         public void InitializeGameBoard()
@@ -339,14 +340,20 @@ namespace WizardWarzRotW
             playerControllers = new PlayerControl[noOfPlayers];
             playerLives = new LivesAndScore[noOfPlayers];
             //playerPositions = new int[noOfPlayers];
-            initialisePlayerReferences();
+            
 
             StaticCollections _staticColections = new StaticCollections();
 
+            
+            
+        }
+
+        private void tempInitialisePlayers()
+        {
+            initialisePlayerReferences();
             powerupRef = new Powerups();
             powerupRef.curGameGrid = GameGridXAML;
             powerupRef.InitialisePowerups();
-            
         }
 
         private void initialiseGameBoardSize()
@@ -381,8 +388,8 @@ namespace WizardWarzRotW
                 Grid.SetRow(playerControllers[i], 1);
                 Grid.SetColumn(playerControllers[i], 1);
                 
-                //playerControllers[i].managerRef = gameBoardManager;
-                //playerControllers[i].gridCellsArray = gameBoardManager.flrTiles;
+                playerControllers[i].managerRef = this;
+                playerControllers[i].gridCellsArray = flrTiles;
                 playerControllers[i].myLivesAndScore = playerLives[i];
                 //playerControllers[i].initialisePlayerGridRef();
                 //playerControllers[i].myPowerupRef = new Powerup();
@@ -508,12 +515,26 @@ namespace WizardWarzRotW
 
         public void ChangeTileImage(int PosX, int PosY)
         {
-
+            flrTiles[PosX, PosY].Source = new BitmapImage(new Uri("pack://application:,,,/Resources/Floor.png", UriKind.Absolute));
         }
 
         public void ChangeTileState(int PosX, int PosY, string tileState)
         {
-
+            switch(tileState)
+            {
+                case("SuperBomb"):
+                    curTileState[PosX, PosY] = TileStates.Powerup;
+                    powerupTileState[PosX, PosY] = PowerupTileStates.Superbomb;
+                    break;
+                case("Shield"):
+                    curTileState[PosX, PosY] = TileStates.Powerup;
+                    powerupTileState[PosX, PosY] = PowerupTileStates.Shield;
+                    break;
+                case("Lifeup"):
+                curTileState[PosX, PosY] = TileStates.Powerup;
+                powerupTileState[PosX, PosY] = PowerupTileStates.Lifeup;
+                break;
+            }
         }
 
         /// <summary>

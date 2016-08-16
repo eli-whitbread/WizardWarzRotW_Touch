@@ -151,7 +151,7 @@ namespace WizardWarzRotW
         public void SpawnPowerup(string powerupName)
         {
             // Set general powerup properties
-            Rectangle powerupTile = new Rectangle();
+            Image powerupTile = new Image();
 
             powerupTile.Height = GameBoard.ReturnTileSize();
             powerupTile.Width = GameBoard.ReturnTileSize();
@@ -164,17 +164,17 @@ namespace WizardWarzRotW
             {
                 case ("SuperBomb"):
                     pName = "Superbomb";
-                    powerupTile.Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\superbomb.png", UriKind.Relative)));
+                    powerupTile.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/superbomb.png", UriKind.Absolute));
                     _localGameBoard.ChangeTileState(xPos, yPos, "Superbomb");
                     break;
                 case ("Shield"):
                     pName = "Shield";
-                    powerupTile.Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\shield.png", UriKind.Relative)));
+                    powerupTile.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/shield.png", UriKind.Absolute));
                     _localGameBoard.ChangeTileState(xPos, yPos, "Shield");
                     break;
                 case ("Lifeup"):
                     pName = "Lifeup";
-                    powerupTile.Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\heart.png", UriKind.Relative)));
+                    powerupTile.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/heart.png", UriKind.Absolute));
                     _localGameBoard.ChangeTileState(xPos, yPos, "Lifeup");
                     break;
             }
@@ -186,7 +186,7 @@ namespace WizardWarzRotW
         // Spawn a powerup at a wall position
         public void WallSpawn(int PosX, int PosY, Grid GameGrid)
         {
-            Rectangle powerupTile = new Rectangle();
+            Image powerupTile = new Image();
 
             //Random r = new Random();
             //int rand = r.Next(0, 3);
@@ -199,21 +199,21 @@ namespace WizardWarzRotW
             if (rand <= 85)
             {
                 pName = "Superbomb";
-                powerupTile.Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\superbomb.png", UriKind.Relative)));
+                powerupTile.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/superbomb.png", UriKind.Absolute));
                 _localGameBoard.ChangeTileState(PosX, PosY, "Superbomb");
                 //MessageBox.Show("Superbomb made");    
             }
             else if (rand >= 86 && rand <= 190)
             {
                 pName = "Shield";
-                powerupTile.Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\shield.png", UriKind.Relative)));
+                powerupTile.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/shield.png", UriKind.Absolute));
                 _localGameBoard.ChangeTileState(PosX, PosY, "Shield");
                 //MessageBox.Show("Shield made");
             }
             else if (rand >= 191)
             {
                 pName = "Lifeup";
-                powerupTile.Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\heart.png", UriKind.Relative)));
+                powerupTile.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/heart.png", UriKind.Absolute));
                 _localGameBoard.ChangeTileState(PosX, PosY, "Lifeup");
                 //MessageBox.Show("Lifeup made");
             }
