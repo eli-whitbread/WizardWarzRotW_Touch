@@ -23,6 +23,7 @@ namespace WizardWarzRotW
         MediaPlayer jukeBox = new MediaPlayer();
         public string trackLocation;
         public double newVolume;
+        private bool titleOrMain = false; // false for title, true for main
         bool isLooping = false;
         public bool audioOn = true;
 
@@ -41,18 +42,20 @@ namespace WizardWarzRotW
         /// </summary> 
         public void playMainMusic()
         {
+            titleOrMain = true;
             isLooping = true;
             trackLocation = "8_bit_wizard.mp3";
             newVolume = 0.15;
-            //PlayTrack();
+            PlayTrack();
         }
 
         public void playWizardOne()
         {
-
-            trackLocation = "Wizard_Warz_01.wav";
+            titleOrMain = false;
+            isLooping = true;
+            trackLocation = "Wizard_Warz_00.wav";
             newVolume = 0.15;
-            //PlayTrack();
+            PlayTrack();
         }
 
         //public void playGameTheme()
@@ -98,7 +101,7 @@ namespace WizardWarzRotW
             if (isLooping)
             {
 
-                Uri uriStreaming = new Uri(@"pack://application:,,,/Resources/" + trackLocation, UriKind.Relative);
+                Uri uriStreaming = new Uri(@"./Resources/" + trackLocation, UriKind.Relative);
 
                 CalculateAudioVolume();                
                 jukeBox.Open(uriStreaming);
@@ -108,7 +111,8 @@ namespace WizardWarzRotW
             }
             else
             {
-                Uri uriStreaming = new Uri(@"pack://application:,,,/Resources/" + trackLocation, UriKind.Relative);
+                Uri uriStreaming = new Uri(@"./Resources/" + trackLocation, UriKind.Relative);
+                
                 CalculateAudioVolume();
                 jukeBox.Open(uriStreaming);
                 jukeBox.Play();
@@ -120,7 +124,15 @@ namespace WizardWarzRotW
         {
             // Loops a particular track
             jukeBox.Position = TimeSpan.Zero;
-            playMainMusic();
+            if(titleOrMain)
+            {
+                playMainMusic();
+            }
+            else
+            {
+                playWizardOne();
+            }
+            
         }
 
         /// <summary>

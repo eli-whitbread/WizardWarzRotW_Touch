@@ -311,6 +311,24 @@ namespace WizardWarzRotW.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Wizard_Warz_00 {
+            get {
+                return ResourceManager.GetStream("Wizard_Warz_00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Wizard_Warz_02 {
+            get {
+                return ResourceManager.GetStream("Wizard_Warz_02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap ZombieHunter_SpriteSheet {

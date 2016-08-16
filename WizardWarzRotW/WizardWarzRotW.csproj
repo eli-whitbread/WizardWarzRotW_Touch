@@ -211,6 +211,14 @@
   <ItemGroup>
     <Resource Include="Resources\Bomb Sheet.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Wizard_Warz_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wizard_Warz_00.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
