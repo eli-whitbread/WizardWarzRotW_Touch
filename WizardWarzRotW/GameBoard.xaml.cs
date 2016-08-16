@@ -391,31 +391,45 @@ namespace WizardWarzRotW
                 // Add the player to the list
                 ListOfPlayers.Add(playerControllers[i]);
 
+                // Set their position on the grid
+                SetPlayerPosition(i);
+
                 // --------------------------- Initialise All Players Lives and Score Controls -----------------------------
                 initialisePlayerLivesAndScore(i);
                 GameGridXAML.Children.Add(playerControllers[i]);
                 Canvas.SetZIndex(playerControllers[i],10);
             }
+        }
 
-            // I had to hard code the player's starting positions, but they'll update properly whenever the player moves.
-            for (int x = 0; x < noOfPlayers; x++)
+
+        public void SetPlayerPosition(int playerNumber)
+        {
+            switch(playerNumber)
             {
-                playerControllers[0].playerPosition = new Point(64, 64);
-
-                if (noOfPlayers == 4)
-                {
-                    playerControllers[1].playerPosition = new Point(1344, 64);
-                    playerControllers[2].playerPosition = new Point(1344, 704);
-                    playerControllers[3].playerPosition = new Point(64, 704);
-                }
-                else if (noOfPlayers == 6)
-                {
-                    playerControllers[1].playerPosition = new Point(1344, 384);
-                    playerControllers[2].playerPosition = new Point(64, 704);
-                    playerControllers[3].playerPosition = new Point(64, 384);
-                    playerControllers[4].playerPosition = new Point(1344, 64);
-                    playerControllers[5].playerPosition = new Point(1344, 704);
-                }
+                case (0):
+                    Grid.SetColumn(playerControllers[playerNumber], 1);
+                    Grid.SetRow(playerControllers[playerNumber], 1);
+                    break;
+                case (1):
+                    Grid.SetColumn(playerControllers[playerNumber], 21);
+                    Grid.SetRow(playerControllers[playerNumber], 1);
+                    break;
+                case (2):
+                    Grid.SetColumn(playerControllers[playerNumber], 21);
+                    Grid.SetRow(playerControllers[playerNumber], 11);
+                    break;
+                case (3):
+                    Grid.SetColumn(playerControllers[playerNumber], 1);
+                    Grid.SetRow(playerControllers[playerNumber], 11);
+                    break;
+                case (4):
+                    Grid.SetColumn(playerControllers[playerNumber], 1);
+                    Grid.SetRow(playerControllers[playerNumber], 6);
+                    break;
+                case (5):
+                    Grid.SetColumn(playerControllers[playerNumber], 21);
+                    Grid.SetRow(playerControllers[playerNumber], 6);
+                    break;
             }
         }
 
