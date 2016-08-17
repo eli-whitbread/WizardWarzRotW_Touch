@@ -246,6 +246,27 @@
   <ItemGroup>
     <Resource Include="Resources\BombEx.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Warz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Wizard .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Quit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Smoke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\nsquared.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BallOfMagic.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
