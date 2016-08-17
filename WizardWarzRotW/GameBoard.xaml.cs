@@ -141,6 +141,7 @@ namespace WizardWarzRotW
         public GameBoard()
         {
             InitializeComponent();
+            //MessageBox.Show("Have been initialised!");
             GameDependencies();
 
             InitializeGameBoard();

@@ -62,8 +62,8 @@ namespace WizardWarzRotW
             // Initialize each instance of each screen when the game loads.
             title = TitleScreenInstance;
             menu = MainMenuInstance;
-            game = GameInstance;
-            end = EndScreenInstance;
+            //game = GameInstance;
+            //end = EndScreenInstance;
 
             // Reveal the title screen.
             TitleScreenInstance.Visibility = Visibility.Visible;
@@ -94,7 +94,11 @@ namespace WizardWarzRotW
                     break;
 
                 case ("game"):
-                    
+                    game = new GameBoard();
+                    end = new EndScreen();
+                    end.Visibility = Visibility.Hidden;
+                    GameCANVAS.Children.Add(game);
+                    GameCANVAS.Children.Add(end);
                     currentGameState = GameStates.Game;
 
                     menu.Visibility = Visibility.Hidden;
