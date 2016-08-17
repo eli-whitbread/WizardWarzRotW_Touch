@@ -75,26 +75,34 @@ namespace WizardWarzRotW
             switch (GameState)
             {
                 case ("title"):
+                    AudioMan.titleOrMain = false;
                     currentGameState = GameStates.Title;
 
                     if (end.Visibility == Visibility.Visible)
                         end.Visibility = Visibility.Hidden;
 
+                    AudioMan.StopTrack();
+                    AudioMan.playWizardOne();
+
                     title.Visibility = Visibility.Visible;
                     break;
 
                 case ("menu"):
-                    currentGameState = GameStates.MainMenu;
-
+                    currentGameState = GameStates.MainMenu;                    
                     title.Visibility = Visibility.Hidden;
                     menu.Visibility = Visibility.Visible;
                     break;
 
                 case ("game"):
+                    
                     currentGameState = GameStates.Game;
 
                     menu.Visibility = Visibility.Hidden;
                     game.Visibility = Visibility.Visible;
+
+                    AudioMan.StopTrack();
+                    AudioMan.titleOrMain = true;
+                    AudioMan.playMainMusic();
 
                     // Set the timer (plus text) and start it. Format: seconds, minutes
                     GameBoard.ReturnGameBoardInstance().ChangeTimerText(59, 3);

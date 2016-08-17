@@ -23,7 +23,7 @@ namespace WizardWarzRotW
         MediaPlayer jukeBox = new MediaPlayer();
         public string trackLocation;
         public double newVolume;
-        private bool titleOrMain = false; // false for title, true for main
+        public bool titleOrMain = false; // false for title, true for main
         bool isLooping = false;
         public bool audioOn = true;
 
@@ -44,7 +44,7 @@ namespace WizardWarzRotW
         {
             titleOrMain = true;
             isLooping = true;
-            trackLocation = "8_bit_wizard.mp3";
+            trackLocation = "Wizard_Warz_02.mp3";
             newVolume = 0.15;
             PlayTrack();
         }
@@ -53,7 +53,7 @@ namespace WizardWarzRotW
         {
             titleOrMain = false;
             isLooping = true;
-            trackLocation = "Wizard_Warz_02.mp3";
+            trackLocation = "Wizard_Warz_00.wav";
             newVolume = 0.15;
             PlayTrack();
         }

@@ -76,7 +76,6 @@ namespace WizardWarzRotW
                     magicBall.Margin = new Thickness(260, 254, 0, 0);
                     wizardLeft.Source = new BitmapImage(new Uri("Resources/TitleSprites/SSB3.png", UriKind.Relative));
                     wizardRight.Source = new BitmapImage(new Uri("Resources/TitleSprites/SSR3.png", UriKind.Relative));
-                    Debug.WriteLine(picCount);
                     picCount++;
                     break;
 
