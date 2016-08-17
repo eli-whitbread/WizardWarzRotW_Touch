@@ -35,6 +35,18 @@ namespace WizardWarzRotW
             InitializeComponent();
 
             tileSizeLocal = GameBoard.ReturnTileSize();
+            element.Width = GameBoard.ReturnTileSize() * 6;
+            element.Height = GameBoard.ReturnTileSize();
+            display.Width = GameBoard.ReturnTileSize() * 6;
+            display.Height = GameBoard.ReturnTileSize();
+            col1.Width = new GridLength(GameBoard.ReturnTileSize());
+            col2.Width = new GridLength(GameBoard.ReturnTileSize());
+            col3.Width = new GridLength(GameBoard.ReturnTileSize());
+            col4.Width = new GridLength(GameBoard.ReturnTileSize());
+            col5.Width = new GridLength(GameBoard.ReturnTileSize() / 2);
+            col6.Width = new GridLength(GameBoard.ReturnTileSize() * 1.5);
+
+
 
             //--------------- Player Lives (HAS TO BE CHANGED HERE)--------------------------
             playerLivesNumber = playerLivesNumber + 3;
@@ -159,9 +171,9 @@ namespace WizardWarzRotW
             playerScore = new Label();
 
             playerScore.Content = currentScore.ToString();
-            playerScore.FontSize = 32;
+            playerScore.FontSize = GameBoard.ReturnTileSize() / 2;
             playerScore.Foreground = new SolidColorBrush(Colors.Black);
-            playerScore.Width = 128;
+            playerScore.Width = GameBoard.ReturnTileSize() * 2;
             playerScore.Height = GameBoard.ReturnTileSize();
 
             // --------------- Set position, within the local grid (scoreGrid) of this element --------------------------------

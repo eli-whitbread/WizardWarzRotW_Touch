@@ -233,8 +233,8 @@ namespace WizardWarzRotW
 
             TouchPoint tp = e.GetTouchPoint(GameBoard.ReturnGameGrid());
 
-            colCheckCur = (int)tp.Position.X / 64;
-            rowCheckCur = (int)tp.Position.Y / 64;
+            colCheckCur = (int)tp.Position.X / GameBoard.ReturnTileSize();
+            rowCheckCur = (int)tp.Position.Y / GameBoard.ReturnTileSize(); ;
             //int colCheckPrev = PlayerPosition[]
 
             
@@ -248,7 +248,7 @@ namespace WizardWarzRotW
                     {
                         if (GameBoard.curTileState[colCheckCur, rowCheckCur] == TileStates.Floor || GameBoard.curTileState[colCheckCur, rowCheckCur] == TileStates.Powerup)
                         {
-                            Debug.WriteLine(String.Format("Added: {0}, {1}", ((int)tp.Position.X / 64), ((int)tp.Position.Y / 64)));
+                            Debug.WriteLine(String.Format("Added: {0}, {1}", ((int)tp.Position.X / GameBoard.ReturnTileSize()), ((int)tp.Position.Y / GameBoard.ReturnTileSize())));
                             PlayerPositions[i, 0] = colCheckCur;
                             PlayerPositions[i, 1] = rowCheckCur;
 

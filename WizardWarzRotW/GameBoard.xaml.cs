@@ -54,7 +54,7 @@ namespace WizardWarzRotW
         // ----------------------------- END GAME BOARD -------------------------------------------
 
         // ------------------------------ PUBLIC GAME DEPENDENCIES -----------------------------
-        protected static Int32 tileSize = 64;
+        protected static Int32 tileSize = 32;
         private GameTimer gameTimerInstance = null;
         double varRotTransform = 90;        
         protected static GameBoard gameBoardManager;
@@ -216,8 +216,8 @@ namespace WizardWarzRotW
                     //
                     //inner solid and destrutable walls still required!!
                     //
-                    flrTiles[c, r].Height = 64;
-                    flrTiles[c, r].Width = 64;
+                    flrTiles[c, r].Height = tileSize;
+                    flrTiles[c, r].Width = tileSize;
                     Grid.SetColumn(flrTiles[c, r], c);
                     Grid.SetRow(flrTiles[c, r], r);
 
