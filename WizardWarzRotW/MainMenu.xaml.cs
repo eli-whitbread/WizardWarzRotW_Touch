@@ -23,6 +23,7 @@ namespace WizardWarzRotW
         public MainMenu()
         {
             InitializeComponent();
+            //GlobalPlayerMainMenu = true;
         }
 
         public static bool GlobalPlayerMainMenu

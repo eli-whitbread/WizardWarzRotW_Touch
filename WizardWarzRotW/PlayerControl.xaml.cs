@@ -37,7 +37,7 @@ namespace WizardWarzRotW
         public Point lastClickPOS;
         public Point playerPosition;
         public Point relativePosition, localBombRelative;
-        public Grid localGameGrid = null;
+        //public Grid localGameGrid = null;
         public Grid highlightLocalGrid = null;
         public Int32 tileSize, bombRadius = 3;
         public Int32[,] playerGridLocArray;
@@ -70,7 +70,7 @@ namespace WizardWarzRotW
 
         Point curMousePos = new Point(0, 0);
 
-        public List<FrameworkElement> pathCells = new List<FrameworkElement>();
+        //public List<FrameworkElement> pathCells = new List<FrameworkElement>();
         List<Ellipse> pathHighlightTile = new List<Ellipse>();
         //public Rectangle[,] gridCellsArray = null;
         public Canvas gameCanRef = null;
@@ -92,6 +92,7 @@ namespace WizardWarzRotW
             gameCanRef = GameBoard.ReturnMainCanvas();
             facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/ZombieHunter_SpriteSheet.png", UriKind.Absolute));
             facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/ZombieHunter_SpriteSheet_facingLeft.png", UriKind.Absolute));
+            highlightLocalGrid = GameBoard.ReturnGameGrid();
             Loaded += PlayerControl_Loaded;
         }
 
@@ -216,6 +217,7 @@ namespace WizardWarzRotW
             //MoveThePlayer();
             _canMove = true;
             _startMoving = false;
+            DeleteHighlight();
         }
 
         private void UserControl_PreviewTouchMove(object sender, TouchEventArgs e)
@@ -252,6 +254,8 @@ namespace WizardWarzRotW
                             PlayerPositions[i, 0] = colCheckCur;
                             PlayerPositions[i, 1] = rowCheckCur;
 
+                            HighlightPathCalc(colCheckCur, rowCheckCur);
+
                             checkCellColPos = colCheckCur;
                             checkCellRowPos = rowCheckCur;
 
@@ -264,6 +268,7 @@ namespace WizardWarzRotW
                         else
                         {
                             //MoveThePlayer();
+                            DeleteHighlight();
                             _canMove = true;
                             return;
                         }
@@ -347,48 +352,6 @@ namespace WizardWarzRotW
                 _step++;
                 return;
             }
-                //if (_myTime <= PlayerPositions.GetLength(0))
-                //{
-                //    // NOT HAPPENING FOR EVERY PART OF THE ARRAY, AS NOT RUNNING EACH 60 Frames
-                //    if (PlayerPositions[_myTime, 0] != 0)
-                //    {
-                //        Grid.SetColumn(this, PlayerPositions[_myTime, 0]);
-                //        Grid.SetRow(this, PlayerPositions[_myTime, 1]);
-                //    }
-
-                //    if (_myTime == PlayerPositions.GetLength(0))
-                //    {
-                //        _myTime = 0;
-                //        _canMove = false;
-                //        return;
-                //    }
-
-                //    GameBoard.ReturnGameGrid().Children.Remove(this);
-                //    GameBoard.ReturnGameGrid().Children.Add(this);
-
-                //}
-                //else
-                //{
-                //    _canMove = false;
-                //}
-            //for (int i = _myTime; i < PlayerPositions.GetLength(0);)
-            //{
-            //    if (PlayerPositions[i, 0] != 0)
-            //    {
-            //        Grid.SetColumn(this, PlayerPositions[i, 0]);
-            //        Grid.SetRow(this, PlayerPositions[i, 1]);
-            //    }
-            //    else
-            //    {
-            //        break;
-            //    }
-            //    GameBoard.ReturnGameGrid().Children.Remove(this);
-            //    GameBoard.ReturnGameGrid().Children.Add(this);
-            //    return;
-            //}
-            
-
-
 
         }
 
@@ -460,5 +423,91 @@ namespace WizardWarzRotW
             return tapsAreCloseInDistance && tapsAreCloseInTime;
 
         }
+
+        /// <summary>
+        /// Adds a highlight to pressed path cell, as a visual feedback for player to know where they have moved. <para>Takes in the current touched Col and Row as ints</para>
+        /// </summary>
+        /// <param name="Col"></param>
+        /// <param name="Row"></param>
+        private void HighlightPathCalc(int Col, int Row)
+        {
+            Ellipse highlight = new Ellipse();
+            Ellipse highlight2 = new Ellipse();
+
+            // ADD HIGHLIGHT
+            highlight.Height = GameBoard.ReturnTileSize() * 0.2f;
+            highlight.Width = GameBoard.ReturnTileSize() * 0.5;
+            highlight2.Height = GameBoard.ReturnTileSize() * 0.5;
+            highlight2.Width = GameBoard.ReturnTileSize() * 0.2f;
+            DetermineHighlightColour();
+            highlight.Fill = new SolidColorBrush(playerColour);
+            highlight.Fill.Opacity = 0.4f;
+            highlight.IsHitTestVisible = false;
+            pathHighlightTile.Add(highlight);
+
+            highlight2.Fill = new SolidColorBrush(playerColour);
+            highlight2.Fill.Opacity = 0.4f;
+            highlight2.IsHitTestVisible = false;
+            pathHighlightTile.Add(highlight2);
+
+            Grid.SetColumn(highlight, Col);
+            Grid.SetRow(highlight, Row);
+            Grid.SetColumn(highlight2, Col);
+            Grid.SetRow(highlight2, Row);
+            highlightLocalGrid.Children.Add(highlight);
+            highlightLocalGrid.Children.Add(highlight2);
+        }
+
+        /// <summary>
+        /// Deletes added highlights, which were previously added. <para>Should be run any time the players touch path is invalidated / completed.</para>
+        /// </summary>
+        private void DeleteHighlight()
+        {
+            foreach (Ellipse highlight in pathHighlightTile)
+            {
+                highlightLocalGrid.Children.Remove(highlight);
+            }
+
+        }
+
+        private void DetermineHighlightColour()
+        {
+            switch (playerName)
+            {
+                // PLAYER 1
+                case ("Player 1"):
+                    playerColour = Colors.Silver;
+                    //Debug.WriteLine("Player 1");
+                    break;
+                // PLAYER 2
+                case ("Player 2"):
+                    //Debug.WriteLine("Player 2");
+                    playerColour = Colors.Red;
+                    break;
+                // PLAYER 3
+                case ("Player 3"):
+                    playerColour = Colors.Blue;
+                    break;
+                // PLAYER 4
+                case ("Player 4"):
+                    playerColour = Colors.Yellow;
+                    break;
+                // PLAYER 5
+                case ("Player 5"):
+                    playerColour = (Color)ColorConverter.ConvertFromString("#FFAC02FB");
+                    break;
+                // PLAYER 6
+                case ("Player 6"):
+                    playerColour = Colors.Green;
+                    break;
+                default:
+
+                    break;
+
+            }
+
+
+        }
+
     }
 }

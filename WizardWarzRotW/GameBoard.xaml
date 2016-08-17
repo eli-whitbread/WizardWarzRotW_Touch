@@ -8,8 +8,8 @@
              Height="1080" Width="1920" Background="#FF707070">
     <Canvas Name="GameCanvas" Height="Auto" Width="Auto">
         <!--This Dock Panel holds the score/ lives controls for Players 5 & 6. These are placed on the canvas first, then the second dock is layer on top-->
-        <DockPanel Name="panel2" Background="#FF2B1717" Width="1600" Height="960">
-            <Separator Height="64" Width="448" Background="#00A0A0A0" />
+        <DockPanel Name="panel2" Background="#FF2B1717" Width="1000" Height="1000">
+            <Separator Name="Separator" Height="64" Width="448" Background="#00A0A0A0" />
             <Label Name="gameTimeText1" FontSize="48" Content="4:00" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-10,96,0" Width="147" Height="64" FontFamily="Palatino Linotype" TextOptions.TextFormattingMode="Display" FontWeight="Light" Panel.ZIndex="2" />
             <Label Name="gameTimeText2" FontSize="48" Content="4:00" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,-10,96,0" Width="147" Height="64" FontFamily="Palatino Linotype" TextOptions.TextFormattingMode="Display" FontWeight="Light">
                 <Label.LayoutTransform>

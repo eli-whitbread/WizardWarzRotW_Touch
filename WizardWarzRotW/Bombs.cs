@@ -279,7 +279,7 @@ namespace WizardWarzRotW
                     Rectangle explosion = new Rectangle();
 
                     //Color tempColour = myOwner.playerColour;
-                    Color tempColour = Colors.Red;
+                    Color tempColour = myOwner.playerColour;
                     explosion.Height = GameBoard.ReturnTileSize();
                     explosion.Width = GameBoard.ReturnTileSize();
 
