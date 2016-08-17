@@ -49,14 +49,8 @@ namespace WizardWarzRotW
         }
         public void InitialisePowerups()
         {
-            //powerupRef = this;
+
         }
-
-        //public static Powerup ReturnPowerupReference()
-        //{
-        //    return powerupRef;
-        //}
-
 
         public void Count()
         {
@@ -105,9 +99,19 @@ namespace WizardWarzRotW
             }
 
             // Check for existing powerups
-            // Need to check for player positions as well
+            if (GameBoard.curTileState[xPos, yPos] == TileStates.Powerup)
             {
-                if (GameBoard.curTileState[xPos, yPos] == TileStates.Powerup)
+                xFlag = false;
+                yFlag = false;
+            }
+
+            // Check for each player's positions
+            // Method is only needed if we decide to have powerups spawn over time, rather than by destroying walls.
+            for (int i = 0; i < GameBoard.ReturnNumberOfPlayer(); i++)
+            {
+                PlayerControl tempPlayer = GameBoard.ReturnPlayerList()[i];
+
+                if (xPos == tempPlayer.playerX && yPos == tempPlayer.playerY)
                 {
                     xFlag = false;
                     yFlag = false;
@@ -116,14 +120,12 @@ namespace WizardWarzRotW
 
             if (xFlag || yFlag)
             {
-                //Random randType = new Random();
                 // The right-most number should be equal to the amount of powerups we've created 
-                //powerupType = randType.Next(0, 3);
                 powerupType = GameBoard.ReturnRandomPowerUpNo();
 
                 if (powerupType == 0)
                 {
-                    SpawnPowerup("SuperBomb");
+                    SpawnPowerup("Superbomb");
                     Console.WriteLine("Superbomb spawned");
                 }
                 else if (powerupType == 1)
@@ -187,9 +189,6 @@ namespace WizardWarzRotW
         public void WallSpawn(int PosX, int PosY, Grid GameGrid)
         {
             Image powerupTile = new Image();
-
-            //Random r = new Random();
-            //int rand = r.Next(0, 3);
 
             int rand = RNG.GenerateRandomNumber();
             //MessageBox.Show(string.Format("Random number: {0}", rand));

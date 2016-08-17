@@ -348,7 +348,14 @@ namespace WizardWarzRotW
                 }
 
                 GameBoard.ReturnGameGrid().Children.Remove(this);
+
+                // The Bombs class needs these variables
+                playerX = PlayerPositions[_step, 0];
+                playerY = PlayerPositions[_step, 1];
+                Console.WriteLine(string.Format("Player {0} postion: {1} {2}", playerName, playerX, playerY));
+
                 GameBoard.ReturnGameGrid().Children.Add(this);
+                
                 _step++;
                 return;
             }

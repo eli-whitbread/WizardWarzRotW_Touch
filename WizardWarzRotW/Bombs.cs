@@ -306,22 +306,6 @@ namespace WizardWarzRotW
             int colPos = explosionMatrix[explosionStep, 0];
             int rowPos = explosionMatrix[explosionStep, 1];
 
-            //// Check if the player was caught in the blast
-            //if (colPos == myOwner.playerX && rowPos == myOwner.playerY)
-            //{
-
-            //    if (myOwner.playerState == "Shield")
-            //    {
-            //        myOwner.playerState = null;
-            //    }
-
-            //    else
-            //    {
-            //        myOwner.myLivesAndScore.ReduceLives(1);
-            //        myOwner.myLivesAndScore.ChangeScore(50, false);
-            //    }
-            //}
-
             // Check if all players were caught in the blast.
             for (int i = 0; i < GameBoard.ReturnPlayerList().Count; i++)
             {
