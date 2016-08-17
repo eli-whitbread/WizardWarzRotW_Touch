@@ -267,6 +267,27 @@
   <ItemGroup>
     <Resource Include="Resources\BallOfMagic.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpriteSheetBlue.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TitleSprites\SSB1.png" />
+    <Resource Include="Resources\TitleSprites\SSB2.png" />
+    <Resource Include="Resources\TitleSprites\SSB3.png" />
+    <Resource Include="Resources\TitleSprites\SSB4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TitleSprites\SSR1.png" />
+    <Resource Include="Resources\TitleSprites\SSR2.png" />
+    <Resource Include="Resources\TitleSprites\SSR3.png" />
+    <Resource Include="Resources\TitleSprites\SSR4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Quit2.png" />
+    <Resource Include="Resources\Start2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

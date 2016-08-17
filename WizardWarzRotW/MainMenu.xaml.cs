@@ -70,13 +70,6 @@ namespace WizardWarzRotW
 
             //mainWinRef.newAudioManager.playMainMusic();
             //mainWinRef.GameStart();
-        }
-
-        private void Image_PreviewTouchDown(object sender, TouchEventArgs e)
-        {
-            //GlobalPlayerMainMenu = false;
-            ////RunWizardWarz();
-            //MainWindow.ReturnMainWindowInstance().ChangeGameState("game");
-        }
+        }        
     }
 }
