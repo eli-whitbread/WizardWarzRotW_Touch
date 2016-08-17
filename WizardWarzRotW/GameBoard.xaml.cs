@@ -504,7 +504,7 @@ namespace WizardWarzRotW
             }
         }
 
-        private void CheckPlayersOnBoard()
+        public void CheckPlayersOnBoard()
         {
             for (int i = 0; i < noOfPlayers; i++)
             {
@@ -517,8 +517,9 @@ namespace WizardWarzRotW
 
                     if (noOfPlayers <= 1)
                     {
-                        gameTimeMinutes = 0;
-                        gameTimeSeconds = 0;
+                        //gameTimeMinutes = 0;
+                        //gameTimeSeconds = 0;
+                        MainWindow.ReturnMainWindowInstance().ChangeGameState("end");
                     }
                 }
             }

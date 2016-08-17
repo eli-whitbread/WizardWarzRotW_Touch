@@ -355,6 +355,12 @@ namespace WizardWarzRotW
                 Console.WriteLine(string.Format("Player {0} postion: {1} {2}", playerName, playerX, playerY));
 
                 GameBoard.ReturnGameGrid().Children.Add(this);
+
+                // Scan tile for powerups
+                if (GameBoard.curTileState[PlayerPositions[_step, 0], PlayerPositions[_step, 1]] == TileStates.Powerup)
+                {
+                    playerState = myPowerupRef.ReturnPowerup(PlayerPositions[_step, 0], PlayerPositions[_step, 1], GameBoard.ReturnGameGrid());
+                }
                 
                 _step++;
                 return;
