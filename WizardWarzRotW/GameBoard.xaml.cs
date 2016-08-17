@@ -54,7 +54,7 @@ namespace WizardWarzRotW
         // ----------------------------- END GAME BOARD -------------------------------------------
 
         // ------------------------------ PUBLIC GAME DEPENDENCIES -----------------------------
-        protected static Int32 tileSize = 32;
+        protected static Int32 tileSize = 47;
         private GameTimer gameTimerInstance = null;
         double varRotTransform = 90;        
         protected static GameBoard gameBoardManager;

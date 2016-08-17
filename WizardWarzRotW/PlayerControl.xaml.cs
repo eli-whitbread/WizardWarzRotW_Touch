@@ -435,10 +435,10 @@ namespace WizardWarzRotW
             Ellipse highlight2 = new Ellipse();
 
             // ADD HIGHLIGHT
-            highlight.Height = GameBoard.ReturnTileSize() * 0.2f;
-            highlight.Width = GameBoard.ReturnTileSize() * 0.5;
-            highlight2.Height = GameBoard.ReturnTileSize() * 0.5;
-            highlight2.Width = GameBoard.ReturnTileSize() * 0.2f;
+            highlight.Height = GameBoard.ReturnTileSize() * 0.18f;
+            highlight.Width = GameBoard.ReturnTileSize() * 0.36;
+            highlight2.Height = GameBoard.ReturnTileSize() * 0.36;
+            highlight2.Width = GameBoard.ReturnTileSize() * 0.18f;
             DetermineHighlightColour();
             highlight.Fill = new SolidColorBrush(playerColour);
             highlight.Fill.Opacity = 0.4f;
