@@ -71,6 +71,11 @@
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Powerups.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RandomNumberGenerator.cs" />
     <Compile Include="ResultScreen.xaml.cs">
       <DependentUpon>ResultScreen.xaml</DependentUpon>
@@ -139,11 +144,6 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -151,8 +151,8 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -168,16 +168,12 @@
     <Resource Include="Resources\audioOn.png" />
     <Resource Include="Resources\Bomb.png" />
     <Resource Include="Resources\Bomb2.png" />
-    <Resource Include="Resources\castleWizardBlue1.png" />
     <Resource Include="Resources\Destructible.png" />
-    <Resource Include="Resources\DestructTile_64x64.png" />
     <Resource Include="Resources\ExplosionCentre.png" />
     <Resource Include="Resources\Floor.png" />
-    <Resource Include="Resources\FloorTile_64x64.png" />
     <Resource Include="Resources\heart.png" />
     <Resource Include="Resources\Home0.png" />
     <Resource Include="Resources\HorizontalExplosion.png" />
-    <Resource Include="Resources\Indesructable.png" />
     <Resource Include="Resources\ZombieHunter_SpriteSheet_facingLeft.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -199,8 +195,6 @@
     <None Include="Resources\pickup.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Resource Include="Resources\PlayerBack1.png" />
-    <Resource Include="Resources\PlayerFront1.png" />
     <Resource Include="Resources\PlayerLeft1.png" />
     <Resource Include="Resources\PlayerRight1.png" />
     <Resource Include="Resources\shield.png" />
@@ -214,7 +208,6 @@
     <None Include="Resources\titleTest2.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Resource Include="Resources\WallTile_64x64.png" />
     <Resource Include="Resources\WIZARD1.png" />
     <Resource Include="Resources\WizardWarzText.png" />
     <Resource Include="Resources\WizardWarzText1.png" />
@@ -249,6 +242,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BombEx.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

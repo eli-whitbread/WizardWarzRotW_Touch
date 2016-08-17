@@ -113,16 +113,6 @@ namespace WizardWarzRotW.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap castleWizardBlue1 {
-            get {
-                object obj = ResourceManager.GetObject("castleWizardBlue1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap CharacterSheet_Left {
             get {
                 object obj = ResourceManager.GetObject("CharacterSheet_Left", resourceCulture);
@@ -163,16 +153,6 @@ namespace WizardWarzRotW.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DestructTile_64x64 {
-            get {
-                object obj = ResourceManager.GetObject("DestructTile_64x64", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ExplosionCentre {
             get {
                 object obj = ResourceManager.GetObject("ExplosionCentre", resourceCulture);
@@ -186,16 +166,6 @@ namespace WizardWarzRotW.Properties {
         internal static System.Drawing.Bitmap Floor {
             get {
                 object obj = ResourceManager.GetObject("Floor", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FloorTile_64x64 {
-            get {
-                object obj = ResourceManager.GetObject("FloorTile_64x64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,39 +203,9 @@ namespace WizardWarzRotW.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Indesructable {
-            get {
-                object obj = ResourceManager.GetObject("Indesructable", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Indestructible {
             get {
                 object obj = ResourceManager.GetObject("Indestructible", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PlayerBack1 {
-            get {
-                object obj = ResourceManager.GetObject("PlayerBack1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PlayerFront1 {
-            get {
-                object obj = ResourceManager.GetObject("PlayerFront1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -316,16 +256,6 @@ namespace WizardWarzRotW.Properties {
         internal static System.Drawing.Bitmap superbomb {
             get {
                 object obj = ResourceManager.GetObject("superbomb", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap WallTile_64x64 {
-            get {
-                object obj = ResourceManager.GetObject("WallTile_64x64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

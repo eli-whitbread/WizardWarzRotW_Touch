@@ -198,7 +198,7 @@ namespace WizardWarzRotW
             bombImage.Height = GameBoard.ReturnTileSize();
             bombImage.Width = GameBoard.ReturnTileSize();
 
-            bombImage.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/Bomb2.png", UriKind.Absolute));
+            bombImage.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/BombEx.png", UriKind.Absolute));
             bombImage.IsHitTestVisible = false;
 
             Grid.SetColumn(bombImage, colPos);

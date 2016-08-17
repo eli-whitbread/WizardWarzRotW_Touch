@@ -130,23 +130,14 @@
   <data name="Bomb2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bomb2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="castleWizardBlue1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\castleWizardBlue1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Destructible" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Destructible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DestructTile_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DestructTile_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ExplosionCentre" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ExplosionCentre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Floor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Floor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FloorTile_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FloorTile_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="heart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\heart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,17 +148,8 @@
   <data name="HorizontalExplosion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HorizontalExplosion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Indesructable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Indesructable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Indestructible" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Indestructible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PlayerBack1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PlayerBack1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PlayerFront1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PlayerFront1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PlayerLeft1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PlayerLeft1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -180,9 +162,6 @@
   </data>
   <data name="superbomb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\superbomb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WallTile_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WallTile_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ZombieHunter_SpriteSheet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ZombieHunter_SpriteSheet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

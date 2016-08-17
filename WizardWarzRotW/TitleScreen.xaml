@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WizardWarzRotW"
              mc:Ignorable="d" 
-             d:DesignHeight="1080" d:DesignWidth="1080">
-    <Grid Name="TitleGrid" Background="#FF892A2A" PreviewTouchDown="TitleScreen_PreviewTouchDown" PreviewMouseDown="TitleGrid_PreviewMouseDown">
+             d:DesignHeight="540" d:DesignWidth="540">
+    <Grid Name="TitleGrid" Background="#FF892A2A" PreviewTouchDown="TitleScreen_PreviewTouchDown" PreviewMouseDown="TitleGrid_PreviewMouseDown" Width="540" Height="540">
         <Image Name="wizard1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" Margin="182,214,834,802" 
                 Source="Resources/WIZARD1.png" Stretch="Fill"/>
         <Image Name="wizard2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" Margin="889,116,127,900" 

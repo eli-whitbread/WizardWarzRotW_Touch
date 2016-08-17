@@ -36,6 +36,7 @@ namespace WizardWarzRotW
             dTimer1.Tick += DTimer1_Tick;
             dTimer1.Interval = new TimeSpan(0, 0, 0, 0, 150);
             dTimer1.Start();
+            
             //titleScreenSound.playTitleSound();
         }
 

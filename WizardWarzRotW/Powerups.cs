@@ -166,7 +166,7 @@ namespace WizardWarzRotW
             {
                 case ("SuperBomb"):
                     pName = "Superbomb";
-                    powerupTile.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/superbomb.png", UriKind.Absolute));
+                    powerupTile.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/Bomb2.png", UriKind.Absolute));
                     _localGameBoard.ChangeTileState(xPos, yPos, "Superbomb");
                     break;
                 case ("Shield"):
@@ -198,7 +198,7 @@ namespace WizardWarzRotW
             if (rand <= 85)
             {
                 pName = "Superbomb";
-                powerupTile.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/superbomb.png", UriKind.Absolute));
+                powerupTile.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/Bomb2.png", UriKind.Absolute));
                 _localGameBoard.ChangeTileState(PosX, PosY, "Superbomb");
                 //MessageBox.Show("Superbomb made");    
             }
