@@ -60,9 +60,9 @@
       <DependentUpon>AudioManager.xaml</DependentUpon>
     </Compile>
     <Compile Include="Bombs.cs" />
-	    <Compile Include="EndScreen.xaml.cs">
+    <Compile Include="EndScreen.xaml.cs">
       <DependentUpon>EndScreen.xaml</DependentUpon>
-    </Compile>    
+    </Compile>
     <Compile Include="GameTimer.cs" />
     <Compile Include="LivesAndScore.xaml.cs">
       <DependentUpon>LivesAndScore.xaml</DependentUpon>
@@ -84,7 +84,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-	    <Page Include="EndScreen.xaml">
+    <Page Include="EndScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,21 +186,34 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\8_bit_wizard.mp3" />
-    <Resource Include="Resources\bomb_Explode.wav" />
-    <Resource Include="Resources\break_wall.wav" />
-    <Resource Include="Resources\defeat.wav" />
+    <None Include="Resources\bomb_Explode.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\break_wall.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\defeat.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Resource Include="Resources\Indestructible.png" />
-    <Resource Include="Resources\pickup.wav" />
+    <None Include="Resources\pickup.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Resource Include="Resources\PlayerBack1.png" />
     <Resource Include="Resources\PlayerFront1.png" />
     <Resource Include="Resources\PlayerLeft1.png" />
     <Resource Include="Resources\PlayerRight1.png" />
     <Resource Include="Resources\shield.png" />
     <Resource Include="Resources\superbomb.png" />
-    <Resource Include="Resources\timer_fuse.wav" />
-    <Resource Include="Resources\titleTest1.wav" />
-    <Resource Include="Resources\titleTest2.wav" />
+    <None Include="Resources\timer_fuse.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\titleTest1.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\titleTest2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Resource Include="Resources\WallTile_64x64.png" />
     <Resource Include="Resources\WIZARD1.png" />
     <Resource Include="Resources\WizardWarzText.png" />
@@ -227,6 +240,15 @@
     <None Include="Resources\Wizard_Warz_02.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DEstructible2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\StoneTile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="heart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

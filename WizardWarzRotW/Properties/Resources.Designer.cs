@@ -153,6 +153,16 @@ namespace WizardWarzRotW.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DEstructible2 {
+            get {
+                object obj = ResourceManager.GetObject("DEstructible2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DestructTile_64x64 {
             get {
                 object obj = ResourceManager.GetObject("DestructTile_64x64", resourceCulture);
@@ -286,6 +296,16 @@ namespace WizardWarzRotW.Properties {
         internal static System.Drawing.Bitmap shield {
             get {
                 object obj = ResourceManager.GetObject("shield", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StoneTile {
+            get {
+                object obj = ResourceManager.GetObject("StoneTile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -97,10 +97,10 @@ namespace WizardWarzRotW
                     game.Visibility = Visibility.Visible;
 
                     // Set the timer (plus text) and start it. Format: seconds, minutes
-                    GameBoard.ReturnGameBoardInstance().ChangeTimerText(5, 0);
+                    GameBoard.ReturnGameBoardInstance().ChangeTimerText(59, 3);
                     GameTimer.ReturnTimerInstance().StartGameTimer();
-                    GameTimer.ReturnTimerInstance().GameTimeSeconds = 5;
-                    GameTimer.ReturnTimerInstance().GameTimeMinutes = 0;
+                    GameTimer.ReturnTimerInstance().GameTimeSeconds = 59;
+                    GameTimer.ReturnTimerInstance().GameTimeMinutes = 3;
                     GameTimer.ReturnTimerInstance().currentTick = 0;
                     break;
 

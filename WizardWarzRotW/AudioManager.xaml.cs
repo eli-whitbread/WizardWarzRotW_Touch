@@ -142,7 +142,7 @@ namespace WizardWarzRotW
         {
             StopTrack();
             trackLocation = "bomb_explode.wav";
-            newVolume = 0.8;
+            newVolume = 0.4;
             PlayTrack();
         }
 

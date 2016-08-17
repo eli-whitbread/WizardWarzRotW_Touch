@@ -27,7 +27,7 @@ namespace WizardWarzRotW
         Image bombImage;
         List<Rectangle> explosionTiles;
         List<FrameworkElement> bombedCells = new List<FrameworkElement>();
-        //AudioManager playBombSndFX = new AudioManager();
+        AudioManager playBombSndFX = new AudioManager();
 
         public GameBoard managerRef = null;
         public PlayerControl myOwner = null;
@@ -204,7 +204,7 @@ namespace WizardWarzRotW
             Grid.SetColumn(bombImage, colPos);
             Grid.SetRow(bombImage, rowPos);
             curGameGrid.Children.Add(bombImage);
-            //playBombSndFX.playBombTick();
+            playBombSndFX.playBombTick();
 
         }
 
@@ -263,7 +263,7 @@ namespace WizardWarzRotW
                 if (explosionStep == 0)
                 {
                     curGameGrid.Children.Remove(bombImage);
-                    //playBombSndFX.playBombExplode();
+                    playBombSndFX.playBombExplode();
                     bombImage = new Image();
                     bombImage.Height = GameBoard.ReturnTileSize();
                     bombImage.Width = GameBoard.ReturnTileSize();

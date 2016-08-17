@@ -15,8 +15,8 @@ namespace WizardWarzRotW
         private int fps = 60;
         public int currentTick = 0;
 
-        public int GameTimeSeconds = 5;
-        public int GameTimeMinutes = 0;
+        public int GameTimeSeconds = 59;
+        public int GameTimeMinutes = 4;
         private GameBoard gameBoardInstance;
 
         /// <summary>
