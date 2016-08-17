@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System;
 
 namespace WizardWarzRotW
 {
@@ -20,7 +21,6 @@ namespace WizardWarzRotW
     {
         Title,
         MainMenu,
-        PlayerSelect,
         Game,
         EndScreen
     }
@@ -30,11 +30,23 @@ namespace WizardWarzRotW
     /// </summary>
     public partial class MainWindow : Window
     {
-        private GameStates curGameState = GameStates.Title;
+        public GameStates currentGameState = GameStates.Title;
+
+        protected static MainWindow MainWindowReference;
+
+        public TitleScreen title;
+        public MainMenu menu;
+        public GameBoard game;
+        public EndScreen end;
 
         public static bool GlobalAudio1
         {
             get; set;
+        }
+
+        public static MainWindow ReturnMainWindowInstance()
+        {
+            return MainWindowReference;
         }
 
         public MainWindow()
@@ -45,17 +57,68 @@ namespace WizardWarzRotW
             AudioMan.audioOn = GlobalAudio1;
             AudioMan.playWizardOne();
 
-        }
-              
+            MainWindowReference = this;
 
-        public static void ChangeGameState(GameStates curGameState)
+            // Initialize each instance of each screen when the game loads.
+            title = TitleScreenInstance;
+            menu = MainMenuInstance;
+            game = GameInstance;
+            end = EndScreenInstance;
+
+            // Reveal the title screen.
+            TitleScreenInstance.Visibility = Visibility.Visible;
+        }
+
+
+        public void ChangeGameState(string GameState)
         {
-            switch (curGameState)
+            switch (GameState)
             {
-                case (GameStates.EndScreen):
-                    curGameState = GameStates.EndScreen;
+                case ("title"):
+                    currentGameState = GameStates.Title;
+
+                    if (end.Visibility == Visibility.Visible)
+                        end.Visibility = Visibility.Hidden;
+
+                    title.Visibility = Visibility.Visible;
+                    break;
+
+                case ("menu"):
+                    currentGameState = GameStates.MainMenu;
+
+                    title.Visibility = Visibility.Hidden;
+                    menu.Visibility = Visibility.Visible;
+                    break;
+
+                case ("game"):
+                    currentGameState = GameStates.Game;
+
+                    menu.Visibility = Visibility.Hidden;
+                    game.Visibility = Visibility.Visible;
+
+                    // Set the timer (plus text) and start it. Format: seconds, minutes
+                    GameBoard.ReturnGameBoardInstance().ChangeTimerText(5, 0);
+                    GameTimer.ReturnTimerInstance().StartGameTimer();
+                    GameTimer.ReturnTimerInstance().GameTimeSeconds = 5;
+                    GameTimer.ReturnTimerInstance().GameTimeMinutes = 0;
+                    GameTimer.ReturnTimerInstance().currentTick = 0;
+                    break;
+
+                case ("end"):
+                    currentGameState = GameStates.EndScreen;
+
+                    game.Visibility = Visibility.Hidden;
+                    end.Visibility = Visibility.Visible;
+
+                    // Set the end timer, timer text, and start the timer.
+                    EndScreen.ReturnEndScreenInstance().currentTick = 0;
+                    EndScreen.ReturnEndScreenInstance().endCountdown = 10;
+                    EndScreen.ReturnEndScreenInstance().endGameTimer.Start();
+                    EndScreen.ReturnEndScreenInstance().endTimer.Content = (EndScreen.ReturnEndScreenInstance().endCountdown + " seconds.");
                     break;
             }
+
+            Console.WriteLine("Current game state: {0}", currentGameState);
         }
     }
 }

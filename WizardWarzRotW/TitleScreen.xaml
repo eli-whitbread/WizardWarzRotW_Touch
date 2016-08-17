@@ -5,8 +5,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WizardWarzRotW"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-            
+             d:DesignHeight="1080" d:DesignWidth="1080">
+    <Grid Name="TitleGrid" Background="#FF892A2A" PreviewTouchDown="TitleScreen_PreviewTouchDown" PreviewMouseDown="TitleGrid_PreviewMouseDown">
+        <Image Name="wizard1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" Margin="182,214,834,802" 
+                Source="Resources/WIZARD1.png" Stretch="Fill"/>
+        <Image Name="wizard2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" Margin="889,116,127,900" 
+                Source="Resources/WIZARD1.png" Stretch="Fill">
+        </Image>
+        <Image Name="wizard3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" Margin="828,812,188,204" 
+                Source="Resources/WIZARD1.png" Stretch="Fill">
+        </Image>
+        <Image Name="wizard4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" Margin="136,784,880,232" 
+                Source="Resources/WIZARD1.png" Stretch="Fill">
+        </Image>
+        <Image Name="wizardText" HorizontalAlignment="Center" VerticalAlignment="Center" Width="605" Height="299" Margin="0,0,0,0" 
+                Source="Resources/WizardWarzText1.png" Stretch="Fill" Canvas.Left="238" Canvas.Top="390">
+        </Image>
     </Grid>
 </UserControl>

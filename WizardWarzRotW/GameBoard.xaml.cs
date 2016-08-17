@@ -54,8 +54,8 @@ namespace WizardWarzRotW
         // ----------------------------- END GAME BOARD -------------------------------------------
 
         // ------------------------------ PUBLIC GAME DEPENDENCIES -----------------------------
-        protected static Int32 tileSize = 47;
-        private GameTimer gameTimerInstance = null;
+        protected static Int32 tileSize = 64;
+        private static GameTimer newGameTimer = null;
         double varRotTransform = 90;        
         protected static GameBoard gameBoardManager;
         protected static Canvas GameCanvasInstance;
@@ -144,7 +144,6 @@ namespace WizardWarzRotW
             GameDependencies();
 
             InitializeGameBoard();
-            tempInitialisePlayers();
         }
 
         public void InitializeGameBoard()
@@ -154,16 +153,7 @@ namespace WizardWarzRotW
 
             curTileState = new TileStates[cols, rows];
             powerupTileState = new PowerupTileStates[cols, rows];
-            panel2.Width = (cols + 2) * tileSize;
-            panel2.Height = (rows + 2) * tileSize;
-            Separator.Width = tileSize * 7;
-            Separator.Height = tileSize;
-            gameTimeText1.Width = tileSize * 2.296875f;
-            gameTimeText1.Height = tileSize;
-            gameTimeText1.FontSize = tileSize * 0.6f;
-            gameTimeText2.Width = tileSize * 2.296875f;
-            gameTimeText2.Height = tileSize;
-            gameTimeText2.FontSize = tileSize * 0.6f;
+
 
             GridLengthConverter myGridLengthConverter = new GridLengthConverter();
             GridLength side = (GridLength)myGridLengthConverter.ConvertFromString("Auto");
@@ -225,8 +215,8 @@ namespace WizardWarzRotW
                     //
                     //inner solid and destrutable walls still required!!
                     //
-                    flrTiles[c, r].Height = tileSize;
-                    flrTiles[c, r].Width = tileSize;
+                    flrTiles[c, r].Height = 64;
+                    flrTiles[c, r].Width = 64;
                     Grid.SetColumn(flrTiles[c, r], c);
                     Grid.SetRow(flrTiles[c, r], r);
 
@@ -323,13 +313,13 @@ namespace WizardWarzRotW
         private void GameDependencies()
         {
 
-            if (gameTimerInstance == null)
+            if (newGameTimer == null)
             {
-                gameTimerInstance = new GameTimer();
+                newGameTimer = new GameTimer();
 
             }
 
-            gameTimerInstance.StartGameTimer();
+            newGameTimer.StartGameTimer();
 
             // The number of players needs to be set before the game board is initialized
             if (MainMenu.GlobalPlayerMainMenu)
@@ -349,36 +339,30 @@ namespace WizardWarzRotW
             playerControllers = new PlayerControl[noOfPlayers];
             playerLives = new LivesAndScore[noOfPlayers];
             //playerPositions = new int[noOfPlayers];
-            
+            initialisePlayerReferences();
 
             StaticCollections _staticColections = new StaticCollections();
 
-            
-            
-        }
-
-        private void tempInitialisePlayers()
-        {
-            initialisePlayerReferences();
             powerupRef = new Powerups();
             powerupRef.curGameGrid = GameGridXAML;
             powerupRef.InitialisePowerups();
+            
         }
 
         private void initialiseGameBoardSize()
         {
             if (noOfPlayers == 4)
             {
-                gameTimeText1.Margin = new Thickness(tileSize * 14.06, 0, -10, 0);
-                gameTimeText2.Margin = new Thickness(tileSize * -3.9, 0, -10, 0);
+                gameTimeText1.Margin = new Thickness(900, 0, -10, 0);
+                gameTimeText2.Margin = new Thickness(-252, 0, -10, 0);
                 TopPanel.HorizontalAlignment = HorizontalAlignment.Center;
                 BottomPanel.HorizontalAlignment = HorizontalAlignment.Center;
-                BottomPanel.Margin = new Thickness(tileSize * 0.9375, 0, 0, 0);
+                BottomPanel.Margin = new Thickness(60, 0, 0, 0);
             }
             else
             {
-                gameTimeText1.Margin = new Thickness(tileSize * 6.25, 0, -10, 0);
-                gameTimeText2.Margin = new Thickness(tileSize * -3.9, 0, -10, 0);
+                gameTimeText1.Margin = new Thickness(400, 0, -10, 0);
+                gameTimeText2.Margin = new Thickness(-252, 0, -10, 0);
 
             }
         }
@@ -397,8 +381,8 @@ namespace WizardWarzRotW
                 Grid.SetRow(playerControllers[i], 1);
                 Grid.SetColumn(playerControllers[i], 1);
                 
-                playerControllers[i].managerRef = this;
-                playerControllers[i].gridCellsArray = flrTiles;
+                //playerControllers[i].managerRef = gameBoardManager;
+                //playerControllers[i].gridCellsArray = gameBoardManager.flrTiles;
                 playerControllers[i].myLivesAndScore = playerLives[i];
                 //playerControllers[i].initialisePlayerGridRef();
                 //playerControllers[i].myPowerupRef = new Powerup();
@@ -454,7 +438,7 @@ namespace WizardWarzRotW
             switch (currentPlayer + 1)
             {
                 case 1:
-                    TopPanel.Height = tileSize;
+
                     varRotTransform = 180;
                     trRot = new RotateTransform(varRotTransform);
                     playerLives[currentPlayer].LayoutTransform = trRot;
@@ -462,8 +446,6 @@ namespace WizardWarzRotW
                     break;
 
                 case 2:
-                    RightPanel.Height = tileSize * 6;
-                    RightPanel.Width = tileSize;
                     varRotTransform = -90;
                     trRot = new RotateTransform(varRotTransform);
                     playerLives[currentPlayer].LayoutTransform = trRot;
@@ -471,13 +453,10 @@ namespace WizardWarzRotW
                     break;
 
                 case 3:
-                    BottomPanel.Height = tileSize;
                     BottomPanel.Children.Add(playerLives[currentPlayer]);
                     break;
 
                 case 4:
-                    LeftPanel.Height = tileSize * 6;
-                    LeftPanel.Width = tileSize;
                     varRotTransform = 90;
                     trRot = new RotateTransform(varRotTransform);
                     playerLives[currentPlayer].LayoutTransform = trRot;
@@ -485,7 +464,6 @@ namespace WizardWarzRotW
                     break;
 
                 case 5:
-                    TopPanel2.Height = tileSize;
                     varRotTransform = 180;
                     trRot = new RotateTransform(varRotTransform);
                     playerLives[currentPlayer].LayoutTransform = trRot;
@@ -493,8 +471,6 @@ namespace WizardWarzRotW
                     break;
 
                 case 6:
-                    BottomPanel2.Margin = new Thickness(0, tileSize * 12.96875, 0, 0);
-                    BottomPanel2.Height = tileSize;
                     BottomPanel2.Children.Add(playerLives[currentPlayer]);
                     break;
 
@@ -532,26 +508,12 @@ namespace WizardWarzRotW
 
         public void ChangeTileImage(int PosX, int PosY)
         {
-            flrTiles[PosX, PosY].Source = new BitmapImage(new Uri("pack://application:,,,/Resources/Floor.png", UriKind.Absolute));
+
         }
 
         public void ChangeTileState(int PosX, int PosY, string tileState)
         {
-            switch(tileState)
-            {
-                case("SuperBomb"):
-                    curTileState[PosX, PosY] = TileStates.Powerup;
-                    powerupTileState[PosX, PosY] = PowerupTileStates.Superbomb;
-                    break;
-                case("Shield"):
-                    curTileState[PosX, PosY] = TileStates.Powerup;
-                    powerupTileState[PosX, PosY] = PowerupTileStates.Shield;
-                    break;
-                case("Lifeup"):
-                curTileState[PosX, PosY] = TileStates.Powerup;
-                powerupTileState[PosX, PosY] = PowerupTileStates.Lifeup;
-                break;
-            }
+
         }
 
         /// <summary>

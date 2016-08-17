@@ -60,6 +60,9 @@
       <DependentUpon>AudioManager.xaml</DependentUpon>
     </Compile>
     <Compile Include="Bombs.cs" />
+	    <Compile Include="EndScreen.xaml.cs">
+      <DependentUpon>EndScreen.xaml</DependentUpon>
+    </Compile>    
     <Compile Include="GameTimer.cs" />
     <Compile Include="LivesAndScore.xaml.cs">
       <DependentUpon>LivesAndScore.xaml</DependentUpon>
@@ -78,6 +81,10 @@
       <DependentUpon>TitleScreen.xaml</DependentUpon>
     </Compile>
     <Page Include="AudioManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+	    <Page Include="EndScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
