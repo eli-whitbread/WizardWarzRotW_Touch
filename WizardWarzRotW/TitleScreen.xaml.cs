@@ -41,7 +41,14 @@ namespace WizardWarzRotW
 
         private void TitleScreen_PreviewTouchDown(object sender, TouchEventArgs e)
         {
+            MainWindow.ReturnMainWindowInstance().ChangeGameState("menu");
+            Console.WriteLine("Detected touch down.");
+        }
 
+        private void TitleGrid_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow.ReturnMainWindowInstance().ChangeGameState("menu");
+            Console.WriteLine("Detected mouse click.");
         }
 
         private void DTimer1_Tick(object sender, EventArgs e)

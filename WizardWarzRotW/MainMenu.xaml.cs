@@ -31,25 +31,51 @@ namespace WizardWarzRotW
         }
 
 
-        private void FourPlayer_PreviewTouchDown(object sender, TouchEventArgs e)
+        private void FourPlayerButton_PreviewTouchDown(object sender, TouchEventArgs e)
         {
             //MessageBox.Show("4 player button pressed");
+            Console.WriteLine("Touch down detected: Four player button");
             GlobalPlayerMainMenu = false;
             RunWizardWarz();
         }
 
-        private void SixPlayer_PreviewTouchDown(object sender, TouchEventArgs e)
+        private void SixPlayerButton_PreviewTouchDown(object sender, TouchEventArgs e)
         {
             //MessageBox.Show("6 player button pressed");
+            Console.WriteLine("Touch down detected: Six player button");
+            GlobalPlayerMainMenu = true;
+            RunWizardWarz();
+        }
+
+        private void FourPlayerButton_PreviewMouseDown(object sender, MouseEventArgs e)
+        {
+            //MessageBox.Show("4 player button pressed");
+            Console.WriteLine("Mouse click detected: Four player button");
+            GlobalPlayerMainMenu = false;
+            RunWizardWarz();
+        }
+
+        private void SixPlayerButton_PreviewMouseDown(object sender, MouseEventArgs e)
+        {
+            //MessageBox.Show("6 player button pressed");
+            Console.WriteLine("Mouse click detected: Six player button");
             GlobalPlayerMainMenu = true;
             RunWizardWarz();
         }
 
         private void RunWizardWarz()
         {
-            MainWindow.ChangeGameState("game");
+            MainWindow.ReturnMainWindowInstance().ChangeGameState("game");
+
             //mainWinRef.newAudioManager.playMainMusic();
             //mainWinRef.GameStart();
+        }
+
+        private void Image_PreviewTouchDown(object sender, TouchEventArgs e)
+        {
+            //GlobalPlayerMainMenu = false;
+            ////RunWizardWarz();
+            //MainWindow.ReturnMainWindowInstance().ChangeGameState("game");
         }
     }
 }

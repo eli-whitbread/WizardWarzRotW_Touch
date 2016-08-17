@@ -21,6 +21,8 @@ namespace WizardWarzRotW
     /// </summary>
     public partial class EndScreen : UserControl
     {
+        protected static EndScreen endScreenInstance;
+
         public float currentTick = 0;
         public int maxScore = 0;
         public string topPlayer;
@@ -40,20 +42,31 @@ namespace WizardWarzRotW
             endGameTimer.Tick += new EventHandler(timer_Tick);
             endGameTimer.Start();
 
-            RetrieveScores();
+            //RetrieveScores();
+
+            // initialize reference
+            endScreenInstance = this;
+        }
+
+        public static EndScreen ReturnEndScreenInstance()
+        {
+            return endScreenInstance;
         }
 
         public void timer_Tick(object sender, EventArgs e)
         {
-            currentTick += 0.5f;
-            endCountdown = 10 - currentTick;
-
-            if (currentTick % 1 == 0)
+            if (MainWindow.ReturnMainWindowInstance().currentGameState == GameStates.EndScreen)
             {
-                Console.WriteLine("Current tick: {0}", currentTick);
-                Countdown();
+                currentTick += 0.5f;
+                endCountdown = 10 - currentTick;
+
+                if (currentTick % 1 == 0)
+                {
+                    Console.WriteLine("Current tick: {0}", currentTick);
+                    Countdown();
+                }
+                FlashTick();
             }
-            FlashTick();
         }
 
         public void Countdown()
@@ -62,26 +75,9 @@ namespace WizardWarzRotW
             endTimer.Content = endCountdown + " seconds.";
             if (endCountdown <= 0)
             {
-                // Original method of restarting game:
-                // ----------------------------------------------------------
-                // Resets variables without creating a new instance of the game.
-
-                //endGameTimer.Stop();
-
-                //MainWindow mwRef = MainWindow.ReturnMainWindowInstance();
-                //mwRef.MainCanvas.Children.Remove(this);
-
-                //TitleScreen title = new TitleScreen();
-                //title.MouseDown += mwRef.Title_MouseDown;
-                //mwRef.MainCanvas.Children.Add(title);
-
-                // New method of restarting game:
-                // ----------------------------------------------------------
-                // Closes the window, then launches a new one.
+                // Final method of restarding game: Use ChangeGameState function.
                 endGameTimer.Stop();
-                MainWindow.ChangeGameState("title");
-                //MainWindow.GameRestart();
-                //Application.Current.Shutdown();
+                MainWindow.ReturnMainWindowInstance().ChangeGameState("title");
             }
         }
 

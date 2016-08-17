@@ -55,7 +55,7 @@ namespace WizardWarzRotW
 
         // ------------------------------ PUBLIC GAME DEPENDENCIES -----------------------------
         protected static Int32 tileSize = 64;
-        private GameTimer gameTimerInstance = null;
+        private static GameTimer newGameTimer = null;
         double varRotTransform = 90;        
         protected static GameBoard gameBoardManager;
         protected static Canvas GameCanvasInstance;
@@ -313,13 +313,13 @@ namespace WizardWarzRotW
         private void GameDependencies()
         {
 
-            if (gameTimerInstance == null)
+            if (newGameTimer == null)
             {
-                gameTimerInstance = new GameTimer();
+                newGameTimer = new GameTimer();
 
             }
 
-            gameTimerInstance.StartGameTimer();
+            newGameTimer.StartGameTimer();
 
             // The number of players needs to be set before the game board is initialized
             if (MainMenu.GlobalPlayerMainMenu)

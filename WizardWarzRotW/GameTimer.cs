@@ -13,10 +13,10 @@ namespace WizardWarzRotW
         public DispatcherTimer gameLoopTimer;
         protected static GameTimer gameTimerInstance;
         private int fps = 60;
-        private int currentTick = 0;
+        public int currentTick = 0;
 
-        public int GameTimeSeconds = 0;
-        public int GameTimeMinutes = 4;
+        public int GameTimeSeconds = 5;
+        public int GameTimeMinutes = 0;
         private GameBoard gameBoardInstance;
 
         /// <summary>
@@ -47,10 +47,9 @@ namespace WizardWarzRotW
             gameLoopTimer.Interval = TimeSpan.FromMilliseconds(1000/fps);
             gameLoopTimer.Tick += new EventHandler(timer_Tick);
             gameBoardInstance = GameBoard.ReturnGameBoardInstance();
-
-            
         }
-        
+
+    
         public void StartGameTimer()
         {
             gameLoopTimer.Start();
@@ -67,41 +66,45 @@ namespace WizardWarzRotW
         // ---------------------------------------------------------------------
         public void timer_Tick(object sender, EventArgs e)
         {
-
-            currentTick += 1;
-            if (currentTick % 60 == 0)
+            if (MainWindow.ReturnMainWindowInstance().currentGameState == GameStates.Game)
             {
-                GameTimeSeconds -= 1;
-                if (GameTimeSeconds <= -1)
+                currentTick += 1;
+                if (currentTick % 60 == 0)
                 {
-                    GameTimeMinutes -= 1;
-                    if (GameTimeMinutes == 0 && GameTimeSeconds == 0)
+                    GameTimeSeconds -= 1;
+                    Console.WriteLine("Full second tick");
+
+                    if (GameTimeSeconds <= -1)
                     {
-                        gameLoopTimer.Stop();
-                        MainWindow.ChangeGameState("end");
+                        GameTimeMinutes -= 1;
+                        if (GameTimeMinutes <= 0 && GameTimeSeconds <= 0)
+                        {
+                            gameLoopTimer.Stop();
+                            MainWindow.ReturnMainWindowInstance().ChangeGameState("end");
+                        }
+                        GameTimeSeconds = 59;
                     }
-                    GameTimeSeconds = 59;
+
+                    GameBoard.ReturnGameBoardInstance().ChangeTimerText(GameTimeSeconds, GameTimeMinutes);
+
+                }
+                // ---------------------------------------------------------------------
+                // ----------------------TICK EVENT FOR PROCESSING ---------------------
+                // ---------------------------------------------------------------------             
+                if (processFrameEvent_TICK != null)
+                {
+                    processFrameEvent_TICK.Invoke(this, e);
+
                 }
 
-                GameBoard.ReturnGameBoardInstance().ChangeTimerText(GameTimeSeconds, GameTimeMinutes);
-
-            }
-            // ---------------------------------------------------------------------
-            // ----------------------TICK EVENT FOR PROCESSING ---------------------
-            // ---------------------------------------------------------------------             
-            if (processFrameEvent_TICK != null)
-            {
-                processFrameEvent_TICK.Invoke(this, e);
-
-            }
-
-            // ---------------------------------------------------------------------
-            // ----------------------TICK EVENT FOR RENDERING-----------------------
-            // ---------------------------------------------------------------------            
-            if (renderFrameEvent_TICK != null)
-            {
-                renderFrameEvent_TICK.Invoke(this, e);
-            }            
+                // ---------------------------------------------------------------------
+                // ----------------------TICK EVENT FOR RENDERING-----------------------
+                // ---------------------------------------------------------------------            
+                if (renderFrameEvent_TICK != null)
+                {
+                    renderFrameEvent_TICK.Invoke(this, e);
+                }
+            }     
         }
 
     }

@@ -6,9 +6,10 @@
              xmlns:local="clr-namespace:WizardWarzRotW"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1080">
-    <Grid>
+    <Grid Background="#FF892A2A">
         <Label x:Name="label" Content="Number of Players" Height="128" Width="542" FontSize="64" Margin="270,210,275,740"/>
-        <Button x:Name="FourPlayerButton" Content="4" Width="256" Height="64" FontSize="32" PreviewTouchDown="FourPlayer_PreviewTouchDown" Margin="410,515,410,500"/>
-        <Button x:Name="SixPlayerButton" Content="6" Width="256" Height="64" FontSize="32" PreviewTouchDown="SixPlayer_PreviewTouchDown" Margin="410,815,410,200"/>
+        <Button x:Name="FourPlayerButton" Content="4" Width="256" Height="64" FontSize="32" PreviewMouseDown="FourPlayerButton_PreviewMouseDown" PreviewTouchDown="FourPlayerButton_PreviewTouchDown" Margin="410,515,410,500"/>
+        <Button x:Name="SixPlayerButton" Content="6" Width="256" Height="64" FontSize="32" PreviewMouseDown="SixPlayerButton_PreviewMouseDown" PreviewTouchDown="SixPlayerButton_PreviewTouchDown" Margin="410,815,410,200"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="500,621,0,0" VerticalAlignment="Top" Width="100" Source="Resources/audio.png" Stretch="Fill" PreviewTouchDown="Image_PreviewTouchDown"/>
     </Grid>
 </UserControl>
