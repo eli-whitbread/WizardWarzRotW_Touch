@@ -42,7 +42,7 @@ namespace WizardWarzRotW
             endGameTimer.Tick += new EventHandler(timer_Tick);
             endGameTimer.Start();
 
-            //RetrieveScores();
+            RetrieveScores();
 
             // initialize reference
             endScreenInstance = this;
@@ -72,7 +72,7 @@ namespace WizardWarzRotW
         public void Countdown()
         {
             // Count down to 0, then restart the game.
-            endTimer.Content = endCountdown + " seconds.";
+            endTimer.Content = endCountdown + "   seconds.";
             if (endCountdown <= 0)
             {
                 // Final method of restarding game: Use ChangeGameState function.

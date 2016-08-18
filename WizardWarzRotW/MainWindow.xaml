@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WizardWarzRotW"
         mc:Ignorable="d"
-        Title="MainWindowXAML" Height="Auto" Width="Auto" >
+        Title="MainWindowXAML" Height="Auto" Width="Auto" WindowStartupLocation="CenterScreen" WindowState="Maximized" >
     <Canvas Name="GameCANVAS" Height="Auto" Width="Auto" Background="#FF0B0B0B">
         <local:AudioManager x:Name="AudioMan"/>
         <local:TitleScreen x:Name="TitleScreenInstance" Visibility="Hidden"/>

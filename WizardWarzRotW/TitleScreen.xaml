@@ -25,7 +25,7 @@
         <Image Name="magicBall" HorizontalAlignment="Left" Height="30" Margin="120,254,0,0" VerticalAlignment="Top" Width="92" Source="Resources/BallOfMagic.png" Stretch="Fill"/>
         <Image Name="startText" HorizontalAlignment="Left" Height="36" Margin="180,356,0,0" VerticalAlignment="Top" Width="176" Source="Resources/Start.png" Stretch="Fill" MouseEnter="startText_MouseEnter" MouseLeave="startText_MouseLeave" PreviewMouseDown="startText_PreviewMouseDown" PreviewTouchDown="startText_PreviewTouchDown"/>
         <Image Name="quitText" HorizontalAlignment="Left" Height="19" Margin="192,434,0,0" VerticalAlignment="Top" Width="150" Source="Resources/Quit.png" Stretch="Fill" MouseEnter="quitText_MouseEnter" MouseLeave="quitText_MouseLeave" PreviewMouseDown="quitText_PreviewMouseDown" PreviewTouchDown="quitText_PreviewTouchDown"/>
-        <Label x:Name="label_Copy" Content="DYNA-WIZARDZ" FontSize="32                " Margin="10,498,314,0" Foreground="White" FontFamily="ArcadeClassic" HorizontalAlignment="Center"  />
-        <Label x:Name="label_Copy1" Content="© NSQUARED SYDNEY" FontSize="24" Margin="310,498,2,0" Foreground="White" FontFamily="ArcadeClassic" HorizontalAlignment="Center" Width="228"  />
+        <Label x:Name="label_Copy" Content="DYNA-WIZARDZ" FontSize="32" Margin="10,498,314,0" Foreground="White" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" HorizontalAlignment="Center"  />
+        <Label x:Name="label_Copy1" Content="© NSQUARED SYDNEY" FontSize="24" Margin="310,501,2,-3" Foreground="White" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" HorizontalAlignment="Center" Width="228"  />
     </Grid>
 </UserControl>

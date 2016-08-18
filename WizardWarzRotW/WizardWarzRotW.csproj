@@ -182,6 +182,7 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\ARCADECLASSIC.TTF" />
     <None Include="Resources\bomb_Explode.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

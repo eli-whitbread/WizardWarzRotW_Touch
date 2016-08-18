@@ -7,13 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="540" d:DesignWidth="540">
     <Grid Background="Black">
-        <Label x:Name="label" Content="Number of Players" Height="64" FontSize="32
-               " Margin="131,205,128,271" Foreground="White" FontFamily="ArcadeClassic" HorizontalAlignment="Center"  />
-        <Button x:Name="FourPlayerButton" Content="4" Width="256" Height="64" FontSize="48" PreviewMouseDown="FourPlayerButton_PreviewMouseDown" PreviewTouchDown="FourPlayerButton_PreviewTouchDown" Margin="142,274,142,202" FontFamily="ArcadeClassic" Background="#FFFFBE00" BorderBrush="#FF10266E" BorderThickness="4" />
-        <Button x:Name="SixPlayerButton" Content="6" Width="256" Height="64" FontSize="48" PreviewMouseDown="SixPlayerButton_PreviewMouseDown" PreviewTouchDown="SixPlayerButton_PreviewTouchDown" Margin="142,393,142,83" FontFamily="ArcadeClassic" Background="#FFFFBE00" BorderBrush="#FF10266E" BorderThickness="4"  />
+        <Label x:Name="label" Content="Number   of   Players" Height="64" FontSize="32
+               " Margin="115,205,118,271" Foreground="White" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" HorizontalAlignment="Center" Width="307"  />
+        <Button x:Name="FourPlayerButton" Content="4" Width="256" Height="64" FontSize="48" PreviewMouseDown="FourPlayerButton_PreviewMouseDown" PreviewTouchDown="FourPlayerButton_PreviewTouchDown" Margin="142,274,142,202" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" Background="#FFFFBE00" BorderBrush="#FF10266E" BorderThickness="4" />
+        <Button x:Name="SixPlayerButton" Content="6" Width="256" Height="64" FontSize="48" PreviewMouseDown="SixPlayerButton_PreviewMouseDown" PreviewTouchDown="SixPlayerButton_PreviewTouchDown" Margin="142,393,142,83" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" Background="#FFFFBE00" BorderBrush="#FF10266E" BorderThickness="4"  />
         <Image HorizontalAlignment="Left" Height="75" Margin="115,15,0,0" VerticalAlignment="Top" Width="293" Source="Resources/Wizard .png" Stretch="Fill"/>
         <Image HorizontalAlignment="Left" Height="66" Margin="142,95,0,0" VerticalAlignment="Top" Width="251" Source="Resources/Warz.png"/>
-        <Label x:Name="label_Copy" Content="DYNA-WIZARDZ" FontSize="32                " Margin="10,498,314,0" Foreground="White" FontFamily="ArcadeClassic" HorizontalAlignment="Center"  />
-        <Label x:Name="label_Copy1" Content="© NSQUARED SYDNEY" FontSize="24" Margin="310,498,2,0" Foreground="White" FontFamily="ArcadeClassic" HorizontalAlignment="Center" Width="228"  />
+        <Label x:Name="label_Copy" Content="DYNA-WIZARDZ" FontSize="32" Margin="10,498,314,0" Foreground="White" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" HorizontalAlignment="Center"  />
+        <Label x:Name="label_Copy1" Content="© NSQUARED SYDNEY" FontSize="24" Margin="308,502,4,-4" Foreground="White" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" HorizontalAlignment="Center" Width="228"  />
     </Grid>
 </UserControl>
