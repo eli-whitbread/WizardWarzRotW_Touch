@@ -385,8 +385,7 @@ namespace WizardWarzRotW
 
         public void initialisePlayerReferences()
         {
-            // Set the reference
-            PlayerListRef = ListOfPlayers;
+            
 
 
             // ------------------------------- Initialise Player References ------------------------------------------------
@@ -415,6 +414,9 @@ namespace WizardWarzRotW
                 GameGridXAML.Children.Add(playerControllers[i]);
                 Canvas.SetZIndex(playerControllers[i],10);
             }
+
+            // Set the reference
+            PlayerListRef = ListOfPlayers;
         }
 
 
@@ -427,24 +429,54 @@ namespace WizardWarzRotW
                     Grid.SetRow(playerControllers[playerNumber], 1);
                     break;
                 case (1):
+                    if(noOfPlayers == 6)
+                    {
+                        // BECOME PLAYER 3
+                        Grid.SetColumn(playerControllers[playerNumber], 21);
+                        Grid.SetRow(playerControllers[playerNumber], 6);
+                    }
+                    else
+                    {
+                        // AM PLAYER 2
+                        Grid.SetColumn(playerControllers[playerNumber], 21);
+                        Grid.SetRow(playerControllers[playerNumber], 1);
+                    }
+                    break;
+                case (2):
+                    if(noOfPlayers == 6)
+                    {
+                        //AM PLAYER 5
+                        Grid.SetColumn(playerControllers[playerNumber], 1);
+                        Grid.SetRow(playerControllers[playerNumber], 11);
+                    }
+                    else
+                    {
+                        // AM PLAYER 3
+                        Grid.SetColumn(playerControllers[playerNumber], 21);
+                        Grid.SetRow(playerControllers[playerNumber], 11);
+                    }                    
+                    break;
+                case (3):
+                    if(noOfPlayers == 6)
+                    {
+                        // AM PLAYER 6
+                        Grid.SetColumn(playerControllers[playerNumber], 1);
+                        Grid.SetRow(playerControllers[playerNumber], 6);
+                    }
+                    else 
+                    {
+                        // AM PLAYER 4
+                        Grid.SetColumn(playerControllers[playerNumber], 1);
+                        Grid.SetRow(playerControllers[playerNumber], 11);
+                    }                    
+                    break;
+                case (4):
                     Grid.SetColumn(playerControllers[playerNumber], 21);
                     Grid.SetRow(playerControllers[playerNumber], 1);
                     break;
-                case (2):
-                    Grid.SetColumn(playerControllers[playerNumber], 21);
-                    Grid.SetRow(playerControllers[playerNumber], 11);
-                    break;
-                case (3):
-                    Grid.SetColumn(playerControllers[playerNumber], 1);
-                    Grid.SetRow(playerControllers[playerNumber], 11);
-                    break;
-                case (4):
-                    Grid.SetColumn(playerControllers[playerNumber], 1);
-                    Grid.SetRow(playerControllers[playerNumber], 6);
-                    break;
                 case (5):
                     Grid.SetColumn(playerControllers[playerNumber], 21);
-                    Grid.SetRow(playerControllers[playerNumber], 6);
+                    Grid.SetRow(playerControllers[playerNumber], 11);
                     break;
             }
         }
@@ -541,7 +573,7 @@ namespace WizardWarzRotW
         {
             switch (tileState)
             {
-                case ("SuperBomb"):
+                case ("Superbomb"):
                     curTileState[PosX, PosY] = TileStates.Powerup;
                     powerupTileState[PosX, PosY] = PowerupTileStates.Superbomb;
                     break;

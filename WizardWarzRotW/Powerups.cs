@@ -164,7 +164,7 @@ namespace WizardWarzRotW
             // Set properties unique to each powerup
             switch (powerupName)
             {
-                case ("SuperBomb"):
+                case ("Superbomb"):
                     pName = "Superbomb";
                     powerupTile.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/Bomb2.png", UriKind.Absolute));
                     _localGameBoard.ChangeTileState(xPos, yPos, "Superbomb");
@@ -243,12 +243,13 @@ namespace WizardWarzRotW
                     {
                         // Remove the powerup, then return its name.
                         GameBoard.curTileState[col, row] = TileStates.Floor;
+                        //MessageBox.Show("Remove Tile");
                         GameGrid.Children.Remove(elem);
 
                         if (GameBoard.powerupTileState[col, row] == PowerupTileStates.Superbomb)
                         {
                             GameBoard.powerupTileState[col, row] = PowerupTileStates.Empty;
-                            //MessageBox.Show("Superbomb!");
+                            //MessageBox.Show("Superbomb!");                            
                             return "Superbomb";
                         }
                         else if (GameBoard.powerupTileState[col, row] == PowerupTileStates.Shield)

@@ -404,7 +404,7 @@ namespace WizardWarzRotW
 
                 //MessageBox.Show("Scanning for powerups.");
                 tempStateFlag = myPowerupRef.ReturnPowerup(playerX, playerY, GameBoard.ReturnGameGrid());
-
+                
                 //MessageBox.Show(string.Format("Player state: {0]", playerState));
 
                 if (tempStateFlag == "Lifeup")
@@ -424,6 +424,7 @@ namespace WizardWarzRotW
                 else
                 {
                     playerState = tempStateFlag;
+                    
                 }
 
                 Console.WriteLine("Player State: {0}", playerState);
@@ -576,13 +577,13 @@ namespace WizardWarzRotW
             switch (status)
             {
                 case ("Superbomb"):
-                    myLivesAndScore.playerHomeTile.Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\superbomb.png", UriKind.Relative)));
+                    myLivesAndScore.playerHomeTile.Fill = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/Resources/Bomb2.png", UriKind.Absolute)));
                     break;
                 case ("Shield"):
-                    myLivesAndScore.playerHomeTile.Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\shield.png", UriKind.Relative)));
+                    myLivesAndScore.playerHomeTile.Fill = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/Resources/shield.png", UriKind.Absolute)));
                     break;
                 case ("null"):
-                    myLivesAndScore.playerHomeTile.Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\Home0.png", UriKind.Relative)));
+                    myLivesAndScore.playerHomeTile.Fill = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/Resources/Home0.png", UriKind.Absolute)));
                     break;
             }
         }
