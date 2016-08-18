@@ -513,8 +513,9 @@ namespace WizardWarzRotW
                     GameGridXAML.Children.Remove(playerControllers[i]);
 
                     playerControllers[i].myLivesAndScore.playerLivesNumber = -1;
-                    noOfPlayers--;
+                    playerControllers[i].myLivesAndScore.currentScore -= 150;
 
+                    noOfPlayers--;
                     if (noOfPlayers <= 1)
                     {
                         //gameTimeMinutes = 0;

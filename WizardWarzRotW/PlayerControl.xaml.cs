@@ -289,11 +289,6 @@ namespace WizardWarzRotW
             e.Handled = true;
         }
 
-        public void UpdatePlayerStatus(string pStatus)
-        {
-
-        }
-
         private bool CheckCanAddCell(int Col, int Row)
         {
             // CHECKS WHETHER THE COORDINATES ARE VALID
@@ -352,15 +347,27 @@ namespace WizardWarzRotW
                 // The Bombs class needs these variables
                 playerX = PlayerPositions[_step, 0];
                 playerY = PlayerPositions[_step, 1];
-                Console.WriteLine(string.Format("Player {0} postion: {1} {2}", playerName, playerX, playerY));
+                //Console.WriteLine(string.Format("Player {0} postion: {1} {2}", playerName, playerX, playerY));
 
                 GameBoard.ReturnGameGrid().Children.Add(this);
 
                 // Scan tile for powerups
-                if (GameBoard.curTileState[PlayerPositions[_step, 0], PlayerPositions[_step, 1]] == TileStates.Powerup)
-                {
-                    playerState = myPowerupRef.ReturnPowerup(PlayerPositions[_step, 0], PlayerPositions[_step, 1], GameBoard.ReturnGameGrid());
-                }
+                PowerupPlayer();
+
+                //if (GameBoard.curTileState[PlayerPositions[_step, 0], PlayerPositions[_step, 1]] == TileStates.Powerup)
+                //{
+                //    playerState = myPowerupRef.ReturnPowerup(PlayerPositions[_step, 0], PlayerPositions[_step, 1], GameBoard.ReturnGameGrid());
+
+                //    if (playerState == "Lifeup")
+                //    {
+                //        myLivesAndScore.currentScore += 50;
+
+                //        if (myLivesAndScore.playerLivesNumber <= 2)
+                //            myLivesAndScore.playerLivesNumber += 1;
+
+                //        playerState = null;
+                //    }
+                //}
                 
                 _step++;
                 return;
@@ -380,6 +387,51 @@ namespace WizardWarzRotW
             }
         }
 
+        // Method that scans the tile the player is currently on for a powerup.
+        public void PowerupPlayer()
+        {
+            string tempStateFlag;
+            string previousStateFlag;
+
+            // Check the tile the player is on for power ups
+            // The last two conditions are to prevent players from being unable to pick up extra lives while they're holding onto a powerup.
+            if (GameBoard.curTileState[playerX, playerY] == TileStates.Powerup && playerState == null ||
+                playerState == "Superbomb" && GameBoard.powerupTileState[playerX, playerY] == PowerupTileStates.Lifeup ||
+                playerState == "Shield" && GameBoard.powerupTileState[playerX, playerY] == PowerupTileStates.Lifeup)
+            {
+                // Set the previousStateFlag flag
+                previousStateFlag = playerState;
+
+                //MessageBox.Show("Scanning for powerups.");
+                tempStateFlag = myPowerupRef.ReturnPowerup(playerX, playerY, GameBoard.ReturnGameGrid());
+
+                //MessageBox.Show(string.Format("Player state: {0]", playerState));
+
+                if (tempStateFlag == "Lifeup")
+                {
+                    tempStateFlag = null;
+                    myLivesAndScore.playerLivesNumber += 1;
+
+                    if (myLivesAndScore.playerLivesNumber >= 4)
+                        myLivesAndScore.playerLivesNumber = 3;
+
+                    myLivesAndScore.CalculateLives();
+
+                    // Prevent the player from losing their current powerup due to collecting an extra life
+                    playerState = previousStateFlag;
+                }
+
+                else
+                {
+                    playerState = tempStateFlag;
+                }
+
+                Console.WriteLine("Player State: {0}", playerState);
+
+                UpdatePlayerStatus(playerState);
+            }
+        }
+
         private void DropBomb()
         {
             if (StaticCollections.CheckBombPosition(colCheckCur, rowCheckCur) == true)
@@ -393,7 +445,7 @@ namespace WizardWarzRotW
                 //localGameGrid.Children.Remove(playerTile);
 
                 if (playerState == "Superbomb")
-                    bombRadius += 3;
+                    bombRadius = bombRadius * 2;
 
                 fireBomb.InitialiseBomb(colCheckCur, rowCheckCur, bombRadius);
                 //localGameGrid.Children.Add(playerTile);
@@ -407,9 +459,9 @@ namespace WizardWarzRotW
                 //MessageBox.Show(string.Format("Player state: {0}", playerState));
                 if (playerState == "Superbomb")
                 {
-                    bombRadius = 3;
+                    bombRadius = bombRadius / 2;
                     playerState = null;
-
+                    UpdatePlayerStatus("null");
                 }
             }
         }
@@ -516,10 +568,23 @@ namespace WizardWarzRotW
                 default:
 
                     break;
-
             }
+        }
 
-
+        public void UpdatePlayerStatus(string status)
+        {
+            switch (status)
+            {
+                case ("Superbomb"):
+                    myLivesAndScore.playerHomeTile.Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\superbomb.png", UriKind.Relative)));
+                    break;
+                case ("Shield"):
+                    myLivesAndScore.playerHomeTile.Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\shield.png", UriKind.Relative)));
+                    break;
+                case ("null"):
+                    myLivesAndScore.playerHomeTile.Fill = new ImageBrush(new BitmapImage(new Uri(@".\Resources\Home0.png", UriKind.Relative)));
+                    break;
+            }
         }
 
     }

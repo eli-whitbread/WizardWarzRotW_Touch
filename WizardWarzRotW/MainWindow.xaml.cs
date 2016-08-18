@@ -136,7 +136,8 @@ namespace WizardWarzRotW
                     EndScreen.ReturnEndScreenInstance().endTimer.Content = (EndScreen.ReturnEndScreenInstance().endCountdown + " seconds.");
                     break;
             }
-            MessageBox.Show(GameCANVAS.Children.Count.ToString());
+
+            //MessageBox.Show(GameCANVAS.Children.Count.ToString());
             Console.WriteLine("Current game state: {0}", currentGameState);
         }
     }

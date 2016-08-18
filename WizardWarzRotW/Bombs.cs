@@ -327,7 +327,7 @@ namespace WizardWarzRotW
                         tempPlayer.myLivesAndScore.ChangeScore(50, false);
 
                         // Grant the player points for causing other players to lose lives.
-                        myOwner.myLivesAndScore.ChangeScore(50, true);
+                        myOwner.myLivesAndScore.ChangeScore(25, true);
 
                         // Check to see if anyone died, and if there's only one player left
                         GameBoard.ReturnGameBoardInstance().CheckPlayersOnBoard();
