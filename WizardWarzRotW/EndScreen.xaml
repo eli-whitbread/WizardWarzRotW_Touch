@@ -5,31 +5,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WizardWarzRotW"
              mc:Ignorable="d" 
-             d:DesignHeight="1080" d:DesignWidth="1080"
-             Background="#FF892A2A">
-    <Grid Name="EndGrid">
-        <Canvas Width="620" Margin="230,400,230,0" >
+             d:DesignHeight="540" d:DesignWidth="540">
+    
+        <Canvas Margin="2,0,-2,0" Background="#FF111111" >
             <!--Display the top scorer-->
-            <Label Name="WinnerText" FontSize="48" Content=" is the winner!" Foreground="Black" HorizontalAlignment="Center" Canvas.Left="241" Canvas.Top="-222" />
-            <Label Name="Winner" FontSize="48" Content="PlayerX" Foreground="Black" HorizontalAlignment="Center" Canvas.Left="70" Canvas.Top="-222" />
+            <Label Name="WinnerText" FontSize="30" Content=" is the winner!" Foreground="White" HorizontalAlignment="Center" Canvas.Left="267" Canvas.Top="154" />
+            <Label Name="Winner" FontSize="30" Content="PlayerX" Foreground="White" HorizontalAlignment="Center" Canvas.Left="152" Canvas.Top="154" />
             <!--Display player scores-->
-            <Label Name="player1Label" FontSize="48" Content="Player 1: " Foreground="Gray" HorizontalAlignment="Center" />
-            <Label Name="player1Score" FontSize="48" Content="XX1" Foreground="Black" HorizontalAlignment="Center" Canvas.Left="201"/>
-            <Label Name="player2Label" FontSize="48" Content="Player 2: " Foreground="#FFF32020" HorizontalAlignment="Center" Canvas.Left="-1" Canvas.Top="74" />
-            <Label Name="player2Score" FontSize="48" Content="XX2" Foreground="Black" HorizontalAlignment="Center" Canvas.Left="198" Canvas.Top="74"/>
-            <Label Name="player3Label" FontSize="48" Content="Player 3: " Foreground="#FF4D26FF" HorizontalAlignment="Center" Canvas.Left="-1" Canvas.Top="148" />
-            <Label Name="player3Score" FontSize="48" Content="XX3" Foreground="Black" HorizontalAlignment="Center" Canvas.Left="198" Canvas.Top="148"/>
-            <Label Name="player4Label" FontSize="48" Content="Player 4: " Foreground="#FFF0DD23" HorizontalAlignment="Center" Canvas.Left="-1" Canvas.Top="222" />
-            <Label Name="player4Score" FontSize="48" Content="XX4" Foreground="Black" HorizontalAlignment="Center" Canvas.Left="198" Canvas.Top="222"/>
-            <Label Name="player5Label" FontSize="48" Content="Player 5: " Foreground="#FFAC02FB" HorizontalAlignment="Center" Canvas.Left="-1" Canvas.Top="296" />
-            <Label Name="player5Score" FontSize="48" Content="XX5" Foreground="Black" HorizontalAlignment="Center" Canvas.Left="198" Canvas.Top="296"/>
-            <Label Name="player6Label" FontSize="48" Content="Player 6: " Foreground="#FF1D8F04" HorizontalAlignment="Center" Canvas.Left="-1" Canvas.Top="370" />
-            <Label Name="player6Score" FontSize="48" Content="XX6" Foreground="Black" HorizontalAlignment="Center" Canvas.Left="198" Canvas.Top="370"/>
+            <Label Name="player1Label" FontSize="24" Content="Player 1: " Foreground="Gray" HorizontalAlignment="Center" Canvas.Left="185" Canvas.Top="206" />
+            <Label Name="player1Score" FontSize="24" Content="XX1" Foreground="White" HorizontalAlignment="Center" Canvas.Left="318" Canvas.Top="206"/>
+            <Label Name="player2Label" FontSize="24" Content="Player 2: " Foreground="#FFF32020" HorizontalAlignment="Center" Canvas.Left="185" Canvas.Top="253" />
+            <Label Name="player2Score" FontSize="24" Content="XX2" Foreground="White" HorizontalAlignment="Center" Canvas.Left="318" Canvas.Top="253"/>
+            <Label Name="player3Label" FontSize="24" Content="Player 3: " Foreground="#FF4D26FF" HorizontalAlignment="Center" Canvas.Left="185" Canvas.Top="301" />
+            <Label Name="player3Score" FontSize="24" Content="XX3" Foreground="White" HorizontalAlignment="Center" Canvas.Left="318" Canvas.Top="301"/>
+            <Label Name="player4Label" FontSize="24" Content="Player 4: " Foreground="#FFF0DD23" HorizontalAlignment="Center" Canvas.Left="185" Canvas.Top="345" />
+            <Label Name="player4Score" FontSize="24" Content="XX4" Foreground="White" HorizontalAlignment="Center" Canvas.Left="318" Canvas.Top="345"/>
+            <Label Name="player5Label" FontSize="24" Content="Player 5: " Foreground="#FFAC02FB" HorizontalAlignment="Center" Canvas.Left="185" Canvas.Top="392" />
+            <Label Name="player5Score" FontSize="24" Content="XX5" Foreground="White" HorizontalAlignment="Center" Canvas.Left="318" Canvas.Top="392"/>
+            <Label Name="player6Label" FontSize="24" Content="Player 6: " Foreground="#FF1D8F04" HorizontalAlignment="Center" Canvas.Left="185" Canvas.Top="438" />
+            <Label Name="player6Score" FontSize="24" Content="XX6" Foreground="White" HorizontalAlignment="Center" Canvas.Left="318" Canvas.Top="438"/>
             <!--Display the time until they get returned to the main menu-->
-            <Label Name="endTimerText" FontSize="48" Content="Returning to the main menu in: " Foreground="Black" HorizontalAlignment="Center" Canvas.Left="-148" Canvas.Top="518"/>
-            <Label Name="endTimer" FontSize="48" Content="10 seconds." Foreground="Black" HorizontalAlignment="Center" Canvas.Left="528" Canvas.Top="518"/>
-
-            <Image x:Name="wizardText" Height="306" Canvas.Left="-99" Canvas.Top="-454" Width="793" Source="Resources/WizardWarzText1.png"/>
+            <Label Name="endTimerText" FontSize="24" Content="Returning to the main menu in: " Foreground="White" HorizontalAlignment="Center" Canvas.Left="10" Canvas.Top="488"/>
+            <Label Name="endTimer" FontSize="36" Content="10 seconds." Foreground="White" HorizontalAlignment="Center" Canvas.Left="351" Canvas.Top="481"/>
+            <Image HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="293" Source="Resources/Wizard .png" Stretch="Fill" Canvas.Left="124" Canvas.Top="15"/>
+            <Image HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="251" Source="Resources/Warz.png" Canvas.Left="142" Canvas.Top="95"/>
         </Canvas>
-    </Grid>
+    
 </UserControl>

@@ -18,7 +18,7 @@
         <Image Name="wizard4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" Margin="136,784,880,232" 
                 Source="Resources/WIZARD1.png" Stretch="Fill">
         </Image>
-        <Image HorizontalAlignment="Left" Height="75" Margin="115,15,0,0" VerticalAlignment="Top" Width="293" Source="Resources/Wizard .png" Stretch="Fill"/>
+        <Image HorizontalAlignment="Left" Height="75" Margin="124,15,0,0" VerticalAlignment="Top" Width="293" Source="Resources/Wizard .png" Stretch="Fill"/>
         <Image HorizontalAlignment="Left" Height="66" Margin="142,95,0,0" VerticalAlignment="Top" Width="251" Source="Resources/Warz.png"/>
         <Image Name="wizardLeft" HorizontalAlignment="Left" Height="100" Margin="27,211,0,0" VerticalAlignment="Top" Width="100" Source="Resources/PlayerRight1.png"/>
         <Image Name="wizardRight" HorizontalAlignment="Left" Height="100" Margin="405,211,0,0" VerticalAlignment="Top" Width="100" Source="Resources/PlayerLeft1.png"/>

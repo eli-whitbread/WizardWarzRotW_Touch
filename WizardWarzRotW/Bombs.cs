@@ -84,7 +84,7 @@ namespace WizardWarzRotW
             explosionStep = 0;
             myTickIncrement = 0.1f;
             effectLifeTime = 5.0f;
-            timeToExplode = 6.0f;
+            timeToExplode = 8.0f;
 
             //set all fill directions as true (ie: explosion can expand in direction)
             fillDir_up = true;
@@ -278,7 +278,6 @@ namespace WizardWarzRotW
                 {
                     Rectangle explosion = new Rectangle();
 
-                    //Color tempColour = myOwner.playerColour;
                     Color tempColour = myOwner.playerColour;
                     explosion.Height = GameBoard.ReturnTileSize();
                     explosion.Width = GameBoard.ReturnTileSize();

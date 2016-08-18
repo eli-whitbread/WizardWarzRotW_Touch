@@ -401,7 +401,7 @@ namespace WizardWarzRotW
                 playerControllers[i].gridCellsArray = flrTiles;
                 playerControllers[i].myLivesAndScore = playerLives[i];
                 //playerControllers[i].initialisePlayerGridRef();
-                //playerControllers[i].myPowerupRef = new Powerup();
+                playerControllers[i].myPowerupRef = new Powerups();
                 playerControllers[i].playerName = "Player " + (i + 1).ToString();
 
                 // Add the player to the list

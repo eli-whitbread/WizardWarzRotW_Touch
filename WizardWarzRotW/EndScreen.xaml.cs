@@ -65,7 +65,7 @@ namespace WizardWarzRotW
                     Console.WriteLine("Current tick: {0}", currentTick);
                     Countdown();
                 }
-                FlashTick();
+                
             }
         }
 
@@ -126,59 +126,7 @@ namespace WizardWarzRotW
                 player5Score.Content = unsortedPlayerStats.Values.ElementAt(4);
                 player6Score.Content = unsortedPlayerStats.Values.ElementAt(5);
             }
-        }
-
-        private void FlashTick()
-        {
-
-            picWaitMove++;
-
-            if (picCount <= 3)
-            {
-                FlashText();
-            }
-            else
-            {
-                picCount = 0;
-                FlashText();
-            }
-
-            if (picWaitMove == 4)
-            {
-
-                picWaitMove = 0;
-            }
-        }
-
-        private void FlashText()
-        {
-            switch (picCount)
-            {
-                case 0:
-                    wizardText.Source = new BitmapImage(new Uri("Resources/WizardWarzText2.png", UriKind.Relative));
-                    picCount++;
-                    break;
-
-                case 1:
-                    wizardText.Source = new BitmapImage(new Uri("Resources/WizardWarzText4.png", UriKind.Relative));
-                    picCount++;
-                    break;
-
-                case 2:
-                    wizardText.Source = new BitmapImage(new Uri("Resources/WizardWarzText3.png", UriKind.Relative));
-                    picCount++;
-                    break;
-
-                case 3:
-                    wizardText.Source = new BitmapImage(new Uri("Resources/WizardWarzText1.png", UriKind.Relative));
-                    picCount++;
-                    break;
-
-                default:
-                    wizardText.Source = new BitmapImage(new Uri("Resources/WizardWarzText.png", UriKind.Relative));
-                    picCount = 0;
-                    break;
-            }
-        }
+        }             
+        
     }
 }

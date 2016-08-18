@@ -66,7 +66,7 @@ namespace WizardWarzRotW
             //end = EndScreenInstance;
 
             // Reveal the title screen.
-            TitleScreenInstance.Visibility = Visibility.Visible;
+            ChangeGameState("title");
         }
 
 
@@ -75,12 +75,16 @@ namespace WizardWarzRotW
             switch (GameState)
             {
                 case ("title"):
+                    TitleScreenInstance.Visibility = Visibility.Visible;
                     AudioMan.titleOrMain = false;
                     currentGameState = GameStates.Title;
 
-                    if (end.Visibility == Visibility.Visible)
-                        end.Visibility = Visibility.Hidden;
-
+                    if (end != null)
+                    {
+                        if (end.Visibility == Visibility.Visible)
+                            end.Visibility = Visibility.Hidden;
+                        GameCANVAS.Children.RemoveAt(3);
+                    }
                     AudioMan.StopTrack();
                     AudioMan.playWizardOne();
 
@@ -94,11 +98,9 @@ namespace WizardWarzRotW
                     break;
 
                 case ("game"):
-                    game = new GameBoard();
-                    end = new EndScreen();
-                    end.Visibility = Visibility.Hidden;
+                    game = new GameBoard();                   
+                    
                     GameCANVAS.Children.Add(game);
-                    GameCANVAS.Children.Add(end);
                     currentGameState = GameStates.Game;
 
                     menu.Visibility = Visibility.Hidden;
@@ -109,17 +111,22 @@ namespace WizardWarzRotW
                     AudioMan.playMainMusic();
 
                     // Set the timer (plus text) and start it. Format: seconds, minutes
-                    GameBoard.ReturnGameBoardInstance().ChangeTimerText(59, 3);
+                    GameBoard.ReturnGameBoardInstance().ChangeTimerText(5, 0);
                     GameTimer.ReturnTimerInstance().StartGameTimer();
-                    GameTimer.ReturnTimerInstance().GameTimeSeconds = 59;
-                    GameTimer.ReturnTimerInstance().GameTimeMinutes = 3;
+                    GameTimer.ReturnTimerInstance().GameTimeSeconds = 5;
+                    GameTimer.ReturnTimerInstance().GameTimeMinutes = 0;
                     GameTimer.ReturnTimerInstance().currentTick = 0;
                     break;
 
                 case ("end"):
                     currentGameState = GameStates.EndScreen;
+                    game.Visibility = Visibility.Collapsed;
+                    end = new EndScreen();
+                    GameCANVAS.Children.RemoveAt(3);
+                                      
+                    GameCANVAS.Children.Add(end);            
 
-                    game.Visibility = Visibility.Hidden;
+                    
                     end.Visibility = Visibility.Visible;
 
                     // Set the end timer, timer text, and start the timer.
@@ -129,7 +136,7 @@ namespace WizardWarzRotW
                     EndScreen.ReturnEndScreenInstance().endTimer.Content = (EndScreen.ReturnEndScreenInstance().endCountdown + " seconds.");
                     break;
             }
-
+            MessageBox.Show(GameCANVAS.Children.Count.ToString());
             Console.WriteLine("Current game state: {0}", currentGameState);
         }
     }
