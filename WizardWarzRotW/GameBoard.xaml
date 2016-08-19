@@ -35,7 +35,9 @@
             <Grid Name="GameGridXAML">
                 
             </Grid>
-            
+            <!--<local:BombDroppedControl/>-->
+            <!--<local:ExplosionTileControl/>-->
+            <!--<local:ExplosionRadiusControl/>-->
         </DockPanel>
         <!--<local:PlayerControl/>-->
 

@@ -113,6 +113,36 @@ namespace WizardWarzRotW.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BombSheet_4step {
+            get {
+                object obj = ResourceManager.GetObject("BombSheet_4step", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CentreExplosion {
+            get {
+                object obj = ResourceManager.GetObject("CentreExplosion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CentreExplosionEnd {
+            get {
+                object obj = ResourceManager.GetObject("CentreExplosionEnd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CharacterSheet_Left {
             get {
                 object obj = ResourceManager.GetObject("CharacterSheet_Left", resourceCulture);
@@ -203,6 +233,36 @@ namespace WizardWarzRotW.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HorizontalExplosion_End {
+            get {
+                object obj = ResourceManager.GetObject("HorizontalExplosion_End", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HorizontalExplosion_Left {
+            get {
+                object obj = ResourceManager.GetObject("HorizontalExplosion_Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HorizontalExplosion_Right {
+            get {
+                object obj = ResourceManager.GetObject("HorizontalExplosion_Right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Indestructible {
             get {
                 object obj = ResourceManager.GetObject("Indestructible", resourceCulture);
@@ -256,6 +316,36 @@ namespace WizardWarzRotW.Properties {
         internal static System.Drawing.Bitmap superbomb {
             get {
                 object obj = ResourceManager.GetObject("superbomb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VerticalExplosion_Down {
+            get {
+                object obj = ResourceManager.GetObject("VerticalExplosion_Down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VerticalExplosion_End {
+            get {
+                object obj = ResourceManager.GetObject("VerticalExplosion_End", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VerticalExplosion_Up {
+            get {
+                object obj = ResourceManager.GetObject("VerticalExplosion_Up", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

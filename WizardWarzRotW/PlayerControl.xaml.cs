@@ -88,10 +88,10 @@ namespace WizardWarzRotW
             _count = 0;
             PlayerPositions = new int[20, 2];
             ResetPlayerPositionArray();
-            facingRight = true;
             gameCanRef = GameBoard.ReturnMainCanvas();
             facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/ZombieHunter_SpriteSheet.png", UriKind.Absolute));
             facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/ZombieHunter_SpriteSheet_facingLeft.png", UriKind.Absolute));
+            facingRight = true;
             highlightLocalGrid = GameBoard.ReturnGameGrid();
             Loaded += PlayerControl_Loaded;
         }

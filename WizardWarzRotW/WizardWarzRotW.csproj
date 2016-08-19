@@ -59,9 +59,18 @@
     <Compile Include="AudioManager.xaml.cs">
       <DependentUpon>AudioManager.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BombDroppedControl.xaml.cs">
+      <DependentUpon>BombDroppedControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Bombs.cs" />
     <Compile Include="EndScreen.xaml.cs">
       <DependentUpon>EndScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExplosionRadiusControl.xaml.cs">
+      <DependentUpon>ExplosionRadiusControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExplosionTileControl.xaml.cs">
+      <DependentUpon>ExplosionTileControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="GameTimer.cs" />
     <Compile Include="LivesAndScore.xaml.cs">
@@ -89,7 +98,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BombDroppedControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EndScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExplosionRadiusControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExplosionTileControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -288,6 +309,33 @@
   <ItemGroup>
     <Resource Include="Resources\Quit2.png" />
     <Resource Include="Resources\Start2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BombSheet_4step.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CentreExplosion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HorizontalExplosion_Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CentreExplosionEnd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HorizontalExplosion_End.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HorizontalExplosion_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VerticalExplosion_Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VerticalExplosion_End.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VerticalExplosion_Up.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
