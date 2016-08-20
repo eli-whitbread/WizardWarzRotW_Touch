@@ -338,12 +338,6 @@
     <Resource Include="Resources\VerticalExplosion_Up.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\SpriteSheetAqua_Left.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\SpriteSheetAqua_Right.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\SpriteSheetBlue_Left.png" />
   </ItemGroup>
   <ItemGroup>
@@ -356,12 +350,6 @@
     <Resource Include="Resources\SpriteSheetGreen_Right.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\SpriteSheetPurple_Left.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\SpriteSheetPurple_Right.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\SpriteSheetRed_Left.png" />
   </ItemGroup>
   <ItemGroup>
@@ -372,6 +360,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\SpriteSheetYellow_Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpriteSheetPurple_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpriteSheetPurple_Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpriteSheetSilver_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpriteSheetSilver_Right.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

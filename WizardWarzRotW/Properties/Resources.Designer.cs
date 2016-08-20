@@ -303,26 +303,6 @@ namespace WizardWarzRotW.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SpriteSheetAqua_Left {
-            get {
-                object obj = ResourceManager.GetObject("SpriteSheetAqua_Left", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SpriteSheetAqua_Right {
-            get {
-                object obj = ResourceManager.GetObject("SpriteSheetAqua_Right", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap SpriteSheetBlue_Left {
             get {
                 object obj = ResourceManager.GetObject("SpriteSheetBlue_Left", resourceCulture);
@@ -396,6 +376,26 @@ namespace WizardWarzRotW.Properties {
         internal static System.Drawing.Bitmap SpriteSheetRed_Right {
             get {
                 object obj = ResourceManager.GetObject("SpriteSheetRed_Right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpriteSheetSilver_Left {
+            get {
+                object obj = ResourceManager.GetObject("SpriteSheetSilver_Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpriteSheetSilver_Right {
+            get {
+                object obj = ResourceManager.GetObject("SpriteSheetSilver_Right", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

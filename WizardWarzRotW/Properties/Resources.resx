@@ -217,12 +217,6 @@
   <data name="VerticalExplosion_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VerticalExplosion_Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SpriteSheetAqua_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SpriteSheetAqua_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SpriteSheetAqua_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SpriteSheetAqua_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="SpriteSheetBlue_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SpriteSheetBlue_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -235,12 +229,6 @@
   <data name="SpriteSheetGreen_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SpriteSheetGreen_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SpriteSheetPurple_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SpriteSheetPurple_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SpriteSheetPurple_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SpriteSheetPurple_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="SpriteSheetRed_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SpriteSheetRed_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -252,5 +240,17 @@
   </data>
   <data name="SpriteSheetYellow_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SpriteSheetYellow_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpriteSheetPurple_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SpriteSheetPurple_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpriteSheetPurple_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SpriteSheetPurple_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpriteSheetSilver_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SpriteSheetSilver_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpriteSheetSilver_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SpriteSheetSilver_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

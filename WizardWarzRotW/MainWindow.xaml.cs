@@ -82,10 +82,11 @@ namespace WizardWarzRotW
                     if (end != null)
                     {
                         if (end.Visibility == Visibility.Visible)
+                        {
                             end.Visibility = Visibility.Hidden;
-                        //MessageBox.Show(GameCANVAS.Children.Count.ToString());
-                        //GameCANVAS.Children.RemoveAt(4);
-                        GameCANVAS.Children.RemoveAt(3);
+                            //MessageBox.Show(GameCANVAS.Children.Count.ToString());
+                            GameCANVAS.Children.RemoveAt(3);
+                        }
                     }
                     AudioMan.StopTrack();
                     AudioMan.playWizardOne();
@@ -125,7 +126,7 @@ namespace WizardWarzRotW
                     game.Visibility = Visibility.Collapsed;
                     end = new EndScreen();
                     //MessageBox.Show(GameCANVAS.Children.Count.ToString());
-                    GameCANVAS.Children.RemoveAt(GameCANVAS.Children.Count - 2);
+                    GameCANVAS.Children.RemoveAt(GameCANVAS.Children.Count - 1);
                                       
                     GameCANVAS.Children.Add(end);            
 
