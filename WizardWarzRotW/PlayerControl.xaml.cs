@@ -190,7 +190,7 @@ namespace WizardWarzRotW
             //Grid.SetRow(pTile, 1);
             //myGrid.Children.Add(pTile);
 
-
+            DropBomb();
         }
 
         private void UserControl_PreviewTouchDown(object sender, TouchEventArgs e)
@@ -435,9 +435,13 @@ namespace WizardWarzRotW
 
         private void DropBomb()
         {
+            //used for non-touch bomb testing
+            //colCheckCur = 1;
+           // rowCheckCur = 1;
+            
             if (StaticCollections.CheckBombPosition(colCheckCur, rowCheckCur) == true)
             {
-                //Debug.WriteLine("Dropped Bomb!");
+                Debug.WriteLine("Dropped Bomb!");
 
                 Bombs fireBomb = new Bombs(GameBoard.ReturnGameGrid());
                 fireBomb.managerRef = managerRef;

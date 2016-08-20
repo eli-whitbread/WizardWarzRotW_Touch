@@ -22,9 +22,10 @@ namespace WizardWarzRotW
     {
         bool isHorizontal;
         SpritesheetImage explosionRadiusImg;
-        BitmapImage horizRightImage, horizLeftImage, vertUpImage, vertDownImage, horizEndImage, vertEndImage;
+        BitmapImage horizRightImage, horizLeftImage, vertUpImage, vertDownImage, horizEndImage, vertEndImage, mySource;
+        int myFrameX, myFrameY;
 
-        public ExplosionRadiusControl()
+        public ExplosionRadiusControl(string dir)
         {
             InitializeComponent();
             horizRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/HorizontalExplosion_Right.png", UriKind.Absolute));
@@ -33,16 +34,18 @@ namespace WizardWarzRotW
             vertDownImage = new BitmapImage(new Uri("pack://application:,,,/Resources/VerticalExplosion_Down.png", UriKind.Absolute));
             horizEndImage = new BitmapImage(new Uri("pack://application:,,,/Resources/HorizontalExplosion_End.png", UriKind.Absolute));
             vertEndImage = new BitmapImage(new Uri("pack://application:,,,/Resources/VerticalExplosion_End.png", UriKind.Absolute));
+            SetExplosionTileDirection(dir);
             Loaded += ExplosionRadiusControl_Loaded;
         }
 
         private void ExplosionRadiusControl_Loaded(object sender, RoutedEventArgs e)
         {
+            
             explosionRadiusImg = new SpritesheetImage()
             {
-                Source = horizRightImage,
-                FrameMaxX = 3,
-                FrameMaxY = 1,
+                Source = mySource,
+                FrameMaxX = myFrameX,
+                FrameMaxY = myFrameY,
                 FrameRate = 30,
                 Width = 64,
                 Height = 64,
@@ -62,8 +65,7 @@ namespace WizardWarzRotW
                 }
             };
 
-            SetExplosionTileDirection("Right");
-
+            
             myERCanvas.Children.Add(explosionRadiusImg);
         }
 
@@ -72,23 +74,27 @@ namespace WizardWarzRotW
             switch (dir)
             {
                 case "Left":
-                    explosionRadiusImg.Source = horizLeftImage;
+                    mySource = horizLeftImage;
+                    myFrameX = 3;
+                    myFrameY = 1;
                     isHorizontal = true;
                     break;
                 case "Right":
-                    explosionRadiusImg.Source = horizRightImage;
+                    mySource = horizRightImage;
+                    myFrameX = 3;
+                    myFrameY = 1;
                     isHorizontal = true;
                     break;
                 case "Up":
-                    explosionRadiusImg.Source = vertUpImage;
-                    explosionRadiusImg.FrameMaxX = 1;
-                    explosionRadiusImg.FrameMaxY = 3;
+                    mySource = vertUpImage;
+                    myFrameX = 1;
+                    myFrameY = 3;
                     isHorizontal = false;
                     break;
                 case "Down":
-                    explosionRadiusImg.Source = vertDownImage;
-                    explosionRadiusImg.FrameMaxX = 1;
-                    explosionRadiusImg.FrameMaxY = 3;
+                    mySource = vertDownImage;
+                    myFrameX = 1;
+                    myFrameY = 3;
                     isHorizontal = false;
                     break;
                 default:

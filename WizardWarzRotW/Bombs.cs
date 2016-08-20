@@ -19,13 +19,16 @@ namespace WizardWarzRotW
         public float effectLifeTime, timeToExplode;
         float myTime, myTickIncrement;
         bool fillDir_up, fillDir_down, fillDir_left, fillDir_right;
-        Int32 explosionStep;
+        Int32 explosionStep, prevExplosionRow, prevExplosionCol;
         Int32 count = 1, distCount = 0;
         Int32 countUp = 1, countDown = 1, countLeft = 1, countRight = 1;
         Int32[,] explosionMatrix;
         bool iCanDestroy;
-        Image bombImage;
-        List<Rectangle> explosionTiles;
+        //Image bombImage;
+        BombDroppedControl bombImage;
+        ExplosionTileControl explosionCenter;
+        //List<Rectangle> explosionTiles;
+        List<ExplosionRadiusControl> explosionTiles;
         List<FrameworkElement> bombedCells = new List<FrameworkElement>();
         AudioManager playBombSndFX = new AudioManager();
 
@@ -67,11 +70,12 @@ namespace WizardWarzRotW
         private void DestroyBomb()
         {
 
-            foreach (Rectangle exp in explosionTiles)
+            //foreach (Rectangle exp in explosionTiles)
+            foreach (ExplosionRadiusControl exp in explosionTiles)
             {
                 curGameGrid.Children.Remove(exp);
             }
-
+            curGameGrid.Children.Remove(explosionCenter); 
             myGameTimerRef.processFrameEvent_TICK -= MyGameTimerRef_tickEvent;
             StaticCollections.RemoveBomb(this);
 
@@ -79,7 +83,8 @@ namespace WizardWarzRotW
 
         public void InitialiseBomb(Int32 startX, Int32 startY, Int32 explosionDist)
         {
-            explosionTiles = new List<Rectangle>();
+            //explosionTiles = new List<Rectangle>();
+            explosionTiles = new List<ExplosionRadiusControl>();
             myTime = 0.0f;
             explosionStep = 0;
             myTickIncrement = 0.1f;
@@ -193,14 +198,8 @@ namespace WizardWarzRotW
             Int32 colPos = explosionMatrix[0, 0];
             Int32 rowPos = explosionMatrix[0, 1];
 
-
-            bombImage = new Image();
-            bombImage.Height = GameBoard.ReturnTileSize();
-            bombImage.Width = GameBoard.ReturnTileSize();
-
-            bombImage.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/BombEx.png", UriKind.Absolute));
-            bombImage.IsHitTestVisible = false;
-
+            bombImage = new BombDroppedControl();
+            
             Grid.SetColumn(bombImage, colPos);
             Grid.SetRow(bombImage, rowPos);
             curGameGrid.Children.Add(bombImage);
@@ -264,35 +263,49 @@ namespace WizardWarzRotW
                 {
                     curGameGrid.Children.Remove(bombImage);
                     playBombSndFX.playBombExplode();
-                    bombImage = new Image();
-                    bombImage.Height = GameBoard.ReturnTileSize();
-                    bombImage.Width = GameBoard.ReturnTileSize();
 
-
-                    Grid.SetColumn(bombImage, colPos);
-                    Grid.SetRow(bombImage, rowPos);
-                    curGameGrid.Children.Add(bombImage);
+                    explosionCenter = new ExplosionTileControl();
+                    Grid.SetColumn(explosionCenter, colPos);
+                    Grid.SetRow(explosionCenter, rowPos);
+                    curGameGrid.Children.Add(explosionCenter);
+                    prevExplosionCol = colPos;
+                    prevExplosionRow = rowPos;
+                    
                 }
 
-                if (colPos != 0 || rowPos != 0)
+                else if (colPos != 0 || rowPos != 0)
                 {
-                    Rectangle explosion = new Rectangle();
+                    
+                    ExplosionRadiusControl explosion;
 
-                    Color tempColour = myOwner.playerColour;
-                    explosion.Height = GameBoard.ReturnTileSize();
-                    explosion.Width = GameBoard.ReturnTileSize();
-
-                    explosion.Fill = new SolidColorBrush(tempColour);
-                    explosion.Fill.Opacity = 0.5f;
-                    explosion.IsHitTestVisible = false;
+                    if (colPos < prevExplosionCol)
+                    {
+                        explosion = new ExplosionRadiusControl("Left");
+                    }
+                    else if (colPos > prevExplosionCol)
+                    {
+                        explosion = new ExplosionRadiusControl("Right");
+                    }
+                    else if (rowPos < prevExplosionRow)
+                    {
+                        explosion = new ExplosionRadiusControl("Down");
+                    }
+                    else
+                    {
+                        explosion = new ExplosionRadiusControl("Up");
+                    }
+                    
                     explosionTiles.Add(explosion);
 
                     Grid.SetColumn(explosion, colPos);
                     Grid.SetRow(explosion, rowPos);
+                    
                     curGameGrid.Children.Add(explosion);
-
+                    
+                    
                 }
                 explosionStep++;
+                
             }
             else
             {
