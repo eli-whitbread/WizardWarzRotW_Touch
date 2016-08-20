@@ -190,7 +190,8 @@ namespace WizardWarzRotW
             //Grid.SetRow(pTile, 1);
             //myGrid.Children.Add(pTile);
 
-            DropBomb();
+            //used for non-touch bomb testing
+            //DropBomb();
         }
 
         private void UserControl_PreviewTouchDown(object sender, TouchEventArgs e)
