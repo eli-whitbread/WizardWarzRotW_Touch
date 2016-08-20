@@ -290,9 +290,9 @@
     <Resource Include="Resources\BallOfMagic.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\SpriteSheetBlue.png">
+    <None Include="Resources\SpriteSheetBlue.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\TitleSprites\SSB1.png" />
@@ -336,6 +336,42 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\VerticalExplosion_Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpriteSheetAqua_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpriteSheetAqua_Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpriteSheetBlue_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpriteSheetBlue_Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpriteSheetGreen_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpriteSheetGreen_Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpriteSheetPurple_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpriteSheetPurple_Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpriteSheetRed_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpriteSheetRed_Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpriteSheetYellow_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpriteSheetYellow_Right.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

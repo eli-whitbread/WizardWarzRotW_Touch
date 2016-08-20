@@ -48,7 +48,7 @@ namespace WizardWarzRotW
         public Image[,] gridCellsArray = null;
 
         //Animated Tile
-        //SpritesheetImage animPlayerTile;
+        SpritesheetImage animPlayerTile;
         public BitmapImage facingRightImage, facingLeftImage;
         public bool facingRight;
 
@@ -89,8 +89,8 @@ namespace WizardWarzRotW
             PlayerPositions = new int[20, 2];
             ResetPlayerPositionArray();
             gameCanRef = GameBoard.ReturnMainCanvas();
-            facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/ZombieHunter_SpriteSheet.png", UriKind.Absolute));
-            facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/ZombieHunter_SpriteSheet_facingLeft.png", UriKind.Absolute));
+            //facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/ZombieHunter_SpriteSheet.png", UriKind.Absolute));
+            //facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/ZombieHunter_SpriteSheet_facingLeft.png", UriKind.Absolute));
             facingRight = true;
             highlightLocalGrid = GameBoard.ReturnGameGrid();
             Loaded += PlayerControl_Loaded;
@@ -160,11 +160,11 @@ namespace WizardWarzRotW
         private void PlayerControl_Loaded(object sender, RoutedEventArgs e)
         {
             
-            SpritesheetImage animPlayerTile = new SpritesheetImage()
+            animPlayerTile = new SpritesheetImage()
             {
                 Source = facingRightImage,
-                FrameMaxX = 5,
-                FrameMaxY = 2,
+                FrameMaxX = 4,
+                FrameMaxY = 1,
                 FrameRate = 30,
                 Width = 64,
                 Height = 64,
@@ -345,6 +345,17 @@ namespace WizardWarzRotW
 
                 GameBoard.ReturnGameGrid().Children.Remove(this);
 
+                if (_step > 0)
+                {
+                    if (PlayerPositions[_step, 1] > PlayerPositions[_step - 1, 1])
+                    {
+                        SwitchSpriteDirection(true);
+                    }
+                    else if(PlayerPositions[_step, 1] < PlayerPositions[_step - 1, 1])
+                    {
+                        SwitchSpriteDirection(false);
+                    }
+                }
                 // The Bombs class needs these variables
                 playerX = PlayerPositions[_step, 0];
                 playerY = PlayerPositions[_step, 1];
@@ -593,5 +604,60 @@ namespace WizardWarzRotW
             }
         }
 
+        public void SetPlayerSpritesheet()
+        {
+            switch (playerName)
+            {
+                // PLAYER 1
+                case ("Player 1"):
+                    facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetAqua_Right.png", UriKind.Absolute));
+                    facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetAqua_Left.png", UriKind.Absolute));
+                    break;
+                // PLAYER 2
+                case ("Player 2"):
+                    facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetRed_Right.png", UriKind.Absolute));
+                    facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetRed_Left.png", UriKind.Absolute));
+                    break;
+                // PLAYER 3
+                case ("Player 3"):
+                    facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetBlue_Right.png", UriKind.Absolute));
+                    facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetBlue_Left.png", UriKind.Absolute));
+                    break;
+                // PLAYER 4
+                case ("Player 4"):
+                    facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetYellow_Right.png", UriKind.Absolute));
+                    facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetYellow_Left.png", UriKind.Absolute));
+                    break;
+                // PLAYER 5
+                case ("Player 5"):
+                    facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetPurple_Right.png", UriKind.Absolute));
+                    facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetPurple_Left.png", UriKind.Absolute));
+                    break;
+                // PLAYER 6
+                case ("Player 6"):
+                    facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetGreen_Right.png", UriKind.Absolute));
+                    facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetGreen_Left.png", UriKind.Absolute));
+                    break;
+                default:
+
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Change the player's sprite acording to the passed bool "facingRight". true = facingRight, false for left
+        /// </summary>
+        /// <param name="facingRight"></param>
+        private void SwitchSpriteDirection(bool facingRight)
+        {
+            if(facingRight == false)
+            {
+                animPlayerTile.Source = facingLeftImage;
+            }
+            else
+            {
+                animPlayerTile.Source = facingRightImage;
+            }
+        }
     }
 }

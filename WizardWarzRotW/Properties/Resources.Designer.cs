@@ -303,6 +303,126 @@ namespace WizardWarzRotW.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SpriteSheetAqua_Left {
+            get {
+                object obj = ResourceManager.GetObject("SpriteSheetAqua_Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpriteSheetAqua_Right {
+            get {
+                object obj = ResourceManager.GetObject("SpriteSheetAqua_Right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpriteSheetBlue_Left {
+            get {
+                object obj = ResourceManager.GetObject("SpriteSheetBlue_Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpriteSheetBlue_Right {
+            get {
+                object obj = ResourceManager.GetObject("SpriteSheetBlue_Right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpriteSheetGreen_Left {
+            get {
+                object obj = ResourceManager.GetObject("SpriteSheetGreen_Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpriteSheetGreen_Right {
+            get {
+                object obj = ResourceManager.GetObject("SpriteSheetGreen_Right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpriteSheetPurple_Left {
+            get {
+                object obj = ResourceManager.GetObject("SpriteSheetPurple_Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpriteSheetPurple_Right {
+            get {
+                object obj = ResourceManager.GetObject("SpriteSheetPurple_Right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpriteSheetRed_Left {
+            get {
+                object obj = ResourceManager.GetObject("SpriteSheetRed_Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpriteSheetRed_Right {
+            get {
+                object obj = ResourceManager.GetObject("SpriteSheetRed_Right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpriteSheetYellow_Left {
+            get {
+                object obj = ResourceManager.GetObject("SpriteSheetYellow_Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpriteSheetYellow_Right {
+            get {
+                object obj = ResourceManager.GetObject("SpriteSheetYellow_Right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap StoneTile {
             get {
                 object obj = ResourceManager.GetObject("StoneTile", resourceCulture);

@@ -402,6 +402,7 @@ namespace WizardWarzRotW
                 //playerControllers[i].initialisePlayerGridRef();
                 playerControllers[i].myPowerupRef = new Powerups();
                 playerControllers[i].playerName = "Player " + (i + 1).ToString();
+                playerControllers[i].SetPlayerSpritesheet();
 
                 // Add the player to the list
                 ListOfPlayers.Add(playerControllers[i]);
