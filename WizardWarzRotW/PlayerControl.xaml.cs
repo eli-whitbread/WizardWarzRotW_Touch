@@ -184,6 +184,7 @@ namespace WizardWarzRotW
             myCanvas.Children.Add(animPlayerTile);
             Canvas.SetTop(animPlayerTile, centerPoint.Y - 32);
             Canvas.SetLeft(animPlayerTile, centerPoint.X - 32);
+            SetDirection();
             //animPlayerTile.PlaysRemaining = 10;
             //
             //Grid.SetColumn(pTile, 1);
@@ -347,11 +348,11 @@ namespace WizardWarzRotW
 
                 if (_step > 0)
                 {
-                    if (PlayerPositions[_step, 1] > PlayerPositions[_step - 1, 1])
+                    if (PlayerPositions[_step, 0] > PlayerPositions[_step - 1, 0])
                     {
                         SwitchSpriteDirection(true);
                     }
-                    else if(PlayerPositions[_step, 1] < PlayerPositions[_step - 1, 1])
+                    else if(PlayerPositions[_step, 0] < PlayerPositions[_step - 1, 0])
                     {
                         SwitchSpriteDirection(false);
                     }
@@ -654,7 +655,7 @@ namespace WizardWarzRotW
         /// Change the player's sprite acording to the passed bool "facingRight". true = facingRight, false for left
         /// </summary>
         /// <param name="facingRight"></param>
-        private void SwitchSpriteDirection(bool facingRight)
+        public void SwitchSpriteDirection(bool facingRight)
         {
             if(facingRight == false)
             {
@@ -665,5 +666,62 @@ namespace WizardWarzRotW
                 animPlayerTile.Source = facingRightImage;
             }
         }
+
+        public void SetDirection()
+        {
+            
+            switch (playerName)
+            {
+                
+                case ("Player 1"):
+                    
+                    break;
+                case ("Player 2"):
+                    if (GameBoard.ReturnNumberOfPlayer() == 6)
+                    {
+                        // BECOME PLAYER 3
+                        SwitchSpriteDirection(false);
+                    }
+                    else
+                    {
+                        // AM PLAYER 2
+                        SwitchSpriteDirection(false);
+                    }
+                    break;
+                case ("Player 3"):
+                    if (GameBoard.ReturnNumberOfPlayer() == 6)
+                    {
+                        //AM PLAYER 5
+                    }
+                    else
+                    {
+                        // AM PLAYER 3
+                        SwitchSpriteDirection(false);
+                    }
+                    break;
+                case ("Player 4"):
+                    if (GameBoard.ReturnNumberOfPlayer() == 6)
+                    {
+                        // AM PLAYER 6
+                    }
+                    else
+                    {
+                        // AM PLAYER 4
+                    }
+                    break;
+                case ("Player 5"):
+
+                    // Am PLAYER 2
+                    SwitchSpriteDirection(false);
+                    break;
+                case ("Player 6"):
+
+                    // Am PLAYER 4
+                    SwitchSpriteDirection(false);
+                    break;
+            }
+        
+        }
+
     }
 }

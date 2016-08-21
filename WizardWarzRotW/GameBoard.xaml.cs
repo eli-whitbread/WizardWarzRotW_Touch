@@ -435,12 +435,14 @@ namespace WizardWarzRotW
                         // BECOME PLAYER 3
                         Grid.SetColumn(playerControllers[playerNumber], 21);
                         Grid.SetRow(playerControllers[playerNumber], 6);
+                        
                     }
                     else
                     {
                         // AM PLAYER 2
                         Grid.SetColumn(playerControllers[playerNumber], 21);
                         Grid.SetRow(playerControllers[playerNumber], 1);
+                        
                     }
                     break;
                 case (2):
@@ -455,6 +457,7 @@ namespace WizardWarzRotW
                         // AM PLAYER 3
                         Grid.SetColumn(playerControllers[playerNumber], 21);
                         Grid.SetRow(playerControllers[playerNumber], 11);
+                        
                     }                    
                     break;
                 case (3):
@@ -474,10 +477,12 @@ namespace WizardWarzRotW
                 case (4):
                     Grid.SetColumn(playerControllers[playerNumber], 21);
                     Grid.SetRow(playerControllers[playerNumber], 1);
+                    
                     break;
                 case (5):
                     Grid.SetColumn(playerControllers[playerNumber], 21);
                     Grid.SetRow(playerControllers[playerNumber], 11);
+                    
                     break;
             }
         }
