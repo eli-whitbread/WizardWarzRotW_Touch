@@ -84,8 +84,8 @@ namespace WizardWarzRotW
                         if (end.Visibility == Visibility.Visible)
                         {
                             end.Visibility = Visibility.Hidden;
-                            //MessageBox.Show(GameCANVAS.Children.Count.ToString());
-                            //GameCANVAS.Children.RemoveAt(3);
+                            game = null;
+                            end = null;
                         }
                     }
 
@@ -101,13 +101,14 @@ namespace WizardWarzRotW
                     break;
 
                 case ("game"):
-                    if (game != null)
+                    if (game == null)
                     {
                         game = null;
 
                         game = new GameBoard();
                         GameCANVAS.Children.Add(game);
                     }
+                    
                      
                     currentGameState = GameStates.Game;
 
@@ -119,10 +120,10 @@ namespace WizardWarzRotW
                     AudioMan.playMainMusic();
 
                     // Set the timer (plus text) and start it. Format: seconds, minutes
-                    GameBoard.ReturnGameBoardInstance().ChangeTimerText(5, 0);
+                    GameBoard.ReturnGameBoardInstance().ChangeTimerText(0, 4);
                     GameTimer.ReturnTimerInstance().StartGameTimer();
-                    GameTimer.ReturnTimerInstance().GameTimeSeconds = 5;
-                    GameTimer.ReturnTimerInstance().GameTimeMinutes = 0;
+                    GameTimer.ReturnTimerInstance().GameTimeSeconds = 0;
+                    GameTimer.ReturnTimerInstance().GameTimeMinutes = 4;
                     GameTimer.ReturnTimerInstance().currentTick = 0;
                     break;
 
@@ -130,15 +131,14 @@ namespace WizardWarzRotW
                     currentGameState = GameStates.EndScreen;
                     game.Visibility = Visibility.Collapsed;
 
-                    if (end != null)
+                    if (end == null)
                     {
                         end = null;
-                        end = new EndScreen();
-                    }
-                    //MessageBox.Show(GameCANVAS.Children.Count.ToString());
 
-                   // GameCANVAS.Children.RemoveAt(GameCANVAS.Children.Count - 1);
-                    GameCANVAS.Children.Add(end);            
+                        end = new EndScreen();
+                        GameCANVAS.Children.Add(end);
+                    }
+                                
                     end.Visibility = Visibility.Visible;
 
                     // Set the end timer, timer text, and start the timer.
