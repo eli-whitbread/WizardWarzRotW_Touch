@@ -72,8 +72,6 @@ namespace WizardWarzRotW
 
         public void ChangeGameState(string GameState)
         {
-
-
             switch (GameState)
             {
                 case ("title"):
@@ -87,7 +85,7 @@ namespace WizardWarzRotW
                         {
                             end.Visibility = Visibility.Hidden;
                             //MessageBox.Show(GameCANVAS.Children.Count.ToString());
-                            GameCANVAS.Children.RemoveAt(3);
+                            //GameCANVAS.Children.RemoveAt(3);
                         }
                     }
 
@@ -131,9 +129,15 @@ namespace WizardWarzRotW
                 case ("end"):
                     currentGameState = GameStates.EndScreen;
                     game.Visibility = Visibility.Collapsed;
-                    end = new EndScreen();
+
+                    if (end != null)
+                    {
+                        end = null;
+                        end = new EndScreen();
+                    }
                     //MessageBox.Show(GameCANVAS.Children.Count.ToString());
-                    GameCANVAS.Children.RemoveAt(GameCANVAS.Children.Count - 1);
+
+                   // GameCANVAS.Children.RemoveAt(GameCANVAS.Children.Count - 1);
                     GameCANVAS.Children.Add(end);            
                     end.Visibility = Visibility.Visible;
 
