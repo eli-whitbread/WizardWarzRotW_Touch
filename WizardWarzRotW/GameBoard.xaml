@@ -19,12 +19,12 @@
             <!--Player 5 User Control-->
             <Grid Name="TopPanel2" DockPanel.Dock="Top" HorizontalAlignment="Right" Height="64" Background="#FFAC02FB" Margin="0,0,0,0" />
             <!--Player 6 User Control-->
-            <Grid Name="BottomPanel2" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Height="64" Background="DarkGreen" Margin="0,830,0,0" />
+            <Grid Name="BottomPanel2" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Height="64" Background="LightGray" Margin="0,830,0,0" />
         </DockPanel>
         <DockPanel LastChildFill="True">
             <!--docked panels grids (players 1- 4 score and lives grids)-->
             <!--Player 1 User Control-->
-            <Grid Name="TopPanel" DockPanel.Dock="Top" HorizontalAlignment="Left" Height="64" Background="LightGray" />
+            <Grid Name="TopPanel" DockPanel.Dock="Top" HorizontalAlignment="Left" Height="64" Background="DarkGreen" />
             <!--Player 2 User Control-->
             <Grid Name="RightPanel" DockPanel.Dock="Right" VerticalAlignment="Center" Height="384" Width="64" Background="Red" Margin="0,0,0,64" />
             <!--Player 3 User Control-->

@@ -558,12 +558,11 @@ namespace WizardWarzRotW
             {
                 // PLAYER 1
                 case ("Player 1"):
-                    playerColour = Colors.Silver;
-                    //Debug.WriteLine("Player 1");
+                    //playerColour = Colors.Silver;
+                    playerColour = Colors.Green;
                     break;
                 // PLAYER 2
                 case ("Player 2"):
-                    //Debug.WriteLine("Player 2");
                     playerColour = Colors.Red;
                     break;
                 // PLAYER 3
@@ -580,7 +579,8 @@ namespace WizardWarzRotW
                     break;
                 // PLAYER 6
                 case ("Player 6"):
-                    playerColour = Colors.Green;
+                    //playerColour = Colors.Green;
+                    playerColour = Colors.Silver;
                     break;
                 default:
 
@@ -610,8 +610,11 @@ namespace WizardWarzRotW
             {
                 // PLAYER 1
                 case ("Player 1"):
-                    facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetSilver_Right.png", UriKind.Absolute));
-                    facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetSilver_Left.png", UriKind.Absolute));
+                    //facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetSilver_Right.png", UriKind.Absolute));
+                    //facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetSilver_Left.png", UriKind.Absolute));
+
+                    facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetGreen_Right.png", UriKind.Absolute));
+                    facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetGreen_Left.png", UriKind.Absolute));
                     break;
                 // PLAYER 2
                 case ("Player 2"):
@@ -635,8 +638,11 @@ namespace WizardWarzRotW
                     break;
                 // PLAYER 6
                 case ("Player 6"):
-                    facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetGreen_Right.png", UriKind.Absolute));
-                    facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetGreen_Left.png", UriKind.Absolute));
+                    //facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetGreen_Right.png", UriKind.Absolute));
+                    //facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetGreen_Left.png", UriKind.Absolute));
+
+                    facingRightImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetSilver_Right.png", UriKind.Absolute));
+                    facingLeftImage = new BitmapImage(new Uri("pack://application:,,,/Resources/SpriteSheetSilver_Left.png", UriKind.Absolute));
                     break;
                 default:
 
