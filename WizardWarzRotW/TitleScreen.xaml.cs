@@ -66,21 +66,21 @@ namespace WizardWarzRotW
                     break;
 
                 case 1:
-                    magicBall.Margin = new Thickness(190, 254, 0, 0);
+                    magicBall.Margin = new Thickness(320, 254, 0, 0);
                     wizardLeft.Source = new BitmapImage(new Uri("Resources/TitleSprites/SSB2.png", UriKind.Relative));
                     wizardRight.Source = new BitmapImage(new Uri("Resources/TitleSprites/SSR2.png", UriKind.Relative));
                     picCount++;
                     break;
 
                 case 2:
-                    magicBall.Margin = new Thickness(260, 254, 0, 0);
+                    magicBall.Margin = new Thickness(520, 254, 0, 0);
                     wizardLeft.Source = new BitmapImage(new Uri("Resources/TitleSprites/SSB3.png", UriKind.Relative));
                     wizardRight.Source = new BitmapImage(new Uri("Resources/TitleSprites/SSR3.png", UriKind.Relative));
                     picCount++;
                     break;
 
                 case 3:
-                    magicBall.Margin = new Thickness(330, 254, 0, 0);
+                    magicBall.Margin = new Thickness(1800, 254, 0, 0);
                     wizardLeft.Source = new BitmapImage(new Uri("Resources/TitleSprites/SSB4.png", UriKind.Relative));
                     wizardRight.Source = new BitmapImage(new Uri("Resources/Smoke.png", UriKind.Relative));
                     picCount = 0;

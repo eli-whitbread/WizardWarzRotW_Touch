@@ -5,31 +5,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WizardWarzRotW"
              mc:Ignorable="d" 
-             d:DesignHeight="540" d:DesignWidth="540">
+             d:DesignHeight="810" d:DesignWidth="810">
 
-    <Canvas Margin="2,0,-2,0" Background="#FF111111" Width="540" Height="540" >
+    <Canvas Margin="2,0,-2,0" Background="#FF111111" Width="810" Height="810" >
         <!--Display the top scorer-->
-        <Label Name="WinnerText" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="30" Content=" is   the   winner!" Foreground="White" HorizontalAlignment="Center" Canvas.Left="238" Canvas.Top="162" />
-        <Label Name="Winner" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="30" Content="PlayerX" Foreground="White" HorizontalAlignment="Center" Canvas.Left="103" Canvas.Top="161" />
+        <Label Name="WinnerText" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="30" Content=" is   the   winner!" Foreground="White" HorizontalAlignment="Center" Canvas.Left="371" Canvas.Top="241" Height="62" Width="379" />
+        <Label Name="Winner" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="30" Content="PlayerX" Foreground="White" HorizontalAlignment="Center" Canvas.Left="219" Canvas.Top="240" Height="62" Width="136" />
         <!--Display player scores-->
-        <Label Name="player1Label" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Player 1: " Foreground="#FF1D8F04" HorizontalAlignment="Center" Canvas.Left="166" Canvas.Top="206" />
-        <Label Name="player1Score" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="XX1" Foreground="White" HorizontalAlignment="Center" Canvas.Left="299" Canvas.Top="206"/>
-        <Label Name="player2Label" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Player 2: " Foreground="#FFF32020" HorizontalAlignment="Center" Canvas.Left="166" Canvas.Top="253" />
-        <Label Name="player2Score" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="XX2" Foreground="White" HorizontalAlignment="Center" Canvas.Left="299" Canvas.Top="253"/>
-        <Label Name="player3Label" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Player 3: " Foreground="#FF4D26FF" HorizontalAlignment="Center" Canvas.Left="166" Canvas.Top="301" />
-        <Label Name="player3Score" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="XX3" Foreground="White" HorizontalAlignment="Center" Canvas.Left="299" Canvas.Top="301"/>
-        <Label Name="player4Label" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Player 4: " Foreground="#FFF0DD23" HorizontalAlignment="Center" Canvas.Left="166" Canvas.Top="345" />
-        <Label Name="player4Score" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="XX4" Foreground="White" HorizontalAlignment="Center" Canvas.Left="299" Canvas.Top="345"/>
-        <Label Name="player5Label" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Player 5: " Foreground="#FFAC02FB" HorizontalAlignment="Center" Canvas.Left="166" Canvas.Top="392" />
-        <Label Name="player5Score" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="XX5" Foreground="White" HorizontalAlignment="Center" Canvas.Left="299" Canvas.Top="392"/>
-        <Label Name="player6Label" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Player 6: " Foreground="Gray" HorizontalAlignment="Center" Canvas.Left="166" Canvas.Top="438" />
-        <Label Name="player6Score" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="XX6" Foreground="White" HorizontalAlignment="Center" Canvas.Left="299" Canvas.Top="438"/>
+        <Label Name="player1Label" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Player 1: " Foreground="#FF1D8F04" HorizontalAlignment="Center" Canvas.Left="257" Canvas.Top="308" Height="52" Width="181" />
+        <Label Name="player1Score" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="XX1" Foreground="White" HorizontalAlignment="Center" Canvas.Left="467" Canvas.Top="308" Height="52" Width="78"/>
+        <Label Name="player2Label" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Player 2: " Foreground="#FFF32020" HorizontalAlignment="Center" Canvas.Left="257" Canvas.Top="381" Height="52" Width="181" />
+        <Label Name="player2Score" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="XX2" Foreground="White" HorizontalAlignment="Center" Canvas.Left="467" Canvas.Top="381" Height="52" Width="78"/>
+        <Label Name="player3Label" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Player 3: " Foreground="#FF4D26FF" HorizontalAlignment="Center" Canvas.Left="257" Canvas.Top="454" Height="52" Width="181" />
+        <Label Name="player3Score" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="XX3" Foreground="White" HorizontalAlignment="Center" Canvas.Left="467" Canvas.Top="454" Height="52" Width="78"/>
+        <Label Name="player4Label" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Player 4: " Foreground="#FFF0DD23" HorizontalAlignment="Center" Canvas.Left="257" Canvas.Top="522" Height="52" Width="181" />
+        <Label Name="player4Score" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="XX4" Foreground="White" HorizontalAlignment="Center" Canvas.Left="467" Canvas.Top="522" Height="52" Width="78"/>
+        <Label Name="player5Label" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Player 5: " Foreground="#FFAC02FB" HorizontalAlignment="Center" Canvas.Left="257" Canvas.Top="593" Height="52" Width="181" />
+        <Label Name="player5Score" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="XX5" Foreground="White" HorizontalAlignment="Center" Canvas.Left="467" Canvas.Top="593" Height="52" Width="78"/>
+        <Label Name="player6Label" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Player 6: " Foreground="Gray" HorizontalAlignment="Center" Canvas.Left="257" Canvas.Top="664" Height="52" Width="181" />
+        <Label Name="player6Score" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="XX6" Foreground="White" HorizontalAlignment="Center" Canvas.Left="467" Canvas.Top="664" Height="52" Width="78"/>
         <!--Display the time until they get returned to the main menu-->
-        <Label Name="endTimerText" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Returning   to   the " Foreground="White" HorizontalAlignment="Center" Canvas.Left="10" Canvas.Top="472"/>
-        <Label Name="endTimer" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="36" Content="10   seconds." Foreground="White" HorizontalAlignment="Center" Canvas.Left="299" Canvas.Top="477"/>
-        <Image HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="293" Source="Resources/Wizard .png" Stretch="Fill" Canvas.Left="124" Canvas.Top="15"/>
-        <Image HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="251" Source="Resources/Warz.png" Canvas.Left="142" Canvas.Top="95"/>
-        <Label x:Name="endTimerText_Copy" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Main   Menu   In :" Foreground="White" HorizontalAlignment="Center" Canvas.Left="53" Canvas.Top="498"/>
+        <Label Name="endTimerText" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Returning   to   the " Foreground="White" HorizontalAlignment="Center" Canvas.Left="78" Canvas.Top="716" Height="52" Width="274"/>
+        <Label Name="endTimer" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="36" Content="10   seconds." Foreground="White" HorizontalAlignment="Center" Canvas.Left="467" Canvas.Top="724" Height="72" Width="333"/>
+        <Image HorizontalAlignment="Left" Height="115" VerticalAlignment="Top" Width="464" Source="Resources/Wizard .png" Stretch="Fill" Canvas.Left="191" Canvas.Top="15"/>
+        <Image HorizontalAlignment="Left" Height="102" VerticalAlignment="Top" Width="398" Source="Resources/Warz.png" Canvas.Left="219" Canvas.Top="137"/>
+        <Label x:Name="endTimerText_Copy" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Main   Menu   In :" Foreground="White" HorizontalAlignment="Center" Canvas.Left="79" Canvas.Top="756" Height="52" Width="267"/>
     </Canvas>
 
 </UserControl>

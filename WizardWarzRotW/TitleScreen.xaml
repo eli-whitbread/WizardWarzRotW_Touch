@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WizardWarzRotW"
              mc:Ignorable="d" 
-             d:DesignHeight="540" d:DesignWidth="540">
-    <Grid Name="TitleGrid" Background="Black" Width="540" Height="540">
+             d:DesignHeight="810" d:DesignWidth="810">
+    <Grid Name="TitleGrid" Background="Black" Width="810" Height="810">
         <Image Name="wizard1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" Margin="182,214,834,802" 
                 Source="Resources/WIZARD1.png" Stretch="Fill"/>
         <Image Name="wizard2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" Margin="889,116,127,900" 
@@ -18,14 +18,14 @@
         <Image Name="wizard4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" Margin="136,784,880,232" 
                 Source="Resources/WIZARD1.png" Stretch="Fill">
         </Image>
-        <Image HorizontalAlignment="Left" Height="75" Margin="124,15,0,0" VerticalAlignment="Top" Width="293" Source="Resources/Wizard .png" Stretch="Fill"/>
-        <Image HorizontalAlignment="Left" Height="66" Margin="142,95,0,0" VerticalAlignment="Top" Width="251" Source="Resources/Warz.png"/>
-        <Image Name="wizardLeft" HorizontalAlignment="Left" Height="100" Margin="27,211,0,0" VerticalAlignment="Top" Width="100" Source="Resources/PlayerRight1.png"/>
-        <Image Name="wizardRight" HorizontalAlignment="Left" Height="100" Margin="405,211,0,0" VerticalAlignment="Top" Width="100" Source="Resources/PlayerLeft1.png"/>
-        <Image Name="magicBall" HorizontalAlignment="Left" Height="30" Margin="120,254,0,0" VerticalAlignment="Top" Width="92" Source="Resources/BallOfMagic.png" Stretch="Fill"/>
-        <Image Name="startText" HorizontalAlignment="Left" Height="36" Margin="180,356,0,0" VerticalAlignment="Top" Width="176" Source="Resources/Start.png" Stretch="Fill" MouseEnter="startText_MouseEnter" MouseLeave="startText_MouseLeave" PreviewMouseDown="startText_PreviewMouseDown" PreviewTouchDown="startText_PreviewTouchDown"/>
-        <Image Name="quitText" HorizontalAlignment="Left" Height="19" Margin="192,434,0,0" VerticalAlignment="Top" Width="150" Source="Resources/Quit.png" Stretch="Fill" MouseEnter="quitText_MouseEnter" MouseLeave="quitText_MouseLeave" PreviewMouseDown="quitText_PreviewMouseDown" PreviewTouchDown="quitText_PreviewTouchDown"/>
-        <Label x:Name="label_Copy" Content="DYNA-WIZARDZ" FontSize="32" Margin="10,498,314,0" Foreground="White" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" HorizontalAlignment="Center"  />
-        <Label x:Name="label_Copy1" Content="© NSQUARED SYDNEY" FontSize="24" Margin="310,501,2,-3" Foreground="White" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" HorizontalAlignment="Center" Width="228"  />
+        <Image HorizontalAlignment="Left" Height="83" Margin="195,10,0,0" VerticalAlignment="Top" Width="463" Source="Resources/Wizard .png" Stretch="Fill"/>
+        <Image HorizontalAlignment="Left" Height="72" Margin="222,98,0,0" VerticalAlignment="Top" Width="397" Source="Resources/Warz.png"/>
+        <Image Name="wizardLeft" HorizontalAlignment="Left" Height="110" Margin="1,217,0,0" VerticalAlignment="Top" Width="159" Source="Resources/PlayerRight1.png"/>
+        <Image Name="wizardRight" HorizontalAlignment="Left" Height="110" Margin="693,217,0,0" VerticalAlignment="Top" Width="107" Source="Resources/PlayerLeft1.png"/>
+        <Image Name="magicBall" HorizontalAlignment="Left" Height="33" Margin="149,264,0,0" VerticalAlignment="Top" Width="145" Source="Resources/BallOfMagic.png" Stretch="Fill"/>
+        <Image Name="startText" HorizontalAlignment="Left" Height="38" Margin="266,393,0,0" VerticalAlignment="Top" Width="278" Source="Resources/Start.png" Stretch="Fill" MouseEnter="startText_MouseEnter" MouseLeave="startText_MouseLeave" PreviewMouseDown="startText_PreviewMouseDown" PreviewTouchDown="startText_PreviewTouchDown"/>
+        <Image Name="quitText" HorizontalAlignment="Left" Height="43" Margin="286,552,0,0" VerticalAlignment="Top" Width="208" Source="Resources/quit.png" Stretch="Fill" MouseEnter="quitText_MouseEnter" MouseLeave="quitText_MouseLeave" PreviewMouseDown="quitText_PreviewMouseDown" PreviewTouchDown="quitText_PreviewTouchDown"/>
+        <Label x:Name="label_Copy" Content="©WIZARD TEAM" FontSize="36" Margin="10,766,440,3" Foreground="White" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" HorizontalAlignment="Center" Width="360"  />
+        <Label x:Name="label_Copy1" Content="NSQUARED SYDNEY" FontSize="36" Margin="510,766,6,0" Foreground="White" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" HorizontalAlignment="Center" Width="294"  />
     </Grid>
 </UserControl>
