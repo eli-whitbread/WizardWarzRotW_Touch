@@ -44,6 +44,10 @@ namespace WizardWarzRotW
             get; set;
         }
 
+        /// <summary>
+        /// Returns the instance of the Main Window. Used primarily to change between game states.
+        /// </summary>
+        /// <returns></returns>
         public static MainWindow ReturnMainWindowInstance()
         {
             return MainWindowReference;
@@ -65,11 +69,15 @@ namespace WizardWarzRotW
             game = GameInstance;
             end = EndScreenInstance;
 
-            // Reveal the title screen.
+            // Start the game at the title screen.
             ChangeGameState("title");
         }
 
-
+        /// <summary>
+        /// Method that changes the state of the game. Will only work if the game states are cycled through in order.
+        /// <para> The four states of the game that can be passed are (in order): "title", "menu", "game", "end". </para>
+        /// </summary>
+        /// <param name="GameState"></param>
         public void ChangeGameState(string GameState)
         {
             switch (GameState)
@@ -148,7 +156,7 @@ namespace WizardWarzRotW
                     EndScreen.ReturnEndScreenInstance().endTimer.Content = (EndScreen.ReturnEndScreenInstance().endCountdown + " seconds.");
                     break;
             }
-            //MessageBox.Show(GameCANVAS.Children.Count.ToString());
+
             Console.WriteLine("Current game state: {0}", currentGameState);
         }
     }
