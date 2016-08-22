@@ -81,6 +81,10 @@ namespace WizardWarzRotW
         public LivesAndScore myLivesAndScore = null;
         public Powerups myPowerupRef = null;
 
+        // Inactivity variables
+        public static bool isPlayerActive = false;
+        public int timeRemaining = 15;
+
         private Point LastTouchDown;
 
         public PlayerControl()
@@ -145,9 +149,11 @@ namespace WizardWarzRotW
 
             }
 
-
-
-            
+            if (GameTimer.ReturnTimerInstance().currentTick % 60 == 0 && !isPlayerActive)
+            //if (_count % 60 == 0 && !isPlayerActive)
+            {
+                PlayerInactivityCheck();
+            }
             
         }
 
@@ -333,6 +339,9 @@ namespace WizardWarzRotW
 
         private void MoveThePlayer()
         {
+            if (!isPlayerActive)
+                isPlayerActive = true;
+
             for (int i = _step; i < PlayerPositions.GetLength(0); i++ )
             {
                 if (PlayerPositions[_step, 0] == 0)
@@ -776,5 +785,24 @@ namespace WizardWarzRotW
             
         }
 
+        // Function that runs at the start of a game. Deletes players that do not move within the first X seconds of the game.
+        public void PlayerInactivityCheck()
+        {
+            timeRemaining--;
+
+            //if (!isPlayerActive)
+            if (timeRemaining >= 0)
+                Console.WriteLine("Checking {0} activity. {1} seconds remaining", playerName, timeRemaining);
+
+            if (!isPlayerActive && timeRemaining == 0)
+            {
+                Console.WriteLine("Delete player");
+                myLivesAndScore.playerLivesNumber = 0;
+                myLivesAndScore.currentScore = 0;
+
+                GameBoard.ReturnGameGrid().Children.Remove(this);
+                GameBoard.ReturnGameBoardInstance().CheckPlayersOnBoard();
+            }
+        }
     }
 }
