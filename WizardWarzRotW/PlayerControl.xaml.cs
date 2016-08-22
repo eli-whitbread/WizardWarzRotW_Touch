@@ -211,7 +211,7 @@ namespace WizardWarzRotW
             //myGrid.Children.Add(pTile);
 
             //used for non-touch bomb testing
-            DropBomb();
+            //DropBomb();
         }
 
         private void UserControl_PreviewTouchDown(object sender, TouchEventArgs e)
@@ -471,8 +471,8 @@ namespace WizardWarzRotW
         private void DropBomb()
         {
             //used for non-touch bomb testing
-            colCheckCur = 1;
-            rowCheckCur = 1;
+            //colCheckCur = 1;
+            //rowCheckCur = 1;
             
             if (StaticCollections.CheckBombPosition(colCheckCur, rowCheckCur) == true)
             {
