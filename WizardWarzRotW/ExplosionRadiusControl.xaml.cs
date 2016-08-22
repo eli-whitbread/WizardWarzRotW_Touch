@@ -40,15 +40,16 @@ namespace WizardWarzRotW
 
         private void ExplosionRadiusControl_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            Int32 tileSize = GameBoard.ReturnTileSize();
+
             explosionRadiusImg = new SpritesheetImage()
             {
                 Source = mySource,
                 FrameMaxX = myFrameX,
                 FrameMaxY = myFrameY,
                 FrameRate = 30,
-                Width = 64,
-                Height = 64,
+                Width = tileSize,
+                Height = tileSize,
                 PlaysRemaining = 1,
                 LoopForever = false,
 
@@ -65,7 +66,11 @@ namespace WizardWarzRotW
                 }
             };
 
-            
+            Point centerPoint = new Point(this.ActualWidth / 2, this.ActualHeight / 2);
+
+            Canvas.SetTop(explosionRadiusImg, centerPoint.Y - (tileSize / 2));
+            Canvas.SetLeft(explosionRadiusImg, centerPoint.X - (tileSize / 2));
+
             myERCanvas.Children.Add(explosionRadiusImg);
         }
 
