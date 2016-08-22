@@ -26,9 +26,6 @@ namespace WizardWarzRotW
             //GlobalPlayerMainMenu = true;
         }
 
-        /// <summary>
-        /// Boolean that sets the game mode. (Four player = false. Six player = true.)
-        /// </summary>
         public static bool GlobalPlayerMainMenu
         {
             get; set;

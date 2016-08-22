@@ -388,6 +388,21 @@ namespace WizardWarzRotW
 
                 // Scan tile for powerups
                 PowerupPlayer();
+
+                //if (GameBoard.curTileState[PlayerPositions[_step, 0], PlayerPositions[_step, 1]] == TileStates.Powerup)
+                //{
+                //    playerState = myPowerupRef.ReturnPowerup(PlayerPositions[_step, 0], PlayerPositions[_step, 1], GameBoard.ReturnGameGrid());
+
+                //    if (playerState == "Lifeup")
+                //    {
+                //        myLivesAndScore.currentScore += 50;
+
+                //        if (myLivesAndScore.playerLivesNumber <= 2)
+                //            myLivesAndScore.playerLivesNumber += 1;
+
+                //        playerState = null;
+                //    }
+                //}
                 
                 _step++;
                 return;
@@ -407,10 +422,7 @@ namespace WizardWarzRotW
             }
         }
 
-        /// <summary>
-        /// Method that scans the powerup tile that the player is currently standing on for a powerup. 
-        /// <para>If one exists and the player does not already have a powerup, the powerup is collected, and the player status is updated.</para>
-        /// </summary>
+        // Method that scans the tile the player is currently on for a powerup.
         public void PowerupPlayer()
         {
             string tempStateFlag;
@@ -599,11 +611,6 @@ namespace WizardWarzRotW
             }
         }
 
-        /// <summary>
-        /// Updates the 'castle tile' whenever a player picks up or uses a powerup.
-        /// <para>Changes the picture of the castle to the picture of the powerup that is passed into the method, or back to the castle if 'null' is passed.</para>
-        /// </summary>
-        /// <param name="status"></param>
         public void UpdatePlayerStatus(string status)
         {
             switch (status)
@@ -778,10 +785,7 @@ namespace WizardWarzRotW
             
         }
 
-        /// <summary>
-        ///  This function deletes players that are not moved in the first 15 seconds of the game.
-        ///  <para>Needs to be called at the start of the game, then once per seconds for 15 seconds afterwards.</para>
-        /// </summary>
+        // Function that runs at the start of a game. Deletes players that do not move within the first X seconds of the game.
         public void PlayerInactivityCheck()
         {
             timeRemaining--;

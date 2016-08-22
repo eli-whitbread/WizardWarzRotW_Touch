@@ -185,13 +185,7 @@ namespace WizardWarzRotW
         }
 
 
-        /// <summary>
-        /// Spawns a powerup at the chosen co-ordinates.
-        /// <para> Must be called whenever a bomb destroys a wall tile.</para>
-        /// </summary>
-        /// <param name="PosX"></param>
-        /// <param name="PosY"></param>
-        /// <param name="GameGrid"></param>
+        // Spawn a powerup at a wall position
         public void WallSpawn(int PosX, int PosY, Grid GameGrid)
         {
             Image powerupTile = new Image();
@@ -232,14 +226,9 @@ namespace WizardWarzRotW
             GameGrid.Children.Add(powerupTile);
         }
 
-        /// <summary>
-        /// Delete a single powerup at the chosen co-ordinates, then returns the name of it.
-        /// </summary>
-        /// <param name="col"></param>
-        /// <param name="row"></param>
-        /// <param name="GameGrid"></param>
-        /// <returns></returns>
 
+        // Delete a single powerup, then return the name of it.
+        // Used to empower players.
         public string ReturnPowerup(int col, int row, Grid GameGrid)
         {
             for (int i = 300; i < GameGrid.Children.Count; i++)

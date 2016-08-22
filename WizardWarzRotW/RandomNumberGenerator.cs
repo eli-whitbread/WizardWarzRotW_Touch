@@ -15,19 +15,19 @@ namespace WizardWarzRotW
             GenerateRandomNumber();
         }
 
-        /// <summary>
-        /// Generates a random integer between 1 and 255.
-        /// </summary>
-        /// <returns></returns>
         public int GenerateRandomNumber()
         {
             byte[] bytes1 = new byte[100];
             byte[] bytes2 = new byte[100];
 
+
+
             RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
             byte[] rndBytes = new byte[4];
             rng.GetBytes(rndBytes);
             int rand = BitConverter.ToInt32(rndBytes, 0);
+
+
 
             RNGCryptoServiceProvider rng2 = new RNGCryptoServiceProvider();
             byte[] rndBytes2 = new byte[4];
@@ -36,6 +36,10 @@ namespace WizardWarzRotW
 
             Random rnd1 = new Random(rand);
             Random rnd2 = new Random(rand2);
+
+            //Console.WriteLine("Generating Random Numbers:");
+            //Console.WriteLine("First Random Number: {0}", rand);
+            //Console.WriteLine("Second Random Number: {0}", rand2);
 
             rnd1.NextBytes(bytes1);
             rnd2.NextBytes(bytes2);
@@ -53,6 +57,18 @@ namespace WizardWarzRotW
                 //if ((ctr + 1) % 10 == 0)
                 //Console.WriteLine();
             }
+
+            Console.WriteLine();
+            //Console.WriteLine("Second Series:");
+            //for (int ctr = bytes2.GetLowerBound(0);
+            //     ctr <= bytes2.GetUpperBound(0);
+            //     ctr++)
+            //{
+            //    Console.Write("{0, 5}", bytes2[ctr]);
+            //    if ((ctr + 1) % 10 == 0) Console.WriteLine();
+            //}
+            //Console.ReadLine();
+
             return bytes1[0];
         }
 
