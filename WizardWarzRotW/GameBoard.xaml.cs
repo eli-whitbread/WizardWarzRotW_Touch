@@ -271,15 +271,23 @@ namespace WizardWarzRotW
 
                         wallCount++;
                     }
-
-
+                    
                 }
             }
         }
 
+        
+        /// <summary>
+        /// Check if the passed grid column/row position ("c" and "r") should be assigned a SolidWall tile and state 
+        /// </summary>
+        /// <param name="c">The Grid column position</param>
+        /// <param name="r">The Grid row position</param>
+        /// <param name="colsLength">The grid's total column count</param>
+        /// <param name="rowsLength">The grid's total row count</param>
+        /// <returns>true or false</returns>
         public bool InitialTilePlacementCheck(Int32 c, Int32 r, Int32 colsLength, Int32 rowsLength)
         {
-            innerWallPos = new Int32[(rows * cols), 2]; //this is waaay too long but don't have much choice
+            innerWallPos = new Int32[(rows * cols), 2]; //this is waaay longer than required but don't have much choice
 
             Int32 innerWallCount = 0;
 

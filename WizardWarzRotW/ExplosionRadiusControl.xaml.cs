@@ -25,6 +25,7 @@ namespace WizardWarzRotW
         BitmapImage horizRightImage, horizLeftImage, vertUpImage, vertDownImage, horizEndImage, vertEndImage, mySource;
         int myFrameX, myFrameY;
 
+        //Initialisation
         public ExplosionRadiusControl(string dir)
         {
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace WizardWarzRotW
             Loaded += ExplosionRadiusControl_Loaded;
         }
 
+        //Initialise the Spritesheet
         private void ExplosionRadiusControl_Loaded(object sender, RoutedEventArgs e)
         {
             Int32 tileSize = GameBoard.ReturnTileSize();
@@ -66,6 +68,7 @@ namespace WizardWarzRotW
                 }
             };
 
+            //Draw the spritesheet image to the UserControl Canvas and center it.
             Point centerPoint = new Point(this.ActualWidth / 2, this.ActualHeight / 2);
 
             Canvas.SetTop(explosionRadiusImg, centerPoint.Y - (tileSize / 2));
@@ -74,6 +77,10 @@ namespace WizardWarzRotW
             myERCanvas.Children.Add(explosionRadiusImg);
         }
 
+        /// <summary>
+        /// Set the Spritesheet's Source image, Width, Height and Direction according to the desired direction
+        /// </summary>
+        /// <param name="dir">The direction the explosion tile is facing/traveling - "Left", "Right", "Up" or "Down"</param>
         public void SetExplosionTileDirection(string dir)
         {
             switch (dir)

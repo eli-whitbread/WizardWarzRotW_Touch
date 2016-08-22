@@ -29,6 +29,7 @@ namespace WizardWarzRotW
            
         }
 
+        //Initialise the Spritesheet
         private void BombDroppedControl_Loaded(object sender, RoutedEventArgs e)
         {
             Int32 tileSize = GameBoard.ReturnTileSize();
@@ -50,6 +51,7 @@ namespace WizardWarzRotW
                 myBombCanvas.Children.Remove(bombTile);
             };
 
+            //Draw the spritesheet image to the UserControl Canvas and center it.
             Point centerPoint = new Point(this.ActualWidth / 2, this.ActualHeight / 2);
 
             Canvas.SetTop(bombTile, centerPoint.Y - (tileSize / 2));
