@@ -317,25 +317,7 @@
     <Resource Include="Resources\CentreExplosion.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\HorizontalExplosion_Right.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\CentreExplosionEnd.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\HorizontalExplosion_End.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\HorizontalExplosion_Left.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\VerticalExplosion_Down.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\VerticalExplosion_End.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\VerticalExplosion_Up.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\SpriteSheetBlue_Left.png" />
@@ -372,6 +354,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\SpriteSheetSilver_Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HorizontalExplosion_End.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HorizontalExplosion_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HorizontalExplosion_Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VerticalExplosion_Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VerticalExplosion_End.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VerticalExplosion_Up.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
