@@ -546,12 +546,13 @@ namespace WizardWarzRotW
         {
             for (int i = 0; i < noOfPlayers; i++)
             {
-                if (playerControllers[i].myLivesAndScore.playerLivesNumber == 0 && playerControllers[i] != null)
+                if (playerControllers[i].myLivesAndScore.playerLivesNumber <= 0 && playerControllers[i] != null)
                 {
-                    GameGridXAML.Children.Remove(playerControllers[i]);
+                    
 
                     playerControllers[i].myLivesAndScore.playerLivesNumber = -1;
                     playerControllers[i].myLivesAndScore.currentScore -= 150;
+                    GameGridXAML.Children.Remove(playerControllers[i]);
 
                     noOfPlayers--;
                     if (noOfPlayers <= 1)
@@ -608,5 +609,7 @@ namespace WizardWarzRotW
             return distance;
 
         }
+
+        
     }
 }

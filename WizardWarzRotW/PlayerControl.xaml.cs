@@ -67,6 +67,10 @@ namespace WizardWarzRotW
         //bool p1HasPath = false;
         //bool isP1Influenced = false;
         bool isTouched = false;
+        private bool iAmFlash = false;
+        private Int32 flashCounter = 0;
+        Rectangle flash = new Rectangle();
+        bool flashOn = false;
 
         Point curMousePos = new Point(0, 0);
 
@@ -131,8 +135,16 @@ namespace WizardWarzRotW
                     }
                     
                 }
-                
+
+                if (iAmFlash && flashCounter <= 8)
+                {
+                    flashPlayerWhite();
+
+                }
+
             }
+
+
 
             
             
@@ -721,6 +733,46 @@ namespace WizardWarzRotW
                     break;
             }
         
+        }
+        
+        /// <summary>
+        /// This function ensures flashing only happens for a set time. <para>Have this run every time a player is hurt by a bomb.</para>
+        /// </summary>
+        public void flashCounterFunction()
+        {
+
+            if (iAmFlash)
+            {
+
+                flashCounter = 0;
+            }
+            else
+            {
+                iAmFlash = true;
+                flashCounter = 0;
+                animPlayerTile.Opacity = 1.0f;
+            }
+
+        }
+
+        
+        /// <summary>
+        /// This function flashes the character a white opac, so to visually provide feedback of damage taken. <para>Have this run every time a player is hurt by a bomb.</para>
+        /// </summary>
+        public void flashPlayerWhite()
+        {
+            if(!flashOn)
+            {
+                animPlayerTile.Opacity = 0.2f;
+                flashOn = true;
+            }
+            else
+            {
+                animPlayerTile.Opacity = 1.0f;
+                flashOn = false;
+            }
+            flashCounter++;
+            
         }
 
     }

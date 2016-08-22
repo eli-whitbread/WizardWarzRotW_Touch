@@ -345,15 +345,19 @@ namespace WizardWarzRotW
                         else
                             myOwner.myLivesAndScore.ChangeScore(50, false);
 
-                        // Check to see if anyone died, and if there's only one player left
-                        GameBoard.ReturnGameBoardInstance().CheckPlayersOnBoard();
+                        tempPlayer.flashCounterFunction();
+                        
                     }
+                    // Check to see if anyone died, and if there's only one player left
+                    GameBoard.ReturnGameBoardInstance().CheckPlayersOnBoard();
                 }
             }
 
 
             return new Tuple<int>(0);
         }
+
+        
 
     }
 }
