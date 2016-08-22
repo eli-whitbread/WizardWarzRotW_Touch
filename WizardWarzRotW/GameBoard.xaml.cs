@@ -544,7 +544,8 @@ namespace WizardWarzRotW
 
         public void CheckPlayersOnBoard()
         {
-            for (int i = 0; i < noOfPlayers; i++)
+            //for (int i = 0; i < noOfPlayers; i++)
+            for (int i = 0; i < playerControllers.Count() - 1; i++)
             {
                 if (playerControllers[i].myLivesAndScore.playerLivesNumber <= 0 && playerControllers[i] != null)
                 {
