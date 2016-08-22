@@ -15,6 +15,10 @@ namespace WizardWarzRotW
             GenerateRandomNumber();
         }
 
+        /// <summary>
+        /// Generates a random integer between 1 and 255.
+        /// </summary>
+        /// <returns></returns>
         public int GenerateRandomNumber()
         {
             byte[] bytes1 = new byte[100];

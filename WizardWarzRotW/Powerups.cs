@@ -150,6 +150,13 @@ namespace WizardWarzRotW
                 Console.WriteLine("Unexpected outcome");
         }
 
+        /// <summary>
+        /// Spawns a powerup at the chosen co-ordinates.
+        /// <para> Must be called whenever a bomb destroys a wall tile.</para>
+        /// </summary>
+        /// <param name="PosX"></param>
+        /// <param name="PosY"></param>
+        /// <param name="GameGrid"></param>
         public void SpawnPowerup(string powerupName)
         {
             // Set general powerup properties
@@ -226,9 +233,13 @@ namespace WizardWarzRotW
             GameGrid.Children.Add(powerupTile);
         }
 
-
-        // Delete a single powerup, then return the name of it.
-        // Used to empower players.
+        /// <summary>
+        /// Delete a single powerup at the chosen co-ordinates, then returns the name of it.
+        /// </summary>
+        /// <param name="col"></param>
+        /// <param name="row"></param>
+        /// <param name="GameGrid"></param>
+        /// <returns></returns>
         public string ReturnPowerup(int col, int row, Grid GameGrid)
         {
             for (int i = 300; i < GameGrid.Children.Count; i++)
