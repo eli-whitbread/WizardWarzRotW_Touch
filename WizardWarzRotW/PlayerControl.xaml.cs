@@ -86,6 +86,7 @@ namespace WizardWarzRotW
             _playerControlTimer.processFrameEvent_TICK += _playerControlTimer_processFrameEvent_TICK;
             _myTime = 0;
             _count = 0;
+            tileSize = GameBoard.ReturnTileSize();
             PlayerPositions = new int[20, 2];
             ResetPlayerPositionArray();
             gameCanRef = GameBoard.ReturnMainCanvas();
@@ -166,8 +167,8 @@ namespace WizardWarzRotW
                 FrameMaxX = 4,
                 FrameMaxY = 1,
                 FrameRate = 30,
-                Width = 64,
-                Height = 64,
+                Width = tileSize,
+                Height = tileSize,
                 PlaysRemaining = 10,
                 LoopForever = true
             };
@@ -181,9 +182,9 @@ namespace WizardWarzRotW
             //Grid.SetColumn(animPlayerTile, 0);
             //Grid.SetRow(animPlayerTile, 0);
 
+            Canvas.SetTop(animPlayerTile, centerPoint.Y - (tileSize / 2));
+            Canvas.SetLeft(animPlayerTile, centerPoint.X - (tileSize / 2));
             myCanvas.Children.Add(animPlayerTile);
-            Canvas.SetTop(animPlayerTile, centerPoint.Y - 32);
-            Canvas.SetLeft(animPlayerTile, centerPoint.X - 32);
             SetDirection();
             //animPlayerTile.PlaysRemaining = 10;
             //

@@ -20,7 +20,8 @@ namespace WizardWarzRotW
     /// </summary>
     public partial class BombDroppedControl : UserControl
     {
-       
+
+        
         public BombDroppedControl()
         {
             InitializeComponent();
@@ -30,14 +31,16 @@ namespace WizardWarzRotW
 
         private void BombDroppedControl_Loaded(object sender, RoutedEventArgs e)
         {
+            Int32 tileSize = GameBoard.ReturnTileSize();
+
             SpritesheetImage bombTile = new SpritesheetImage()
             {
                 Source = new BitmapImage(new Uri("pack://application:,,,/Resources/BombSheet_4step.png", UriKind.Absolute)),
                 FrameMaxX = 4,
                 FrameMaxY = 1,
                 FrameRate = 10,
-                Width = 64,
-                Height = 64,
+                Width = tileSize,
+                Height = tileSize,
                 PlaysRemaining = 10,
                 LoopForever = true,
 
@@ -47,6 +50,10 @@ namespace WizardWarzRotW
                 myBombCanvas.Children.Remove(bombTile);
             };
 
+            Point centerPoint = new Point(this.ActualWidth / 2, this.ActualHeight / 2);
+
+            Canvas.SetTop(bombTile, centerPoint.Y - (tileSize / 2));
+            Canvas.SetLeft(bombTile, centerPoint.X - (tileSize / 2));
             myBombCanvas.Children.Add(bombTile);
         }
     }
