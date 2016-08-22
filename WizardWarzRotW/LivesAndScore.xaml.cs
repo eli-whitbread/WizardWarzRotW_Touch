@@ -24,11 +24,12 @@ namespace WizardWarzRotW
         public Rectangle playerHomeTile;
         
         public Rectangle playerLivesTile;
-        public Label playerScore;
+        public static Label playerScore;
         public int currentScore;
         
         public int tileSizeLocal;
         //AudioManager playMusic = new AudioManager();
+        //public System.Drawing.Font arcadeFont;
 
         public LivesAndScore()
         {
@@ -46,7 +47,7 @@ namespace WizardWarzRotW
             col5.Width = new GridLength(GameBoard.ReturnTileSize() / 2);
             col6.Width = new GridLength(GameBoard.ReturnTileSize() * 1.5);
 
-
+            //arcadeFont = new System.Drawing.Font("ArcadeClassic", GameBoard.ReturnTileSize() / 2, System.Drawing.FontStyle.Regular);
 
             //--------------- Player Lives (HAS TO BE CHANGED HERE)--------------------------
             playerLivesNumber = playerLivesNumber + 3;
@@ -168,20 +169,25 @@ namespace WizardWarzRotW
             //--------------------------------------------| Initialise Player Score |-------------------------------------------           
             //------------------------------------------------------------------------------------------------------------------
 
-            playerScore = new Label();
+            playerScore = PlayerScore;
+            //playerScore = new Label();
 
             playerScore.Content = currentScore.ToString();
-            playerScore.FontSize = GameBoard.ReturnTileSize() / 2;
+            playerScore.FontSize = GameBoard.ReturnTileSize() / 1.5;
             playerScore.Foreground = new SolidColorBrush(Colors.Black);
             playerScore.Width = GameBoard.ReturnTileSize() * 2;
             playerScore.Height = GameBoard.ReturnTileSize();
+            //playerScore.FontFamily = new FontFamily("ArcadeClassic");
 
             // --------------- Set position, within the local grid (scoreGrid) of this element --------------------------------
 
             Grid.SetRow(playerScore, 0);
             Grid.SetColumn(playerScore, 1);
 
-            scoreGrid.Children.Add(playerScore);
+            if (scoreGrid.Children.Contains(playerScore)) { }
+            else
+                scoreGrid.Children.Add(playerScore);
+
             //-----------------------------------------------------------------------------------------------------------------
             //-----------------------------------------------------------------------------------------------------------------
 

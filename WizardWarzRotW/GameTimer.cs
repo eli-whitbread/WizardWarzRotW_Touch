@@ -72,7 +72,7 @@ namespace WizardWarzRotW
                 if (currentTick % 60 == 0)
                 {
                     GameTimeSeconds -= 1;
-                    Console.WriteLine("Full second tick");
+                    //Console.WriteLine("Full second tick");
 
                     if (GameTimeSeconds <= -1)
                     {

@@ -28,6 +28,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
+                <Label Name="PlayerScore" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" />
             </Grid>
         </StackPanel>
     </Grid>
