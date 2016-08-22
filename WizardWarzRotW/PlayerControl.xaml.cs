@@ -422,7 +422,10 @@ namespace WizardWarzRotW
             }
         }
 
-        // Method that scans the tile the player is currently on for a powerup.
+        /// <summary>
+        /// Method that scans the powerup tile that the player is currently standing on for a powerup. 
+        /// <para>If one exists and the player does not already have a powerup, the powerup is collected, and the player status is updated.</para>
+        /// </summary>
         public void PowerupPlayer()
         {
             string tempStateFlag;
@@ -611,6 +614,11 @@ namespace WizardWarzRotW
             }
         }
 
+        /// <summary>
+        /// Updates the 'castle tile' whenever a player picks up or uses a powerup.
+        /// <para>Changes the picture of the castle to the picture of the powerup that is passed into the method, or back to the castle if 'null' is passed.</para>
+        /// </summary>
+        /// <param name="status"></param>
         public void UpdatePlayerStatus(string status)
         {
             switch (status)
