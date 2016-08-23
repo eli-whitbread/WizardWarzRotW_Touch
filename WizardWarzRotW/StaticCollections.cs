@@ -8,7 +8,7 @@ namespace WizardWarzRotW
 {
     class StaticCollections
     {
-        public Int32 maxBombsInLevel = 10;
+        public Int32 maxBombsInLevel = 50;
         protected static Bombs[] levelBombInstances;
         public static Int32[,] levelBombGridPositions;
 
