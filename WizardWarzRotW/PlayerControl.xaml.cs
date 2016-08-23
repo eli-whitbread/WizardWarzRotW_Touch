@@ -141,7 +141,7 @@ namespace WizardWarzRotW
                     
                 }
 
-                if (iAmFlash && flashCounter <= 8)
+                if (iAmFlash && flashCounter <= 7)
                 {
                     flashPlayerWhite();
 
@@ -149,7 +149,7 @@ namespace WizardWarzRotW
 
             }
 
-            if (GameTimer.ReturnTimerInstance().currentTick % 60 == 0 && !isPlayerActive)
+            if (GameTimer.ReturnTimerInstance().currentTick % 60 == 0 && !isPlayerActive && timeRemaining > 0)
             //if (_count % 60 == 0 && !isPlayerActive)
             {
                 PlayerInactivityCheck();
@@ -481,7 +481,7 @@ namespace WizardWarzRotW
             {
                 Debug.WriteLine("Dropped Bomb!");
 
-                Bombs fireBomb = new Bombs(GameBoard.ReturnGameGrid());
+                Bombs fireBomb = new Bombs(GameBoard.ReturnGameGrid(), this);
                 fireBomb.managerRef = managerRef;
                 fireBomb.myOwner = this;
 
@@ -797,18 +797,21 @@ namespace WizardWarzRotW
         public void PlayerInactivityCheck()
         {
             timeRemaining--;
-
+            //MessageBox.Show(string.Format("{0}", timeRemaining));
             //if (!isPlayerActive)
             if (timeRemaining >= 0)
                 Console.WriteLine("Checking {0} activity. {1} seconds remaining", playerName, timeRemaining);
 
             if (!isPlayerActive && timeRemaining == 0)
             {
+                
                 Console.WriteLine("Delete player");
-                myLivesAndScore.playerLivesNumber = 0;
-                myLivesAndScore.currentScore = 0;
-
-                GameBoard.ReturnGameGrid().Children.Remove(this);
+                
+                //MessageBox.Show(string.Format("Now: {0}", playerName));
+                myLivesAndScore.ReduceLives(3);
+                //myLivesAndScore.playerLivesNumber = 0;
+                //myLivesAndScore.currentScore = 0;
+                
                 GameBoard.ReturnGameBoardInstance().CheckPlayersOnBoard();
             }
         }

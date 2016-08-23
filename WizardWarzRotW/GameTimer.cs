@@ -85,6 +85,7 @@ namespace WizardWarzRotW
                         GameTimeSeconds = 59;
                     }
 
+                    
                     GameBoard.ReturnGameBoardInstance().ChangeTimerText(GameTimeSeconds, GameTimeMinutes);
 
                 }

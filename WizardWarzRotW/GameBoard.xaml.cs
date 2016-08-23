@@ -144,6 +144,8 @@ namespace WizardWarzRotW
             //MessageBox.Show("Have been initialised!");
             GameDependencies();
 
+            //MessageBox.Show(noOfPlayers.ToString());
+
             InitializeGameBoard();
             tempInitialisePlayers();
         }
@@ -392,10 +394,7 @@ namespace WizardWarzRotW
         }
 
         public void initialisePlayerReferences()
-        {
-            
-
-
+        {         
             // ------------------------------- Initialise Player References ------------------------------------------------
             for (int i = 0; i <= noOfPlayers - 1; i++)
             {
@@ -421,16 +420,20 @@ namespace WizardWarzRotW
                 // --------------------------- Initialise All Players Lives and Score Controls -----------------------------
                 initialisePlayerLivesAndScore(i);
                 GameGridXAML.Children.Add(playerControllers[i]);
+                
                 Canvas.SetZIndex(playerControllers[i],10);
             }
 
             // Set the reference
             PlayerListRef = ListOfPlayers;
+
+            
         }
 
 
         public void SetPlayerPosition(int playerNumber)
         {
+           
             switch(playerNumber)
             {
                 case (0):
@@ -497,9 +500,10 @@ namespace WizardWarzRotW
 
         public void initialisePlayerLivesAndScore(int currentPlayer)
         {
-            switch (currentPlayer + 1)
+            
+            switch (currentPlayer)
             {
-                case 1:
+                case 0:
                     TopPanel.Height = tileSize;
                     varRotTransform = 180;
                     trRot = new RotateTransform(varRotTransform);
@@ -507,7 +511,7 @@ namespace WizardWarzRotW
                     TopPanel.Children.Add(playerLives[currentPlayer]);
                     break;
 
-                case 2:
+                case 1:
                     RightPanel.Height = tileSize * 6;
                     RightPanel.Width = tileSize;
                     varRotTransform = -90;
@@ -516,12 +520,12 @@ namespace WizardWarzRotW
                     RightPanel.Children.Add(playerLives[currentPlayer]);
                     break;
 
-                case 3:
+                case 2:
                     BottomPanel.Height = tileSize;
                     BottomPanel.Children.Add(playerLives[currentPlayer]);
                     break;
 
-                case 4:
+                case 3:
                     LeftPanel.Height = tileSize * 6;
                     LeftPanel.Width = tileSize;
                     varRotTransform = 90;
@@ -530,7 +534,7 @@ namespace WizardWarzRotW
                     LeftPanel.Children.Add(playerLives[currentPlayer]);
                     break;
 
-                case 5:
+                case 4:
                     TopPanel2.Height = tileSize;
                     varRotTransform = 180;
                     trRot = new RotateTransform(varRotTransform);
@@ -538,7 +542,7 @@ namespace WizardWarzRotW
                     TopPanel2.Children.Add(playerLives[currentPlayer]);
                     break;
 
-                case 6:
+                case 5:
                     BottomPanel2.Margin = new Thickness(0, tileSize * 12.96875, 0, 0);
                     BottomPanel2.Height = tileSize;
                     BottomPanel2.Children.Add(playerLives[currentPlayer]);
@@ -552,18 +556,20 @@ namespace WizardWarzRotW
 
         public void CheckPlayersOnBoard()
         {
+            
             //for (int i = 0; i < noOfPlayers; i++)
             for (int i = 0; i < playerControllers.Count() - 1; i++)
             {
-                if (playerControllers[i].myLivesAndScore.playerLivesNumber <= 0 && playerControllers[i] != null)
+                if (playerControllers[i].myLivesAndScore.playerLivesNumber == 0 && GameGridXAML.Children.Contains(playerControllers[i]))
                 {
                     
 
-                    playerControllers[i].myLivesAndScore.playerLivesNumber = -1;
-                    playerControllers[i].myLivesAndScore.currentScore -= 150;
+                    //playerControllers[i].myLivesAndScore.playerLivesNumber = -1;
+                    //playerControllers[i].myLivesAndScore.currentScore -= 150;
                     GameGridXAML.Children.Remove(playerControllers[i]);
 
                     noOfPlayers--;
+                    //MessageBox.Show(string.Format("No Of Players {0}", noOfPlayers));
                     if (noOfPlayers <= 1)
                     {
                         //gameTimeMinutes = 0;
@@ -572,6 +578,8 @@ namespace WizardWarzRotW
                     }
                 }
             }
+            //MessageBox.Show(string.Format("COUNT = {0}, No. = {1}", playerControllers.Count().ToString(), noOfPlayers.ToString()));
+            
         }
 
         public void ChangeTimerText(int seconds, int minutes)

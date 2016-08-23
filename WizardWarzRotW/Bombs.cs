@@ -39,9 +39,9 @@ namespace WizardWarzRotW
 
         GameTimer myGameTimerRef = null;
 
-        public Bombs(Grid localGameGrid)
+        public Bombs(Grid localGameGrid, PlayerControl myPlayer)
         {
-            myOwner = new PlayerControl();
+            myOwner = myPlayer;
             curGameGrid = localGameGrid;
             myGameTimerRef = GameTimer.ReturnTimerInstance();
             myGameTimerRef.processFrameEvent_TICK += MyGameTimerRef_tickEvent;
@@ -318,10 +318,16 @@ namespace WizardWarzRotW
             int colPos = explosionMatrix[explosionStep, 0];
             int rowPos = explosionMatrix[explosionStep, 1];
 
+            
+            
             // Check if all players were caught in the blast.
             for (int i = 0; i < GameBoard.ReturnPlayerList().Count; i++)
             {
                 PlayerControl tempPlayer = GameBoard.ReturnPlayerList()[i];
+
+
+                
+            
 
                 if (colPos == tempPlayer.playerX && rowPos == tempPlayer.playerY)
                 {
@@ -332,10 +338,13 @@ namespace WizardWarzRotW
                         //MessageBox.Show(string.Format("{0} was shielded.", tempPlayer.playerName));
                         tempPlayer.playerState = null;
                         tempPlayer.UpdatePlayerStatus("null");
+                        //MessageBox.Show(string.Format("{0} was caught in the blast!", tempPlayer.playerName));
+
                     }
 
                     else
                     {
+                        //MessageBox.Show(tempPlayer.playerName);
                         tempPlayer.myLivesAndScore.ReduceLives(1);
                         //tempPlayer.myLivesAndScore.ChangeScore(50, false);
 
