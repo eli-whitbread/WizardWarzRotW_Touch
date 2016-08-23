@@ -475,7 +475,7 @@ namespace WizardWarzRotW
         {
             //used for non-touch bomb testing
             //colCheckCur = 1;
-            //rowCheckCur = 1;
+            //rowCheckCur = 3;
             
             if (StaticCollections.CheckBombPosition(colCheckCur, rowCheckCur) == true)
             {

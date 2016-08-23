@@ -98,13 +98,13 @@ namespace WizardWarzRotW
                     isHorizontal = true;
                     break;
                 case "Up":
-                    mySource = vertUpImage;
+                    mySource = vertDownImage;
                     myFrameX = 1;
                     myFrameY = 3;
                     isHorizontal = false;
                     break;
                 case "Down":
-                    mySource = vertDownImage;
+                    mySource = vertUpImage;
                     myFrameX = 1;
                     myFrameY = 3;
                     isHorizontal = false;
