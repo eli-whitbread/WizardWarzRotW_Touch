@@ -35,7 +35,7 @@ namespace WizardWarzRotW
                 Source = new BitmapImage(new Uri("pack://application:,,,/Resources/CentreExplosion.png", UriKind.Absolute)),
                 FrameMaxX = 3,
                 FrameMaxY = 1,
-                FrameRate = 10,
+                FrameRate = 30,
                 Width = 64,
                 Height = 64,
                 PlaysRemaining = 1,
