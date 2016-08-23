@@ -82,7 +82,7 @@ namespace WizardWarzRotW
         public Powerups myPowerupRef = null;
 
         // Inactivity variables
-        public static bool isPlayerActive = false;
+        public bool isPlayerActive = false;
         public int timeRemaining = 15;
 
         private Point LastTouchDown;

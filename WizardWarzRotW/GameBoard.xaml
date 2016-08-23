@@ -26,7 +26,7 @@
             <!--Player 1 User Control-->
             <Grid Name="TopPanel" DockPanel.Dock="Top" HorizontalAlignment="Left" Height="64" Background="DarkGreen" />
             <!--Player 2 User Control-->
-            <Grid Name="RightPanel" DockPanel.Dock="Right" VerticalAlignment="Center" Height="384" Width="64" Background="Red" Margin="0,0,0,64" />
+            <Grid Name="RightPanel" DockPanel.Dock="Right" VerticalAlignment="Center" Height="384" Width="64" Background="#FFB0003F" Margin="0,0,0,64" />
             <!--Player 3 User Control-->
             <Grid Name="BottomPanel" DockPanel.Dock="Bottom" HorizontalAlignment="Left" Height="64" Background="Blue" />
             <!--Player 4 User Control-->
