@@ -411,14 +411,15 @@ namespace WizardWarzRotW
                 playerControllers[i].playerName = "Player " + (i + 1).ToString();
                 playerControllers[i].SetPlayerSpritesheet();
 
-                // Add the player to the list
-                ListOfPlayers.Add(playerControllers[i]);
+                
 
                 // Set their position on the grid
                 SetPlayerPosition(i);
 
                 // --------------------------- Initialise All Players Lives and Score Controls -----------------------------
                 initialisePlayerLivesAndScore(i);
+                // Add the player to the list
+                ListOfPlayers.Add(playerControllers[i]);
                 GameGridXAML.Children.Add(playerControllers[i]);
                 
                 Canvas.SetZIndex(playerControllers[i],10);
@@ -558,7 +559,7 @@ namespace WizardWarzRotW
         {
             
             //for (int i = 0; i < noOfPlayers; i++)
-            for (int i = 0; i < playerControllers.Count() - 1; i++)
+            for (int i = 0; i < playerControllers.Count(); i++)
             {
                 if (playerControllers[i].myLivesAndScore.playerLivesNumber == 0 && GameGridXAML.Children.Contains(playerControllers[i]))
                 {
