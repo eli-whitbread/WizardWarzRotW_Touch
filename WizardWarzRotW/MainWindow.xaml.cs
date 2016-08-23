@@ -66,8 +66,8 @@ namespace WizardWarzRotW
             // Initialize each instance of each screen when the game loads.
             title = TitleScreenInstance;
             menu = MainMenuInstance;
-            game = GameInstance;
-            end = EndScreenInstance;
+            //game = GameInstance;
+            //end = EndScreenInstance;
 
             // Reveal the title screen.
             ChangeGameState("title");
@@ -128,10 +128,10 @@ namespace WizardWarzRotW
                     AudioMan.playMainMusic();
 
                     // Set the timer (plus text) and start it. Format: seconds, minutes
-                    GameBoard.ReturnGameBoardInstance().ChangeTimerText(0, 4);
+                    GameBoard.ReturnGameBoardInstance().ChangeTimerText(59, 3);
                     GameTimer.ReturnTimerInstance().StartGameTimer();
-                    GameTimer.ReturnTimerInstance().GameTimeSeconds = 0;
-                    GameTimer.ReturnTimerInstance().GameTimeMinutes = 4;
+                    GameTimer.ReturnTimerInstance().GameTimeSeconds = 59;
+                    GameTimer.ReturnTimerInstance().GameTimeMinutes = 3;
                     GameTimer.ReturnTimerInstance().currentTick = 0;
                     break;
 

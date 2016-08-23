@@ -10,7 +10,7 @@
         <local:AudioManager x:Name="AudioMan"/>
         <local:TitleScreen x:Name="TitleScreenInstance" Visibility="Hidden"/>
         <local:MainMenu x:Name="MainMenuInstance" Visibility="Hidden"/>
-        <local:GameBoard x:Name="GameInstance" Visibility="Hidden"/>
-        <local:EndScreen x:Name="EndScreenInstance" Visibility="Hidden"/>
+        <!--<local:GameBoard x:Name="GameInstance" Visibility="Hidden"/>
+        <local:EndScreen x:Name="EndScreenInstance" Visibility="Hidden"/>-->
     </Canvas>
 </Window>
