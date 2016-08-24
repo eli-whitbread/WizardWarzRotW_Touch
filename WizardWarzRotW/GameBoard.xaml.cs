@@ -240,6 +240,7 @@ namespace WizardWarzRotW
 
         }
 
+        //Randomly assigns grid cell positions for "Destructible" wall tiles and adds them to an array
         void AssignDestructibleWallPositions()
         {
             Int32 wallCount = 0;
@@ -431,7 +432,7 @@ namespace WizardWarzRotW
             
         }
 
-
+        //Set the start positions for each player on the game board
         public void SetPlayerPosition(int playerNumber)
         {
            

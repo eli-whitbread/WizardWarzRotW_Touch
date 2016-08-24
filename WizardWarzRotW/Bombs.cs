@@ -81,6 +81,12 @@ namespace WizardWarzRotW
 
         }
 
+        /// <summary>
+        /// Initialise a Bomb at the required position
+        /// </summary>
+        /// <param name="startX">Grid Column Position</param>
+        /// <param name="startY">Grid Row Position</param>
+        /// <param name="explosionDist">How many grid cells can the explosion travel in each direction</param>
         public void InitialiseBomb(Int32 startX, Int32 startY, Int32 explosionDist)
         {
             //explosionTiles = new List<Rectangle>();
@@ -141,11 +147,11 @@ namespace WizardWarzRotW
 
 
             //output explosionMatrix for testing
-            for (int p = 0; p < explosionMatrix.GetLength(0); p++)
-            {
-                Console.Write(string.Format("{0}{1}\n", explosionMatrix[p, 0], explosionMatrix[p, 1]));
+            //for (int p = 0; p < explosionMatrix.GetLength(0); p++)
+            //{
+            //    Console.Write(string.Format("{0}{1}\n", explosionMatrix[p, 0], explosionMatrix[p, 1]));
 
-            }
+            //}
 
             //draw unexploded bomb image
             DrawBomb();
@@ -155,6 +161,12 @@ namespace WizardWarzRotW
 
         //check the current state (enum) of the tile at gameGrid position (xPos,yPos)
         //note: x = Columns y = Rows
+        /// <summary>
+        /// Check a grid cell against the TileStates Enum array
+        /// </summary>
+        /// <param name="xPos">The grid cell column to check</param>
+        /// <param name="yPos">The grid cell row to check</param>
+        /// <returns>The current "TileState" of the grid cell at xPos,yPos</returns>
         TileStates ReturnCellTileState(Int32 xPos, Int32 yPos)
         {
             return GameBoard.curTileState[xPos, yPos];
@@ -193,6 +205,7 @@ namespace WizardWarzRotW
 
         }
 
+        //Adds the initial Bomb image to the game board
         void DrawBomb()
         {
             Int32 colPos = explosionMatrix[0, 0];
@@ -207,6 +220,7 @@ namespace WizardWarzRotW
 
         }
 
+        //Check the grid cells affected by the explosion for "collisions"
         void ProcessExplosion()
         {
             if (explosionStep < explosionMatrix.GetLength(0))
@@ -251,6 +265,7 @@ namespace WizardWarzRotW
             }
         }
 
+        //Draw the explosion tiles to the game board
         void DrawExplosion()
         {
 
