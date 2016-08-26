@@ -106,8 +106,8 @@ namespace WizardWarzRotW
 
             // The sorted dictionary should have the top-scoring player as the last entry.
             topPlayer = sortedPlayerStats.Keys.Last();
-
-            if(topPlayer == sortedPlayerStats.Keys.ElementAt(sortedPlayerStats.Count -1))
+            //MessageBox.Show(string.Format("Player First: {0}, Player 2nd: {1}", sortedPlayerStats.Values.Last(), sortedPlayerStats.Values.ElementAt(sortedPlayerStats.Count-2)));
+            if(sortedPlayerStats.Values.Last() == sortedPlayerStats.Values.ElementAt(sortedPlayerStats.Count-2))
             {
                 TiedText.Visibility = Visibility.Visible;
                 Winner.Visibility = Visibility.Hidden;
