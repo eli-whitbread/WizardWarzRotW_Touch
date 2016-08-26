@@ -92,39 +92,51 @@ namespace WizardWarzRotW
             {
                 unsortedPlayerStats.Add(player.playerName, player.myLivesAndScore.currentScore);
                 Console.WriteLine(string.Format("Player result: {0}, score: {1}", player.playerName, player.myLivesAndScore.currentScore));
-            }
+            }            
+            
 
             // Use OrderBy method to sort dictionary by value, then add the sorted values to the second dictionary.
             foreach (var item in unsortedPlayerStats.OrderBy(i => i.Value))
             {
                 //MessageBox.Show(string.Format("Dictionary key/value: {0}", item));
                 Console.WriteLine(item);
+                
                 sortedPlayerStats.Add(item.Key, item.Value);
             }
 
             // The sorted dictionary should have the top-scoring player as the last entry.
             topPlayer = sortedPlayerStats.Keys.Last();
-            Console.WriteLine("{0} is the winner!", topPlayer);
-            Winner.Content = topPlayer;
+
+            if(topPlayer == sortedPlayerStats.Keys.ElementAt(sortedPlayerStats.Count -1))
+            {
+                TiedText.Visibility = Visibility.Visible;
+                Winner.Visibility = Visibility.Hidden;
+                WinnerText.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                Winner.Content = topPlayer;
+            }
+            //Console.WriteLine("{0} is the winner!", topPlayer);
+            
 
             player1Score.Content = unsortedPlayerStats.Values.ElementAt(0);
             player2Score.Content = unsortedPlayerStats.Values.ElementAt(1);
             player3Score.Content = unsortedPlayerStats.Values.ElementAt(2);
             player4Score.Content = unsortedPlayerStats.Values.ElementAt(3);
-
             // If there are only 4 players, empty the last two groups of labels
-            if (GameBoard.ReturnNumberOfPlayer() <= 4)
+            try
+            {
+                player5Score.Content = unsortedPlayerStats.Values.ElementAt(4);
+                player6Score.Content = unsortedPlayerStats.Values.ElementAt(5);
+            }
+            catch
             {
                 player5Score.Content = "";
                 player5Label.Content = "";
                 player6Score.Content = "";
                 player6Label.Content = "";
-            }
 
-            else
-            {
-                player5Score.Content = unsortedPlayerStats.Values.ElementAt(4);
-                player6Score.Content = unsortedPlayerStats.Values.ElementAt(5);
             }
         }             
         

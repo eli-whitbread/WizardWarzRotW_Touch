@@ -11,6 +11,7 @@
         <!--Display the top scorer-->
         <Label Name="WinnerText" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="30" Content=" is   the   winner!" Foreground="White" HorizontalAlignment="Center" Canvas.Left="371" Canvas.Top="241" Height="62" Width="379" />
         <Label Name="Winner" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="30" Content="PlayerX" Foreground="White" HorizontalAlignment="Center" Canvas.Left="219" Canvas.Top="240" Height="62" Width="136" />
+        <Label x:Name="TiedText" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="30" Content="Tied Match!" Foreground="White" HorizontalAlignment="Center" Canvas.Left="316" Canvas.Top="240" Height="62" Width="192" Visibility="Hidden"/>
         <!--Display player scores-->
         <Label Name="player1Label" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Player 1: " Foreground="#FF1D8F04" HorizontalAlignment="Center" Canvas.Left="257" Canvas.Top="308" Height="52" Width="181" />
         <Label Name="player1Score" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="XX1" Foreground="White" HorizontalAlignment="Center" Canvas.Left="467" Canvas.Top="308" Height="52" Width="78"/>
@@ -30,6 +31,7 @@
         <Image HorizontalAlignment="Left" Height="115" VerticalAlignment="Top" Width="464" Source="Resources/Wizard .png" Stretch="Fill" Canvas.Left="191" Canvas.Top="15"/>
         <Image HorizontalAlignment="Left" Height="102" VerticalAlignment="Top" Width="398" Source="Resources/Warz.png" Canvas.Left="219" Canvas.Top="137"/>
         <Label x:Name="endTimerText_Copy" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" FontSize="24" Content="Main   Menu   In :" Foreground="White" HorizontalAlignment="Center" Canvas.Left="79" Canvas.Top="756" Height="52" Width="267"/>
+
     </Canvas>
 
 </UserControl>

@@ -8,8 +8,8 @@
              d:DesignHeight="810" d:DesignWidth="810">
     <Grid Background="Black">
         <Label x:Name="label" Content="Number   of   Players" Height="64" FontSize="46
-               " Margin="212,256,158,490" Foreground="White" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" HorizontalAlignment="Center" Width="440"  />
-        <Button x:Name="FourPlayerButton" Content="4" FontSize="48" PreviewMouseDown="FourPlayerButton_PreviewMouseDown" PreviewTouchDown="FourPlayerButton_PreviewTouchDown" Margin="267,356,234.6,371.6" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" Background="#FFFFBE00" BorderBrush="#FF10266E" BorderThickness="4" />
+               " Margin="212,224,158,522" Foreground="White" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" HorizontalAlignment="Center" Width="440"  />
+        <Button x:Name="FourPlayerButton" Content="4" FontSize="48" PreviewMouseDown="FourPlayerButton_PreviewMouseDown" PreviewTouchDown="FourPlayerButton_PreviewTouchDown" Margin="267,318,235,410" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" Background="#FFFFBE00" BorderBrush="#FF10266E" BorderThickness="4" />
         <Button x:Name="SixPlayerButton" Content="6" FontSize="48" PreviewMouseDown="SixPlayerButton_PreviewMouseDown" PreviewTouchDown="SixPlayerButton_PreviewTouchDown" Margin="267,539,234.6,188.6" FontFamily="/WizardWarzRotW;component/Resources/#ArcadeClassic" Background="#FFFFBE00" BorderBrush="#FF10266E" BorderThickness="4"  />
         <Image HorizontalAlignment="Left" Height="75" Margin="234,17,0,0" VerticalAlignment="Top" Width="357" Source="Resources/Wizard .png" Stretch="Fill"/>
         <Image HorizontalAlignment="Left" Height="66" Margin="273,97,0,0" VerticalAlignment="Top" Width="306" Source="Resources/Warz.png"/>
