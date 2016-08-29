@@ -86,9 +86,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="RandomNumberGenerator.cs" />
-    <Compile Include="ResultScreen.xaml.cs">
-      <DependentUpon>ResultScreen.xaml</DependentUpon>
-    </Compile>
     <Compile Include="SpritesheetImage.cs" />
     <Compile Include="StaticCollections.cs" />
     <Compile Include="TitleScreen.xaml.cs">
@@ -142,10 +139,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PlayerControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ResultScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
