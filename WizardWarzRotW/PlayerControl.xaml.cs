@@ -759,18 +759,14 @@ namespace WizardWarzRotW
         public void flashCounterFunction()
         {
 
-            if (iAmFlash)
+            if (!iAmFlash)
             {
 
-                flashCounter = 0;
-            }
-            else
-            {
                 iAmFlash = true;
-                flashCounter = 0;
-                animPlayerTile.Opacity = 1.0f;
             }
-
+            
+            flashCounter = 0;
+            animPlayerTile.Opacity = 1.0f;
         }
 
         
@@ -790,6 +786,12 @@ namespace WizardWarzRotW
                 flashOn = false;
             }
             flashCounter++;
+
+            if(flashCounter > 7)
+            {
+                iAmFlash = false;
+                animPlayerTile.Opacity = 1.0f;
+            }
             
         }
 
