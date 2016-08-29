@@ -105,6 +105,13 @@ namespace WizardWarzRotW
             Loaded += PlayerControl_Loaded;
         }
 
+        public void DestroyPlayer()
+        {
+            _playerControlTimer.processFrameEvent_TICK -= _playerControlTimer_processFrameEvent_TICK;
+            myLivesAndScore.ReduceLives(3);
+            GameBoard.ReturnGameBoardInstance().CheckPlayersOnBoard();
+        }
+
         // ---------------------------------------------------------------------
         // ----------------------PLAYER TICK PROCESS -----------------------------------
         // ---------------------------------------------------------------------
@@ -383,7 +390,7 @@ namespace WizardWarzRotW
                 playerX = PlayerPositions[_step, 0];
                 playerY = PlayerPositions[_step, 1];
                 //Console.WriteLine(string.Format("Player {0} postion: {1} {2}", playerName, playerX, playerY));
-
+                
                 GameBoard.ReturnGameGrid().Children.Add(this);
 
                 // Scan tile for powerups

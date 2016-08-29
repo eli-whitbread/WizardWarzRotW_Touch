@@ -334,12 +334,17 @@ namespace WizardWarzRotW
 
         private void GameDependencies()
         {
+            if(newGameTimer != null)
+            {
+                newGameTimer.StopGameTimer();
+            }
 
             if (newGameTimer == null)
             {
                 newGameTimer = new GameTimer();
 
             }
+            
 
             newGameTimer.StartGameTimer();
 
@@ -569,13 +574,17 @@ namespace WizardWarzRotW
                     //playerControllers[i].myLivesAndScore.playerLivesNumber = -1;
                     //playerControllers[i].myLivesAndScore.currentScore -= 150;
                     GameGridXAML.Children.Remove(playerControllers[i]);
-
+                    
                     noOfPlayers--;
                     //MessageBox.Show(string.Format("No Of Players {0}", noOfPlayers));
                     if (noOfPlayers <= 1)
                     {
                         //gameTimeMinutes = 0;
                         //gameTimeSeconds = 0;
+                        foreach (PlayerControl pc in playerControllers)
+                        {
+                            pc.DestroyPlayer();
+                        }
                         MainWindow.ReturnMainWindowInstance().ChangeGameState("end");
                     }
                 }

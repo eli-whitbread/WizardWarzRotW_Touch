@@ -145,6 +145,9 @@ namespace WizardWarzRotW
 
                         end = new EndScreen();
                         GameCANVAS.Children.Add(end);
+                        
+                        GameBoard.ReturnGameGrid().Children.Clear();
+                        GameBoard.ReturnPlayerList().Clear();
                     }
                                 
                     end.Visibility = Visibility.Visible;
